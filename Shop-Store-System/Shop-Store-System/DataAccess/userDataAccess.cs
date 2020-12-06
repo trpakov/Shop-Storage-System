@@ -26,7 +26,7 @@ namespace Shop_Store_System.DataAccess
             try
             {
                 //query за вземане на данните от таблицата с потребителите
-                String sql = "SELECT * FROM tbl_users";
+                String sql = "SELECT * FROM table_users";
 
                 //Изпълнение на query
                 SqlCommand cmd = new SqlCommand(sql, conn);
@@ -68,15 +68,15 @@ namespace Shop_Store_System.DataAccess
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
-                cmd.Parameters.AddWithValue("@first_name", user.FirstName);
-                cmd.Parameters.AddWithValue("@last_name", user.LastName);
-                cmd.Parameters.AddWithValue("@email", user.Email);
-                cmd.Parameters.AddWithValue("@username", user.Username);
-                cmd.Parameters.AddWithValue("@password", user.Password);
-                cmd.Parameters.AddWithValue("@contact", user.Contact);
-                cmd.Parameters.AddWithValue("@address", user.Address);
-                cmd.Parameters.AddWithValue("@gender", user.Gender);
-                cmd.Parameters.AddWithValue("@user_type", user.UserType);
+                cmd.Parameters.AddWithValue("@first_name", user.FirstName ?? (object)DBNull.Value);
+                cmd.Parameters.AddWithValue("@last_name", user.LastName ?? (object)DBNull.Value);
+                cmd.Parameters.AddWithValue("@email", user.Email ?? (object)DBNull.Value);
+                cmd.Parameters.AddWithValue("@username", user.Username ?? (object)DBNull.Value);
+                cmd.Parameters.AddWithValue("@password", user.Password ?? (object)DBNull.Value);
+                cmd.Parameters.AddWithValue("@contact", user.Contact ?? (object)DBNull.Value);
+                cmd.Parameters.AddWithValue("@address", user.Address ?? (object)DBNull.Value);
+                cmd.Parameters.AddWithValue("@gender", user.Gender ?? (object)DBNull.Value);
+                cmd.Parameters.AddWithValue("@user_type", user.UserType ?? (object)DBNull.Value);
                 cmd.Parameters.AddWithValue("@added_date", user.AddedDate);
                 cmd.Parameters.AddWithValue("@added_by", user.AddedBy);
 
@@ -125,7 +125,7 @@ namespace Shop_Store_System.DataAccess
                 cmd.Parameters.AddWithValue("@contact", user.Contact);
                 cmd.Parameters.AddWithValue("@address", user.Address);
                 cmd.Parameters.AddWithValue("@gender", user.Gender);
-                cmd.Parameters.AddWithValue("@user_type", user.Username);
+                cmd.Parameters.AddWithValue("@user_type", user.UserType);
                 cmd.Parameters.AddWithValue("@added_date", user.AddedDate);
                 cmd.Parameters.AddWithValue("@added_by", user.AddedBy);
                 cmd.Parameters.AddWithValue("@id", user.Id);
@@ -189,6 +189,35 @@ namespace Shop_Store_System.DataAccess
                 conn.Close();
             }
             return isSuccess;
+        }
+
+        //Търсене на данни
+        public DataTable Search(string keywords)
+        {
+            SqlConnection conn = new SqlConnection(myconnstrng);
+
+            DataTable dt = new DataTable();
+            try
+            {
+                String sql = "SELECT * FROM table_users WHERE id LIKE '%" + keywords + "%' OR first_name LIKE '%" + keywords + "%' OR last_name LIKE '%" + keywords + "%' OR username LIKE '%" + keywords + "%'";
+
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+                conn.Open();
+
+                adapter.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return dt;
         }
     }
 }
