@@ -15,6 +15,7 @@ namespace Shop_Store_System.BusinesLogic
         public string Username { get; set; }
         public string Password { get; set; }
         public string Address { get; set; }
+        public string Contact { get; set; }
         public string Gender { get; set; }
         public string UserType { get; set; }
         public DateTime AddedDate { get; set; }

@@ -162,21 +162,21 @@ namespace Shop_Store_System.DataAccess
 
             try
             {
-                string sql = "DELETE FROM tbl_users WHERE id=@id";
+                string sql = "DELETE FROM table_users WHERE id=@id";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
-                cmd.Parameters.AddWithValue("@id", user.id);
+                cmd.Parameters.AddWithValue("@id", user.Id);
+
                 conn.Open();
+
                 int rows = cmd.ExecuteNonQuery();
                 if (rows > 0)
                 {
-                    //Query Successfull
                     isSuccess = true;
                 }
                 else
                 {
-                    //Query Failed
                     isSuccess = false;
                 }
             }
