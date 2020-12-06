@@ -46,25 +46,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="formAdminDashboard.cs">
+    <Compile Include="Design Interfaces\formAdminDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formAdminDashboard.Designer.cs">
+    <Compile Include="Design Interfaces\formAdminDashboard.Designer.cs">
       <DependentUpon>formAdminDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="formUserDashboard.cs">
+    <Compile Include="Design Interfaces\formUserDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formUserDashboard.Designer.cs">
+    <Compile Include="Design Interfaces\formUserDashboard.Designer.cs">
       <DependentUpon>formUserDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design Interfaces\formUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design Interfaces\formUsers.Designer.cs">
+      <DependentUpon>formUsers.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="formAdminDashboard.resx">
+    <EmbeddedResource Include="Design Interfaces\formAdminDashboard.resx">
       <DependentUpon>formAdminDashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="formUserDashboard.resx">
+    <EmbeddedResource Include="Design Interfaces\formUserDashboard.resx">
       <DependentUpon>formUserDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design Interfaces\formUsers.resx">
+      <DependentUpon>formUsers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -86,6 +86,7 @@
             this.usersToolStripMenuItem.Name = "usersToolStripMenuItem";
             this.usersToolStripMenuItem.Size = new System.Drawing.Size(58, 24);
             this.usersToolStripMenuItem.Text = "Users";
+            this.usersToolStripMenuItem.Click += new System.EventHandler(this.usersToolStripMenuItem_Click);
             // 
             // categoryToolStripMenuItem
             // 
@@ -138,7 +139,7 @@
             this.labelAppFName.Font = new System.Drawing.Font("Segoe UI Semibold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelAppFName.Location = new System.Drawing.Point(859, 451);
             this.labelAppFName.Name = "labelAppFName";
-            this.labelAppFName.Size = new System.Drawing.Size(189, 46);
+            this.labelAppFName.Size = new System.Drawing.Size(185, 45);
             this.labelAppFName.TabIndex = 4;
             this.labelAppFName.Text = "Shop Store";
             // 
@@ -148,7 +149,7 @@
             this.labelAppLName.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelAppLName.Location = new System.Drawing.Point(1054, 451);
             this.labelAppLName.Name = "labelAppLName";
-            this.labelAppLName.Size = new System.Drawing.Size(133, 46);
+            this.labelAppLName.Size = new System.Drawing.Size(132, 45);
             this.labelAppLName.TabIndex = 5;
             this.labelAppLName.Text = "System";
             // 

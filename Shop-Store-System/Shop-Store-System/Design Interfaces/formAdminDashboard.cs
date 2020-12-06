@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Shop_Store_System.Design_Interfaces;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,12 @@ namespace Shop_Store_System
         public formAdminDashboard()
         {
             InitializeComponent();
+        }
+
+        private void usersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formUsers user = new formUsers();
+            user.Show();
         }
     }
 }

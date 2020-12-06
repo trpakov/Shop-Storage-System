@@ -16,7 +16,7 @@ namespace Shop_Store_System
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new formUserDashboard());
+            Application.Run(new formAdminDashboard());
         }
     }
 }
