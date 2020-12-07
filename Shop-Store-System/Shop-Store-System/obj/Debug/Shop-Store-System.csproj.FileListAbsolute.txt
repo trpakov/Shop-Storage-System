@@ -11,3 +11,4 @@ D:\Programing\Github\Shop-Storage-System\Shop-Store-System\Shop-Store-System\obj
 D:\Programing\Github\Shop-Storage-System\Shop-Store-System\Shop-Store-System\obj\Debug\Shop_Store_System.formUserDashboard.resources
 D:\Programing\Github\Shop-Storage-System\Shop-Store-System\Shop-Store-System\obj\Debug\Shop_Store_System.Design_Interfaces.formUsers.resources
 D:\Programing\Github\Shop-Storage-System\Shop-Store-System\Shop-Store-System\obj\Debug\Shop_Store_System.Design_Interfaces.formLogin.resources
+D:\Programing\Github\Shop-Storage-System\Shop-Store-System\Shop-Store-System\obj\Debug\Shop_Store_System.Design_Interfaces.formCategories.resources

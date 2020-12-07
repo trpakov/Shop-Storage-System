@@ -36,5 +36,11 @@ namespace Shop_Store_System
         {
             labelLoggedUser.Text = formLogin.loggedIn;
         }
+
+        private void categoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formCategories category = new formCategories();
+            category.Show();
+        }
     }
 }
