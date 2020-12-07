@@ -47,7 +47,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessLogic\loginBusinessLogic.cs" />
     <Compile Include="BusinessLogic\userBusinessLogic.cs" />
+    <Compile Include="DataAccess\loginDataAccess.cs" />
     <Compile Include="DataAccess\userDataAccess.cs" />
     <Compile Include="Design Interfaces\formAdminDashboard.cs">
       <SubType>Form</SubType>
