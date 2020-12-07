@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Shop_Store_System.Design_Interfaces;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,13 @@ namespace Shop_Store_System
         public formUserDashboard()
         {
             InitializeComponent();
+        }
+
+        private void formUserDashboard_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            formLogin login = new formLogin();
+            login.Show();
+            this.Hide();
         }
     }
 }

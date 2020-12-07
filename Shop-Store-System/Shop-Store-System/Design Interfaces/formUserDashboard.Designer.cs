@@ -90,7 +90,7 @@
             this.labelAppLName.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelAppLName.Location = new System.Drawing.Point(1054, 446);
             this.labelAppLName.Name = "labelAppLName";
-            this.labelAppLName.Size = new System.Drawing.Size(133, 46);
+            this.labelAppLName.Size = new System.Drawing.Size(132, 45);
             this.labelAppLName.TabIndex = 10;
             this.labelAppLName.Text = "System";
             // 
@@ -100,7 +100,7 @@
             this.labelAppFName.Font = new System.Drawing.Font("Segoe UI Semibold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelAppFName.Location = new System.Drawing.Point(859, 446);
             this.labelAppFName.Name = "labelAppFName";
-            this.labelAppFName.Size = new System.Drawing.Size(189, 46);
+            this.labelAppFName.Size = new System.Drawing.Size(185, 45);
             this.labelAppFName.TabIndex = 9;
             this.labelAppFName.Text = "Shop Store";
             // 
@@ -163,6 +163,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "User Dashboard";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formUserDashboard_FormClosed);
             this.menuStripTop.ResumeLayout(false);
             this.menuStripTop.PerformLayout();
             this.panelFooter.ResumeLayout(false);

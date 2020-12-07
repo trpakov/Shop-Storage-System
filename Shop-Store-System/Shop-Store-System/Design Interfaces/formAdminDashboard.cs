@@ -23,5 +23,12 @@ namespace Shop_Store_System
             formUsers user = new formUsers();
             user.Show();
         }
+
+        private void formAdminDashboard_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            formLogin login = new formLogin();
+            login.Show();
+            this.Hide();
+        }
     }
 }
