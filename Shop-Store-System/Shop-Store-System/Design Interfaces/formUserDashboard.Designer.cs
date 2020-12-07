@@ -164,6 +164,7 @@
             this.Text = "User Dashboard";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formUserDashboard_FormClosed);
+            this.Load += new System.EventHandler(this.formUserDashboard_Load);
             this.menuStripTop.ResumeLayout(false);
             this.menuStripTop.PerformLayout();
             this.panelFooter.ResumeLayout(false);

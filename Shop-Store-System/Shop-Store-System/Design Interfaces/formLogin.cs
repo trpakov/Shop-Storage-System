@@ -21,6 +21,7 @@ namespace Shop_Store_System.Design_Interfaces
 
         loginBusinessLogic login = new loginBusinessLogic();
         loginDataAccess loginDataAccess = new loginDataAccess();
+        public static string loggedIn;
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
@@ -35,6 +36,7 @@ namespace Shop_Store_System.Design_Interfaces
             {
                 
                 MessageBox.Show("Login Successful.");
+                loggedIn = login.Username;
 
                 //Отваряне на определена форма според usertype 
                 switch (login.UserType)
@@ -66,6 +68,12 @@ namespace Shop_Store_System.Design_Interfaces
             {
                 MessageBox.Show("Login Failed. Try Again");
             }
+        }
+
+        private void formLogin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            System.Diagnostics.Process.GetCurrentProcess().Kill();
+            Application.Exit();
         }
     }
 }

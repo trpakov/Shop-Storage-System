@@ -35,8 +35,13 @@ namespace Shop_Store_System.Design_Interfaces
             user.Gender = cmbGender.Text;
             user.UserType = cmbUserType.Text;
             user.AddedDate = DateTime.Now;
-            user.AddedBy = 1;
-            
+
+            //Вземане на името на влезналия потребител
+            string loggedUser = formLogin.loggedIn;
+            userBusinessLogic usr = userDataAccess.GetIDFromUsername(loggedUser);
+
+            user.AddedBy = usr.Id;
+
 
             //Вкарване на данни в базата данни
             bool success = userDataAccess.Insert(user);
@@ -107,7 +112,15 @@ namespace Shop_Store_System.Design_Interfaces
             user.Gender = cmbGender.Text;
             user.UserType = cmbUserType.Text;
             user.AddedDate = DateTime.Now;
-            user.AddedBy = 1;
+
+            //user.AddedBy = 1;
+
+            //---------------------------------------------------------------------------------------
+            string loggedUser = formLogin.loggedIn;
+            userBusinessLogic usr = userDataAccess.GetIDFromUsername(loggedUser);
+
+            user.AddedBy = usr.Id;
+            //---------------------------------------------------------------------------------------
 
             //Редактиране на данните в базата данни
             bool success = userDataAccess.Update(user);
@@ -167,6 +180,12 @@ namespace Shop_Store_System.Design_Interfaces
                 DataTable dt = userDataAccess.Select();
                 dgvUsers.DataSource = dt;
             }
+        }
+
+        private void formUsers_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //System.Diagnostics.Process.GetCurrentProcess().Kill();
+            //Application.Exit();
         }
     }
 }

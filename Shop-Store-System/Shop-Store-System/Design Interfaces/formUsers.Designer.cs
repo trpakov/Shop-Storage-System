@@ -361,6 +361,7 @@
             this.Name = "formUsers";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Users";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formUsers_FormClosed);
             this.Load += new System.EventHandler(this.formUsers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).EndInit();
             this.ResumeLayout(false);

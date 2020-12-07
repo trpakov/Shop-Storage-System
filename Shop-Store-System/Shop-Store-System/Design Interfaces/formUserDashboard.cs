@@ -22,7 +22,13 @@ namespace Shop_Store_System
         {
             formLogin login = new formLogin();
             login.Show();
-            this.Hide();
+            System.Diagnostics.Process.GetCurrentProcess().Kill();
+            Application.Exit();
+        }
+
+        private void formUserDashboard_Load(object sender, EventArgs e)
+        {
+            labelLoggedUser.Text = formLogin.loggedIn;
         }
     }
 }

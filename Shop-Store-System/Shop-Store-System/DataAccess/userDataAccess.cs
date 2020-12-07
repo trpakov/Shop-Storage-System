@@ -219,5 +219,36 @@ namespace Shop_Store_System.DataAccess
             }
             return dt;
         }
+
+        //Вземане на id от влезналия потребител
+        public userBusinessLogic GetIDFromUsername(string username)
+        {
+            userBusinessLogic user = new userBusinessLogic();
+            SqlConnection conn = new SqlConnection(myconnstrng);
+            DataTable dt = new DataTable();
+
+            try
+            {
+                string sql = "SELECT id FROM table_users WHERE username='" + username + "'";
+
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, conn);
+                conn.Open();
+
+                adapter.Fill(dt);
+                if (dt.Rows.Count > 0)
+                {
+                    user.Id = int.Parse(dt.Rows[0]["id"].ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return user;
+        }
     }
 }
