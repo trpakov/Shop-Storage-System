@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Shop_Store_System.Design_Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace Shop_Store_System
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new formAdminDashboard());
+            Application.Run(new formLogin());
         }
     }
 }
