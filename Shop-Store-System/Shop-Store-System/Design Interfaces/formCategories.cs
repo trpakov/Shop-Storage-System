@@ -125,5 +125,21 @@ namespace Shop_Store_System.Design_Interfaces
                 MessageBox.Show("Failed to Delete Category.");
             }
         }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            string keywords = txtSearch.Text;
+
+            if (keywords != null)
+            {
+                DataTable dt = categoryDataAccess.Search(keywords);
+                dgvCategories.DataSource = dt;
+            }
+            else
+            {
+                DataTable dt = categoryDataAccess.Select();
+                dgvCategories.DataSource = dt;
+            }
+        }
     }
 }

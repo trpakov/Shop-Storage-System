@@ -179,5 +179,36 @@ namespace Shop_Store_System.DataAccess
 
             return isSuccess;
         }
+
+        //Търсене на данни
+        public DataTable Search(string keywords)
+        {
+            SqlConnection conn = new SqlConnection(myconnstrng);
+
+            DataTable dt = new DataTable();
+
+            try
+            {
+                String sql = "SELECT * FROM table_categories WHERE id LIKE '%" + keywords + "%' OR title LIKE '%" + keywords + "%' OR description LIKE '%" + keywords + "%'";
+
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+                conn.Open();
+
+                adapter.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return dt;
+        }
     }
 }
