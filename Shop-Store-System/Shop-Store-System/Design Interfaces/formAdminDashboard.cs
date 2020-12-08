@@ -42,5 +42,11 @@ namespace Shop_Store_System
             formCategories category = new formCategories();
             category.Show();
         }
+
+        private void productsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formProducts product = new formProducts();
+            product.Show();
+        }
     }
 }

@@ -71,6 +71,12 @@
     <Compile Include="Design Interfaces\formLogin.Designer.cs">
       <DependentUpon>formLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Design Interfaces\formProducts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design Interfaces\formProducts.Designer.cs">
+      <DependentUpon>formProducts.cs</DependentUpon>
+    </Compile>
     <Compile Include="Design Interfaces\formUserDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +99,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Design Interfaces\formLogin.resx">
       <DependentUpon>formLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design Interfaces\formProducts.resx">
+      <DependentUpon>formProducts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Design Interfaces\formUserDashboard.resx">
       <DependentUpon>formUserDashboard.cs</DependentUpon>
