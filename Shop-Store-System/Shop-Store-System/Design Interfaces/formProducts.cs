@@ -145,5 +145,23 @@ namespace Shop_Store_System.Design_Interfaces
                 MessageBox.Show("Failed to Delete Product.");
             }
         }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            string keywords = txtSearch.Text;
+
+            if (keywords != null)
+            {
+                //Визуализация на търсения продукт
+                DataTable dt = productDataAccess.Search(keywords);
+                dgvProducts.DataSource = dt;
+            }
+            else
+            {
+                //Визуализация на всички продукти
+                DataTable dt = productDataAccess.Select();
+                dgvProducts.DataSource = dt;
+            }
+        }
     }
 }
