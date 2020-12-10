@@ -1,4 +1,5 @@
-﻿using Shop_Store_System.BusinessLogic;
+﻿using Shop_Store_System.BusinesLogic;
+using Shop_Store_System.BusinessLogic;
 using Shop_Store_System.DataAccess;
 using System;
 using System.Collections.Generic;
@@ -20,9 +21,9 @@ namespace Shop_Store_System.Design_Interfaces
         }
 
         categoriesDataAccess categoryDataAccess = new categoriesDataAccess();
-        productsBusinessLogic p = new productsBusinessLogic();
-        productsDataAccess pdal = new productsDataAccess();
-        userDataAccess udal = new userDataAccess();
+        productsBusinessLogic product = new productsBusinessLogic();
+        productsDataAccess productDataAccess = new productsDataAccess();
+        userDataAccess userDataAccess = new userDataAccess();
 
         private void formProducts_Load(object sender, EventArgs e)
         {
@@ -36,8 +37,113 @@ namespace Shop_Store_System.Design_Interfaces
             cmbCategory.DisplayMember = "title";
             cmbCategory.ValueMember = "title";
 
-            DataTable dt = pdal.Select();
+            DataTable dt = productDataAccess.Select();
             dgvProducts.DataSource = dt;
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            product.Name = txtName.Text;
+            product.Category = cmbCategory.Text;
+            product.Description = txtDescription.Text;
+            product.Rate = decimal.Parse(txtRate.Text);
+            product.Quantity = 0;
+            product.AddedDate = DateTime.Now;
+
+            //Вземане на името и id на влезналия потребител
+            String loggedUsr = formLogin.loggedIn;
+            userBusinessLogic user = userDataAccess.GetIDFromUsername(loggedUsr);
+
+            product.AddedBy = user.Id;
+
+            bool success = productDataAccess.Insert(product);
+
+            if (success == true)
+            {
+                MessageBox.Show("Product Added Successfully.");
+
+                Clear();
+
+                DataTable dt = productDataAccess.Select();
+                dgvProducts.DataSource = dt;
+            }
+            else
+            {
+                MessageBox.Show("Failed to Add New Product.");
+            }
+        }
+
+        public void Clear()
+        {
+            txtID.Text = "";
+            txtName.Text = "";
+            txtDescription.Text = "";
+            txtRate.Text = "";
+            txtSearch.Text = "";
+        }
+
+        private void dgvProducts_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            //Променлива за запазване на номера на селектирания ред
+            int rowIndex = e.RowIndex;
+
+            txtID.Text = dgvProducts.Rows[rowIndex].Cells[0].Value.ToString();
+            txtName.Text = dgvProducts.Rows[rowIndex].Cells[1].Value.ToString();
+            cmbCategory.Text = dgvProducts.Rows[rowIndex].Cells[2].Value.ToString();
+            txtDescription.Text = dgvProducts.Rows[rowIndex].Cells[3].Value.ToString();
+            txtRate.Text = dgvProducts.Rows[rowIndex].Cells[4].Value.ToString();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            product.Id = int.Parse(txtID.Text);
+            product.Name = txtName.Text;
+            product.Category = cmbCategory.Text;
+            product.Description = txtDescription.Text;
+            product.Rate = decimal.Parse(txtRate.Text);
+            product.AddedDate = DateTime.Now;
+
+            String loggedUsr = formLogin.loggedIn;
+            userBusinessLogic user = userDataAccess.GetIDFromUsername(loggedUsr);
+
+            product.AddedBy = user.Id;
+
+            bool success = productDataAccess.Update(product);
+
+            if (success == true)
+            {
+                MessageBox.Show("Product Successfully Updated.");
+
+                Clear();
+
+                DataTable dt = productDataAccess.Select();
+                dgvProducts.DataSource = dt;
+            }
+            else
+            {
+                MessageBox.Show("Failed to Update Product.");
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            product.Id = int.Parse(txtID.Text);
+
+            bool success = productDataAccess.Delete(product);
+
+            if (success == true)
+            {
+                MessageBox.Show("Product successfully deleted.");
+
+                Clear();
+
+                DataTable dt = productDataAccess.Select();
+                dgvProducts.DataSource = dt;
+            }
+            else
+            {
+                MessageBox.Show("Failed to Delete Product.");
+            }
         }
     }
 }
