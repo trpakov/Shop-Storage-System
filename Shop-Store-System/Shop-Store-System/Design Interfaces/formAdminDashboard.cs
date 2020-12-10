@@ -48,5 +48,11 @@ namespace Shop_Store_System
             formProducts product = new formProducts();
             product.Show();
         }
+
+        private void dealerAndCustomerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formDealerCustomer dealerAndCustomer = new formDealerCustomer();
+            dealerAndCustomer.Show();
+        }
     }
 }
