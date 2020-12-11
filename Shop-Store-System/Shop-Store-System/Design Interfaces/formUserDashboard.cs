@@ -36,5 +36,17 @@ namespace Shop_Store_System
             formDealerCustomer dealerAndCustomer = new formDealerCustomer();
             dealerAndCustomer.Show();
         }
+
+        private void purchaseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formPurchaseSales purchase = new formPurchaseSales();
+            purchase.Show();
+        }
+
+        private void salesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formPurchaseSales sales = new formPurchaseSales();
+            sales.Show();
+        }
     }
 }
