@@ -133,5 +133,21 @@ namespace Shop_Store_System.Design_Interfaces
                 MessageBox.Show("Failed to Delete Person.");
             }
         }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            string keyword = txtSearch.Text;
+
+            if (keyword != null)
+            {
+                DataTable dt = dealerCustomerDataAccess.Search(keyword);
+                dgvDeaCust.DataSource = dt;
+            }
+            else
+            {
+                DataTable dt = dealerCustomerDataAccess.Select();
+                dgvDeaCust.DataSource = dt;
+            }
+        }
     }
 }
