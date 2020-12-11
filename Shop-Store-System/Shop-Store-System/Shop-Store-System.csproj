@@ -51,6 +51,8 @@
     <Compile Include="BusinessLogic\dealerandcustomerBusinessLogic.cs" />
     <Compile Include="BusinessLogic\loginBusinessLogic.cs" />
     <Compile Include="BusinessLogic\productsBusinessLogic.cs" />
+    <Compile Include="BusinessLogic\transactionDetailBusinessLogic.cs" />
+    <Compile Include="BusinessLogic\transactionsBusinessLogic.cs" />
     <Compile Include="BusinessLogic\userBusinessLogic.cs" />
     <Compile Include="DataAccess\categoriesDataAccess.cs" />
     <Compile Include="DataAccess\dealerandcustomerDataAccess.cs" />
