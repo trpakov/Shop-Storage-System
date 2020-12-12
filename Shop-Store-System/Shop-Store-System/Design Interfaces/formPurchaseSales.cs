@@ -20,6 +20,7 @@ namespace Shop_Store_System.Design_Interfaces
         }
 
         dealerandcustomerDataAccess dcDataAccess = new dealerandcustomerDataAccess();
+        productsDataAccess productDataAccess = new productsDataAccess();
 
         private void formPurchaseSales_Load(object sender, EventArgs e)
         {
@@ -48,6 +49,28 @@ namespace Shop_Store_System.Design_Interfaces
             txtEmail.Text = dc.Email;
             txtContact.Text = dc.Contact;
             txtAddress.Text = dc.Address;
+        }
+
+        private void txtSearchProduct_TextChanged(object sender, EventArgs e)
+        {
+            string keyword = txtSearchProduct.Text;
+
+            if (keyword == "")
+            {
+                txtProductName.Text = "";
+                txtInventory.Text = "";
+                txtRate.Text = "";
+                txtQty.Text = "";
+                return;
+            }
+
+            //Търсене на продукт в базата данни
+            productsBusinessLogic product = productDataAccess.GetProductsForTransaction(keyword);
+
+            //Визуализация на намерените данни в текстовите кутии
+            txtProductName.Text = product.Name;
+            txtInventory.Text = product.Quantity.ToString();
+            txtRate.Text = product.Rate.ToString();
         }
     }
 }

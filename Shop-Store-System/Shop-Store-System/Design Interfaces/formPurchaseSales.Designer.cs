@@ -59,6 +59,7 @@
             this.dgvAddedProducts = new System.Windows.Forms.DataGridView();
             this.labelDGVTitle = new System.Windows.Forms.Label();
             this.panelCalculation = new System.Windows.Forms.Panel();
+            this.labelTop = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.txtReturnAmount = new System.Windows.Forms.TextBox();
             this.txtPaidAmount = new System.Windows.Forms.TextBox();
@@ -73,7 +74,6 @@
             this.labelDiscount = new System.Windows.Forms.Label();
             this.labelSubTotal = new System.Windows.Forms.Label();
             this.labelCalculationTitle = new System.Windows.Forms.Label();
-            this.labelTop = new System.Windows.Forms.Label();
             this.pnlDeaCust.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelDataGridView.SuspendLayout();
@@ -291,6 +291,7 @@
             this.txtSearchProduct.Name = "txtSearchProduct";
             this.txtSearchProduct.Size = new System.Drawing.Size(302, 30);
             this.txtSearchProduct.TabIndex = 6;
+            this.txtSearchProduct.TextChanged += new System.EventHandler(this.txtSearchProduct_TextChanged);
             // 
             // labelQuantity
             // 
@@ -402,6 +403,17 @@
             this.panelCalculation.Name = "panelCalculation";
             this.panelCalculation.Size = new System.Drawing.Size(639, 457);
             this.panelCalculation.TabIndex = 3;
+            // 
+            // labelTop
+            // 
+            this.labelTop.AutoSize = true;
+            this.labelTop.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTop.ForeColor = System.Drawing.Color.Teal;
+            this.labelTop.Location = new System.Drawing.Point(561, 432);
+            this.labelTop.Name = "labelTop";
+            this.labelTop.Size = new System.Drawing.Size(65, 25);
+            this.labelTop.TabIndex = 4;
+            this.labelTop.Text = "label1";
             // 
             // btnSave
             // 
@@ -535,17 +547,6 @@
             this.labelCalculationTitle.Size = new System.Drawing.Size(159, 23);
             this.labelCalculationTitle.TabIndex = 0;
             this.labelCalculationTitle.Text = "Calculation Details";
-            // 
-            // labelTop
-            // 
-            this.labelTop.AutoSize = true;
-            this.labelTop.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTop.ForeColor = System.Drawing.Color.Teal;
-            this.labelTop.Location = new System.Drawing.Point(561, 432);
-            this.labelTop.Name = "labelTop";
-            this.labelTop.Size = new System.Drawing.Size(65, 25);
-            this.labelTop.TabIndex = 4;
-            this.labelTop.Text = "label1";
             // 
             // formPurchaseSales
             // 
