@@ -22,10 +22,18 @@ namespace Shop_Store_System.Design_Interfaces
         dealerandcustomerDataAccess dcDataAccess = new dealerandcustomerDataAccess();
         productsDataAccess productDataAccess = new productsDataAccess();
 
+        DataTable transactionTable = new DataTable();
+
         private void formPurchaseSales_Load(object sender, EventArgs e)
         {
             string type = formUserDashboard.transactionType;
             labelTop.Text = type;
+
+            //Създаване на колони за таблицата
+            transactionTable.Columns.Add("Product Name");
+            transactionTable.Columns.Add("Rate");
+            transactionTable.Columns.Add("Quantity");
+            transactionTable.Columns.Add("Total");
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -71,6 +79,40 @@ namespace Shop_Store_System.Design_Interfaces
             txtProductName.Text = product.Name;
             txtInventory.Text = product.Quantity.ToString();
             txtRate.Text = product.Rate.ToString();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            string productName = txtProductName.Text;
+            decimal Rate = decimal.Parse(txtRate.Text);
+            decimal Qty = decimal.Parse(txtQty.Text);
+
+            decimal Total = Rate * Qty;
+
+            decimal subTotal = decimal.Parse(txtSubTotal.Text);
+            subTotal = subTotal + Total;
+
+            //Проверка дали има избран продукт 
+            if (productName == "")
+            {
+                MessageBox.Show("Select the product first. Try Again.");
+            }
+            else
+            {
+                //Добавяне на продукта в таблицата
+                transactionTable.Rows.Add(productName, Rate, Qty, Total);
+
+                dgvAddedProducts.DataSource = transactionTable;
+
+                txtSubTotal.Text = subTotal.ToString();
+
+                //Clear the Textboxes
+                txtSearchProduct.Text = "";
+                txtProductName.Text = "";
+                txtInventory.Text = "0.00";
+                txtRate.Text = "0.00";
+                txtQty.Text = "0.00";
+            }
         }
     }
 }

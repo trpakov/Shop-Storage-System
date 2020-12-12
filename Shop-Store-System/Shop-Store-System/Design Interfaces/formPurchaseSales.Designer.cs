@@ -251,6 +251,7 @@
             this.btnAdd.TabIndex = 11;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // txtQty
             // 
@@ -409,7 +410,7 @@
             this.labelTop.AutoSize = true;
             this.labelTop.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTop.ForeColor = System.Drawing.Color.Teal;
-            this.labelTop.Location = new System.Drawing.Point(561, 432);
+            this.labelTop.Location = new System.Drawing.Point(15, 432);
             this.labelTop.Name = "labelTop";
             this.labelTop.Size = new System.Drawing.Size(65, 25);
             this.labelTop.TabIndex = 4;
@@ -477,6 +478,7 @@
             this.txtSubTotal.ReadOnly = true;
             this.txtSubTotal.Size = new System.Drawing.Size(427, 30);
             this.txtSubTotal.TabIndex = 7;
+            this.txtSubTotal.Text = "0";
             // 
             // labelReturnAmount
             // 
