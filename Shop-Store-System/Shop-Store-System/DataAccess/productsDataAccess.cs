@@ -288,5 +288,138 @@ namespace Shop_Store_System.DataAccess
 
             return product;
         }
+
+        //Вземане на моментното количество продукти
+        public decimal GetProductQty(int productID)
+        {
+            SqlConnection conn = new SqlConnection(myconnstrng);
+
+            decimal qty = 0;
+
+            DataTable dt = new DataTable();
+
+            try
+            {
+                string sql = "SELECT qty FROM tаblе_products WHERE id = " + productID;
+
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+                conn.Open();
+
+                adapter.Fill(dt);
+
+                if (dt.Rows.Count > 0)
+                {
+                    qty = decimal.Parse(dt.Rows[0]["qty"].ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return qty;
+        }
+
+        //Промяна на количеството
+        public bool UpdateQuantity(int productID, decimal quantity)
+        {
+            bool success = false;
+
+            SqlConnection conn = new SqlConnection(myconnstrng);
+
+            try
+            {
+                string sql = "UPDATE table_products SET qty=@qty WHERE id=@id";
+
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                cmd.Parameters.AddWithValue("@qty", quantity);
+                cmd.Parameters.AddWithValue("@id", productID);
+
+                conn.Open();
+
+                int rows = cmd.ExecuteNonQuery();
+                if (rows > 0)
+                {
+                    success = true;
+                }
+                else
+                {
+                    success = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return success;
+        }
+
+        //Увеличаване на количеството
+        public bool IncreaseProduct(int productID, decimal increaseQuantity)
+        {
+            bool success = false;
+
+            SqlConnection conn = new SqlConnection(myconnstrng);
+
+            try
+            {
+                //Вземане на текущото количество
+                decimal currentQuantity = GetProductQty(productID);
+
+                //Увеличаване на текущото количество с това което сме купили
+                decimal newQuantity = currentQuantity + increaseQuantity;
+
+                //Промяна на количеството
+                success = UpdateQuantity(productID, newQuantity);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return success;
+        }
+
+        //Намаляне на количеството
+        public bool DecreaseProduct(int productID, decimal decreaseQuantity)
+        {
+            bool success = false;
+
+            SqlConnection conn = new SqlConnection(myconnstrng);
+
+            try
+            {
+                decimal currentQuantity = GetProductQty(productID);
+
+                decimal newQuantity = currentQuantity - decreaseQuantity;
+
+                success = UpdateQuantity(productID, newQuantity);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return success;
+        }
     }
 }
