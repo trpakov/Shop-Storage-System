@@ -227,12 +227,23 @@ namespace Shop_Store_System.Design_Interfaces
                     //Вземане на типа purchase/sales за намаляне или увеличаване на количеството на продуктите 
                     string transactionType = labelTop.Text;
 
-                    
+                    bool changeQuantity = false;
+
+                    if (transactionType == "Purchase")
+                    {
+                        //Увеличаване на количеството на продуктите
+                        changeQuantity = productDataAccess.IncreaseProduct(transactionDetail.ProductId, transactionDetail.Quantity);
+                    }
+                    else if (transactionType == "Sales")
+                    {
+                        //Намаляне на количеството на продуктите
+                        changeQuantity = productDataAccess.DecreaseProduct(transactionDetail.ProductId, transactionDetail.Quantity);
+                    }
 
                     //Добавяне на транзакцията с детайлите около продукта в базата данни
                     bool insertDetails = transactionDetailData.InsertTransactionDetail(transactionDetail);
 
-                    success = insertTransaction && insertDetails;
+                    success = insertTransaction && insertDetails && changeQuantity;
                 }
 
                 //Проверка дали всичко е успешно
