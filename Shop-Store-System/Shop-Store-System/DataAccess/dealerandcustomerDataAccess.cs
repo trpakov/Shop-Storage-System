@@ -210,5 +210,46 @@ namespace Shop_Store_System.DataAccess
             return dt;
         }
 
+        //Търсене в данните
+        public dealerandcustomerBusinessLogic SearchDealerCustomerForTransaction(string keyword)
+        {
+            dealerandcustomerBusinessLogic dealerCustomer = new dealerandcustomerBusinessLogic();
+
+            SqlConnection conn = new SqlConnection(myconnstrng);
+
+            DataTable dt = new DataTable();
+
+            try
+            {
+                string sql = "SELECT name, email, contact, address from table_dealer_customer WHERE id LIKE '%" + keyword + "%' OR name LIKE '%" + keyword + "%'";
+
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, conn);
+
+                conn.Open();
+
+                adapter.Fill(dt);
+
+                //Ако успешно имам намерени данни ние ги запазваме в обекта от business logic 
+                if (dt.Rows.Count > 0)
+                {
+                    dealerCustomer.Name = dt.Rows[0]["name"].ToString();
+                    dealerCustomer.Email = dt.Rows[0]["email"].ToString();
+                    dealerCustomer.Contact = dt.Rows[0]["contact"].ToString();
+                    dealerCustomer.Address = dt.Rows[0]["address"].ToString();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return dealerCustomer;
+        }
+
     }
 }

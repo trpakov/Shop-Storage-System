@@ -18,6 +18,8 @@ namespace Shop_Store_System
             InitializeComponent();
         }
 
+        public static string transactionType;
+
         private void formUserDashboard_FormClosed(object sender, FormClosedEventArgs e)
         {
             formLogin login = new formLogin();
@@ -39,12 +41,14 @@ namespace Shop_Store_System
 
         private void purchaseToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            transactionType = "Purchase";
             formPurchaseSales purchase = new formPurchaseSales();
             purchase.Show();
         }
 
         private void salesToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            transactionType = "Sales";
             formPurchaseSales sales = new formPurchaseSales();
             sales.Show();
         }
