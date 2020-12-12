@@ -444,6 +444,7 @@
             this.txtPaidAmount.Name = "txtPaidAmount";
             this.txtPaidAmount.Size = new System.Drawing.Size(427, 30);
             this.txtPaidAmount.TabIndex = 11;
+            this.txtPaidAmount.TextChanged += new System.EventHandler(this.txtPaidAmount_TextChanged);
             // 
             // txtGrandTotal
             // 
@@ -461,6 +462,7 @@
             this.txtVat.Name = "txtVat";
             this.txtVat.Size = new System.Drawing.Size(427, 30);
             this.txtVat.TabIndex = 9;
+            this.txtVat.TextChanged += new System.EventHandler(this.txtVat_TextChanged);
             // 
             // txtDiscount
             // 
@@ -469,6 +471,7 @@
             this.txtDiscount.Name = "txtDiscount";
             this.txtDiscount.Size = new System.Drawing.Size(427, 30);
             this.txtDiscount.TabIndex = 8;
+            this.txtDiscount.TextChanged += new System.EventHandler(this.txtDiscount_TextChanged);
             // 
             // txtSubTotal
             // 

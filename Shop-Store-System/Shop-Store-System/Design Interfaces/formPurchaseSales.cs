@@ -114,5 +114,58 @@ namespace Shop_Store_System.Design_Interfaces
                 txtQty.Text = "0.00";
             }
         }
+
+        private void txtDiscount_TextChanged(object sender, EventArgs e)
+        {
+            string value = txtDiscount.Text;
+
+            if (value == "")
+            {
+                MessageBox.Show("Please Add Discount First.");
+            }
+            else
+            {
+                decimal subTotal = decimal.Parse(txtSubTotal.Text);
+                decimal discount = decimal.Parse(txtDiscount.Text);
+
+                decimal grandTotal = ((100 - discount) / 100) * subTotal;
+
+                grandTotal = Math.Round(grandTotal, 2);
+
+                txtGrandTotal.Text = grandTotal.ToString();
+            }
+        }
+
+        private void txtVat_TextChanged(object sender, EventArgs e)
+        {
+            string check = txtGrandTotal.Text;
+
+            if (check == "")
+            {
+                MessageBox.Show("Calculate the discount and set the Grand Total First.");
+            }
+            else
+            {
+                decimal previousGT = decimal.Parse(txtGrandTotal.Text);
+                decimal tax = decimal.Parse(txtVat.Text);
+                decimal grandTotal = ((100 + tax) / 100) * previousGT;
+
+                grandTotal = Math.Round(grandTotal, 2);
+
+                txtGrandTotal.Text = grandTotal.ToString();
+            }
+        }
+
+        private void txtPaidAmount_TextChanged(object sender, EventArgs e)
+        {
+            decimal grandTotal = decimal.Parse(txtGrandTotal.Text);
+            decimal paidAmount = decimal.Parse(txtPaidAmount.Text);
+
+            decimal returnAmount = paidAmount - grandTotal;
+
+            returnAmount = Math.Round(returnAmount, 2);
+
+            txtReturnAmount.Text = returnAmount.ToString();
+        }
     }
 }
