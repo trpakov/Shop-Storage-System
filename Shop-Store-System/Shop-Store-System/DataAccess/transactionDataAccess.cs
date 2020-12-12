@@ -15,7 +15,7 @@ namespace Shop_Store_System.DataAccess
         static string myconnstrng = ConfigurationManager.ConnectionStrings["connstrng"].ConnectionString;
 
         //Добавяне на транзакция
-        public bool Insert_Transaction(transactionBusinessLogic transaction, out int transactionID)
+        public bool InsertTransaction(transactionBusinessLogic transaction, out int transactionID)
         {
             bool isSuccess = false;
 

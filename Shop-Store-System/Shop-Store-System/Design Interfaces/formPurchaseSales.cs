@@ -1,4 +1,5 @@
-﻿using Shop_Store_System.BusinessLogic;
+﻿using Shop_Store_System.BusinesLogic;
+using Shop_Store_System.BusinessLogic;
 using Shop_Store_System.DataAccess;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 using System.Windows.Forms;
 
 namespace Shop_Store_System.Design_Interfaces
@@ -21,6 +23,9 @@ namespace Shop_Store_System.Design_Interfaces
 
         dealerandcustomerDataAccess dcDataAccess = new dealerandcustomerDataAccess();
         productsDataAccess productDataAccess = new productsDataAccess();
+        userDataAccess userDataAccess = new userDataAccess();
+        transactionDataAccess transactionDataAccess = new transactionDataAccess();
+        transactionDetailDataAccess transactionDetailData = new transactionDetailDataAccess();
 
         DataTable transactionTable = new DataTable();
 
@@ -166,6 +171,112 @@ namespace Shop_Store_System.Design_Interfaces
             returnAmount = Math.Round(returnAmount, 2);
 
             txtReturnAmount.Text = returnAmount.ToString();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            //Вземане на въпросната форма purchase/sales
+            transactionBusinessLogic transaction = new transactionBusinessLogic();
+            transaction.Type = labelTop.Text;
+
+            //Вземане на името и id-то на доставчика или купувача
+            string deaCustName = txtName.Text;
+            dealerandcustomerBusinessLogic dealerCustomer = dcDataAccess.GetDeaCustIDFromName(deaCustName);
+
+            transaction.DealerCustomerId = dealerCustomer.Id;
+            transaction.GrandTotal = Math.Round(decimal.Parse(txtGrandTotal.Text), 2);
+            transaction.TransactionDate = DateTime.Now;
+            transaction.Tax = decimal.Parse(txtVat.Text);
+            transaction.Discount = decimal.Parse(txtDiscount.Text);
+
+            //Вземане на потребителското име на потребителя
+            string username = formLogin.loggedIn;
+            userBusinessLogic user = userDataAccess.GetIDFromUsername(username);
+
+            transaction.AddedBy = user.Id;
+            transaction.TransactionDetails = transactionTable;
+
+            bool success = false;
+
+            using (TransactionScope scope = new TransactionScope())
+            {
+                //Задаване на стойноста на транзакцията първоначално на -1
+                int transactionID = -1;
+
+                //Добавяне на транзакция
+                bool insertTransaction = transactionDataAccess.InsertTransaction(transaction, out transactionID);
+
+                //Use for loop to insert Transaction Details
+                for (int i = 0; i < transactionTable.Rows.Count; i++)
+                {
+                    //Вземане на всички детайли за продукта
+                    transactionDetailBusinessLogic transactionDetail = new transactionDetailBusinessLogic();
+
+                    //Вземане на id чрез името на продукта
+                    string productName = transactionTable.Rows[i][0].ToString();
+                    productsBusinessLogic product = productDataAccess.GetProductIDFromName(productName);
+
+                    transactionDetail.ProductId = product.Id;
+                    transactionDetail.Rate = decimal.Parse(transactionTable.Rows[i][1].ToString());
+                    transactionDetail.Quantity = decimal.Parse(transactionTable.Rows[i][2].ToString());
+                    transactionDetail.Total = Math.Round(decimal.Parse(transactionTable.Rows[i][3].ToString()), 2);
+                    transactionDetail.DealerCustomerId = dealerCustomer.Id;
+                    transactionDetail.AddedDate = DateTime.Now;
+                    transactionDetail.AddedBy = user.Id;
+
+                    //Вземане на типа purchase/sales за намаляне или увеличаване на количеството на продуктите 
+                    string transactionType = labelTop.Text;
+
+                    
+
+                    //Добавяне на транзакцията с детайлите около продукта в базата данни
+                    bool insertDetails = transactionDetailData.InsertTransactionDetail(transactionDetail);
+
+                    success = insertTransaction && insertDetails;
+                }
+
+                //Проверка дали всичко е успешно
+                if (success == true)
+                {
+                    //Успешно завършено
+                    scope.Complete();
+
+                    
+
+                    MessageBox.Show("Transaction Completed Sucessfully.");
+
+                    //Изтриване на всички редове 
+                    dgvAddedProducts.DataSource = null;
+                    dgvAddedProducts.Rows.Clear();
+                    //Изтриване на текстовите полета
+                    ClearAll();
+                   
+                }
+                else
+                {
+                    MessageBox.Show("Transaction Failed.");
+                }
+            }
+        }
+
+        public void ClearAll()
+        {
+            txtSearch.Text = "";
+            txtName.Text = "";
+            txtEmail.Text = "";
+            txtContact.Text = "";
+            txtAddress.Text = "";
+            txtSearchProduct.Text = "";
+            txtProductName.Text = "";
+            txtInventory.Text = "0";
+            txtRate.Text = "0";
+            txtQty.Text = "0";
+            txtSubTotal.Text = "0";
+            txtDiscount.Text = "0";
+            txtVat.Text = "0";
+            txtGrandTotal.Text = "0";
+            txtPaidAmount.Text = "0";
+            txtReturnAmount.Text = "0";
         }
     }
 }

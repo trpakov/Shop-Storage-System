@@ -251,5 +251,41 @@ namespace Shop_Store_System.DataAccess
             return dealerCustomer;
         }
 
+        //Вземане на id-то от името 
+        public dealerandcustomerBusinessLogic GetDeaCustIDFromName(string Name)
+        {
+            dealerandcustomerBusinessLogic dealerCustomer = new dealerandcustomerBusinessLogic();
+
+            SqlConnection conn = new SqlConnection(myconnstrng);
+
+            DataTable dt = new DataTable();
+
+            try
+            {
+                string sql = "SELECT id FROM table_dealer_customer WHERE name='" + Name + "'";
+
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, conn);
+
+                conn.Open();
+
+                adapter.Fill(dt);
+
+                if (dt.Rows.Count > 0)
+                {
+                    dealerCustomer.Id = int.Parse(dt.Rows[0]["id"].ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return dealerCustomer;
+        }
+
     }
 }
