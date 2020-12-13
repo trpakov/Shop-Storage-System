@@ -52,5 +52,11 @@ namespace Shop_Store_System
             formPurchaseSales sales = new formPurchaseSales();
             sales.Show();
         }
+
+        private void inventoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formInventory inventory = new formInventory();
+            inventory.Show();
+        }
     }
 }

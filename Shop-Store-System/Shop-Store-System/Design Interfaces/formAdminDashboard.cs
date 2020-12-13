@@ -60,5 +60,11 @@ namespace Shop_Store_System
             formTransactions transaction = new formTransactions();
             transaction.Show();
         }
+
+        private void inventoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formInventory inventory = new formInventory();
+            inventory.Show();
+        }
     }
 }
