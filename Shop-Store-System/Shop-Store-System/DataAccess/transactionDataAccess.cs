@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -63,6 +64,68 @@ namespace Shop_Store_System.DataAccess
             }
 
             return isSuccess;
+        }
+
+        //Визуализация на всички транзакции
+        public DataTable DisplayAllTransactions()
+        {
+            SqlConnection conn = new SqlConnection(myconnstrng);
+
+            DataTable dt = new DataTable();
+
+            try
+            {
+                string sql = "SELECT * FROM table_transactions";
+
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+                conn.Open();
+
+                adapter.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return dt;
+        }
+
+        //Визуализация на транзакции според типа
+        public DataTable DisplayTransactionByType(string type)
+        {
+            SqlConnection conn = new SqlConnection(myconnstrng);
+
+            DataTable dt = new DataTable();
+
+            try 
+            { 
+                string sql = "SELECT * FROM table_transactions WHERE type='" + type + "'";
+
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+                conn.Open();
+
+                adapter.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return dt;
         }
     }
 }

@@ -42,7 +42,7 @@
             this.dgvTransactions.Name = "dgvTransactions";
             this.dgvTransactions.RowHeadersWidth = 51;
             this.dgvTransactions.RowTemplate.Height = 24;
-            this.dgvTransactions.Size = new System.Drawing.Size(1048, 453);
+            this.dgvTransactions.Size = new System.Drawing.Size(1163, 453);
             this.dgvTransactions.TabIndex = 0;
             // 
             // labelTransactionType
@@ -66,6 +66,7 @@
             this.cmbTransactionType.Name = "cmbTransactionType";
             this.cmbTransactionType.Size = new System.Drawing.Size(389, 31);
             this.cmbTransactionType.TabIndex = 2;
+            this.cmbTransactionType.SelectedIndexChanged += new System.EventHandler(this.cmbTransactionType_SelectedIndexChanged);
             // 
             // btnAll
             // 
@@ -78,12 +79,13 @@
             this.btnAll.TabIndex = 3;
             this.btnAll.Text = "Show All";
             this.btnAll.UseVisualStyleBackColor = false;
+            this.btnAll.Click += new System.EventHandler(this.btnAll_Click);
             // 
             // formTransactions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1072, 535);
+            this.ClientSize = new System.Drawing.Size(1187, 535);
             this.Controls.Add(this.btnAll);
             this.Controls.Add(this.cmbTransactionType);
             this.Controls.Add(this.labelTransactionType);
@@ -91,6 +93,7 @@
             this.Name = "formTransactions";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Transactions";
+            this.Load += new System.EventHandler(this.formTransactions_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransactions)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
