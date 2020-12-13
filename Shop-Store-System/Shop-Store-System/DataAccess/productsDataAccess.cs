@@ -300,7 +300,7 @@ namespace Shop_Store_System.DataAccess
 
             try
             {
-                string sql = "SELECT qty FROM tаblе_products WHERE id = " + productID;
+                string sql = "SELECT qty FROM table_products WHERE id = " + productID;
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
 

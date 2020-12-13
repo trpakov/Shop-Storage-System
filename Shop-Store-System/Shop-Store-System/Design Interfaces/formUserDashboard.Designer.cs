@@ -154,9 +154,9 @@
             this.labelFooter.ForeColor = System.Drawing.Color.White;
             this.labelFooter.Location = new System.Drawing.Point(902, 11);
             this.labelFooter.Name = "labelFooter";
-            this.labelFooter.Size = new System.Drawing.Size(223, 28);
+            this.labelFooter.Size = new System.Drawing.Size(231, 28);
             this.labelFooter.TabIndex = 0;
-            this.labelFooter.Text = "Developed by: 12group";
+            this.labelFooter.Text = "Developed by: Group 12";
             // 
             // formUserDashboard
             // 

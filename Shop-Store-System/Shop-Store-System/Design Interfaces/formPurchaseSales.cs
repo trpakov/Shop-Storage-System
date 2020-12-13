@@ -1,4 +1,5 @@
-﻿using Shop_Store_System.BusinesLogic;
+﻿using DGVPrinterHelper;
+using Shop_Store_System.BusinesLogic;
 using Shop_Store_System.BusinessLogic;
 using Shop_Store_System.DataAccess;
 using System;
@@ -252,7 +253,19 @@ namespace Shop_Store_System.Design_Interfaces
                     //Успешно завършено
                     scope.Complete();
 
-                    
+                    //Принтиране на сметката
+                    DGVPrinter printer = new DGVPrinter();
+
+                    printer.Title = "\r\n\r\n\r\n Store Shop System \r\n\r\n";
+                    printer.SubTitle = "12 Group \r\n Phone: 0120012012 \r\n\r\n";
+                    printer.SubTitleFormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.NoClip;
+                    printer.PageNumbers = true;
+                    printer.PageNumberInHeader = false;
+                    printer.PorportionalColumns = true;
+                    printer.HeaderCellAlignment = StringAlignment.Near;
+                    printer.Footer = "Discount: " + txtDiscount.Text + "% \r\n" + "TAX: " + txtVat.Text + "% \r\n" + "Total: " + txtGrandTotal.Text + "\r\n\r\n" + "Thank you for doing business with us.";
+                    printer.FooterSpacing = 10;
+                    printer.PrintDataGridView(dgvAddedProducts);
 
                     MessageBox.Show("Transaction Completed Sucessfully.");
 
