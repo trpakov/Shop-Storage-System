@@ -63,6 +63,7 @@
             this.cmbCategories.Name = "cmbCategories";
             this.cmbCategories.Size = new System.Drawing.Size(438, 31);
             this.cmbCategories.TabIndex = 2;
+            this.cmbCategories.SelectedIndexChanged += new System.EventHandler(this.cmbCategories_SelectedIndexChanged);
             // 
             // btnAll
             // 
@@ -75,6 +76,7 @@
             this.btnAll.TabIndex = 3;
             this.btnAll.Text = "Show All";
             this.btnAll.UseVisualStyleBackColor = false;
+            this.btnAll.Click += new System.EventHandler(this.btnAll_Click);
             // 
             // formInventory
             // 
@@ -88,6 +90,7 @@
             this.Name = "formInventory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inventory";
+            this.Load += new System.EventHandler(this.formInventory_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
