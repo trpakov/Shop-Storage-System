@@ -98,6 +98,12 @@
     <Compile Include="Design Interfaces\formPurchaseSales.Designer.cs">
       <DependentUpon>formPurchaseSales.cs</DependentUpon>
     </Compile>
+    <Compile Include="Design Interfaces\formTransactions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design Interfaces\formTransactions.Designer.cs">
+      <DependentUpon>formTransactions.cs</DependentUpon>
+    </Compile>
     <Compile Include="Design Interfaces\formUserDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +135,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Design Interfaces\formPurchaseSales.resx">
       <DependentUpon>formPurchaseSales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design Interfaces\formTransactions.resx">
+      <DependentUpon>formTransactions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Design Interfaces\formUserDashboard.resx">
       <DependentUpon>formUserDashboard.cs</DependentUpon>

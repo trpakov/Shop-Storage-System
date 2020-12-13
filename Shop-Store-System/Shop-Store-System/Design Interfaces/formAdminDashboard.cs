@@ -54,5 +54,11 @@ namespace Shop_Store_System
             formDealerCustomer dealerAndCustomer = new formDealerCustomer();
             dealerAndCustomer.Show();
         }
+
+        private void transactionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formTransactions transaction = new formTransactions();
+            transaction.Show();
+        }
     }
 }
