@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Shop_Store_System.BusinessLogic
 {
-    class loginBusinessLogic
+   public class loginBusinessLogic
     {
         public string Username { get; set; }
         public string Password { get; set; }

@@ -25,17 +25,64 @@ namespace Shop_Store_System.Design_Interfaces
         private void btnAdd_Click(object sender, EventArgs e)
         {
             //Взимане на данни от текстовите кутии
-            user.FirstName = txtFirstName.Text;
-            user.LastName = txtLastName.Text;
-            user.Email = txtEmail.Text;
-            user.Username = txtUsername.Text;
-            user.Password = txtPassword.Text;
+            try
+            {
+                user.FirstName = txtFirstName.Text;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Invalid first name! The name must 2 or more characters.");
+                return;
+            }
+            try
+            {
+                user.LastName = txtLastName.Text;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Invalid last name! The name must 2 or more characters.");
+                return;
+            }
+            try
+            {
+                user.Email = txtEmail.Text;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Invalid email! Try again.");
+                return;
+            }
+            try
+            {
+                user.Username = txtUsername.Text;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Invalid username! The username must be 5 or more characters.");
+                return;
+            }
+            try
+            {
+                user.Password = txtPassword.Text;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Invalid password! The password must be 6 or more characters.");
+                return;
+            }
+            try 
+            { 
             user.Contact = txtContact.Text;
             user.Address = txtAddress.Text;
             user.Gender = cmbGender.Text;
             user.UserType = cmbUserType.Text;
             user.AddedDate = DateTime.Now;
-
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Invalid input");
+                return;
+            }
             //Вземане на името на влезналия потребител
             string loggedUser = formLogin.loggedIn;
             userBusinessLogic usr = userDataAccess.GetIDFromUsername(loggedUser);
@@ -102,17 +149,64 @@ namespace Shop_Store_System.Design_Interfaces
         {
             //Вземане на данните от текстовите кутии
             user.Id = int.Parse(txtUserID.Text);
-            user.FirstName = txtFirstName.Text;
-            user.LastName = txtLastName.Text;
-            user.Email = txtEmail.Text;
-            user.Username = txtUsername.Text;
-            user.Password = txtPassword.Text;
-            user.Contact = txtContact.Text;
-            user.Address = txtAddress.Text;
-            user.Gender = cmbGender.Text;
-            user.UserType = cmbUserType.Text;
-            user.AddedDate = DateTime.Now;
-
+            try
+            {
+                user.FirstName = txtFirstName.Text;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Invalid first name! The name must 2 or more characters.");
+                return;
+            }
+            try
+            {
+                user.LastName = txtLastName.Text;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Invalid last name! The name must 2 or more characters.");
+                return;
+            }
+            try
+            {
+                user.Email = txtEmail.Text;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Invalid email! Try again.");
+                return;
+            }
+            try
+            {
+                user.Username = txtUsername.Text;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Invalid username! The username must be 5 or more characters.");
+                return;
+            }
+            try
+            {
+                user.Password = txtPassword.Text;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Invalid password! The password must be 6 or more characters.");
+                return;
+            }
+            try
+            {
+                user.Contact = txtContact.Text;
+                user.Address = txtAddress.Text;
+                user.Gender = cmbGender.Text;
+                user.UserType = cmbUserType.Text;
+                user.AddedDate = DateTime.Now;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Invalid input");
+                return;
+            }
             //user.AddedBy = 1;
 
             //---------------------------------------------------------------------------------------

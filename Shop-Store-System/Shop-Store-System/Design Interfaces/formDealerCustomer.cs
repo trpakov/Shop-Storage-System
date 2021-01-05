@@ -26,14 +26,39 @@ namespace Shop_Store_System.Design_Interfaces
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            dealerCustomer.Type = cmbDeaCust.Text;
-            dealerCustomer.Name = txtName.Text;
-            dealerCustomer.Email = txtEmail.Text;
-            dealerCustomer.Contact = txtContact.Text;
-            dealerCustomer.Address = txtAddress.Text;
-            dealerCustomer.AddedDate = DateTime.Now;
+           
+            try
+            {
+                dealerCustomer.Name = txtName.Text;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Invalid name!");
+                return;
+            }
+            try
+            {
+                dealerCustomer.Email = txtEmail.Text;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Invalid email! Try again.");
+                return;
+            }
+            try
+            {
+                dealerCustomer.Type = cmbDeaCust.Text;
+                dealerCustomer.Contact = txtContact.Text;
+                dealerCustomer.Address = txtAddress.Text;
+                dealerCustomer.AddedDate = DateTime.Now;
+            }
+            catch(Exception )
+            {
+                MessageBox.Show("Invalid input!");
+                return;
+            }
 
-            string loggedUsr = formLogin.loggedIn;
+                    string loggedUsr = formLogin.loggedIn;
             userBusinessLogic user = userDataAccess.GetIDFromUsername(loggedUsr);
             dealerCustomer.AddedBy = user.Id;
 
@@ -85,12 +110,38 @@ namespace Shop_Store_System.Design_Interfaces
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             dealerCustomer.Id = int.Parse(txtDeaCustID.Text);
-            dealerCustomer.Type = cmbDeaCust.Text;
-            dealerCustomer.Name = txtName.Text;
-            dealerCustomer.Email = txtEmail.Text;
-            dealerCustomer.Contact = txtContact.Text;
-            dealerCustomer.Address = txtAddress.Text;
-            dealerCustomer.AddedDate = DateTime.Now;
+
+            try
+            {
+                dealerCustomer.Name = txtName.Text;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Invalid name!");
+                return;
+            }
+            try
+            {
+                dealerCustomer.Email = txtEmail.Text;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Invalid email! Try again.");
+                return;
+            }
+            try
+            {
+                dealerCustomer.Type = cmbDeaCust.Text;
+                dealerCustomer.Contact = txtContact.Text;
+                dealerCustomer.Address = txtAddress.Text;
+                dealerCustomer.AddedDate = DateTime.Now;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Invalid input!");
+                return;
+            }
+
 
             string loggedUsr = formLogin.loggedIn;
             userBusinessLogic user = userDataAccess.GetIDFromUsername(loggedUsr);
