@@ -14,24 +14,24 @@
 
 ## :pushpin: Objectives and requirements - application
 **Functional requirements:**
-• Easy and fast organization of the site
-• Tracking of available products and their specifications
-• Distribution of products (articles) in different categories
-• Transaction tracking and logistics
-• Add, remove, search and manage products
-• Easy and fast payment and printing of the purchased
-• Better distribution and inventory
-• Better availability of information
-• Division of work between employees and managers in two modules (employee module, administrator module)
+* • Easy and fast organization of the site
+* • Tracking of available products and their specifications
+* • Distribution of products (articles) in different categories
+* • Transaction tracking and logistics
+* • Add, remove, search and manage products
+* • Easy and fast payment and printing of the purchased
+* • Better distribution and inventory
+* • Better availability of information
+* • Division of work between employees and managers in two modules (employee module, administrator module)
 
 ## :pushpin: Цели и изисквания – приложение
 **Функционални изисквания:**
-•	Лесна и бърза организация на обекта
-•	Проследяване на наличните продукти и техните спецификации
-•	Разпределяне на продуктите (артикулите) в различни категории
-•	Проследяване на транзакциите и логистиката
-•	Добавяне, премахване, търсене и управление на продуктите
-•	Лесно и бързо разплащане и отпечатване на закупеното
-•	По-добро разпределение и инвентаризация
-•	По-добра достъпност на информацията
-•	Разпределяне на работата между служители и управители в два модула (модул служител, модул администратор)
+* •	Лесна и бърза организация на обекта
+* •	Проследяване на наличните продукти и техните спецификации
+* •	Разпределяне на продуктите (артикулите) в различни категории
+* •	Проследяване на транзакциите и логистиката
+* •	Добавяне, премахване, търсене и управление на продуктите
+* •	Лесно и бързо разплащане и отпечатване на закупеното
+* •	По-добро разпределение и инвентаризация
+* •	По-добра достъпност на информацията
+* •	Разпределяне на работата между служители и управители в два модула (модул служител, модул администратор)
