@@ -36,6 +36,20 @@
 * •	По-добра достъпност на информацията
 * •	Разпределяне на работата между служители и управители в два модула (модул служител, модул администратор)
 
+## :wrench: Tools used
+* • C ##
+* • Windows Forms
+* • SQL Express 2019
+* • SQL Management Studio 2019
+* • GitHub
+
+## :wrench: Използвани инструменти
+* • C## 
+* • Windows Forms
+* • SQL Express 2019
+* • SQL Managment Studio 2019
+* • GitHub
+
 ## :chart_with_upwards_trend: Product perspective
 The payment, inventory and logistics system has great prospects for the near and distant future. Trade together with information systems is developing at a high pace, the interaction and dependence between them is growing. Therefore, such systems will continue to enter, develop and improve in these areas. If the main users of the system maintain the application well, load it with various goods, update its content and use it effectively for the workflow, then this software will never be out of use. One of the important qualities of this type of systems is accessibility and usability, as they are accessible and can be used by any employee from a computer or tablet.
 
