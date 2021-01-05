@@ -35,3 +35,9 @@
 * •	По-добро разпределение и инвентаризация
 * •	По-добра достъпност на информацията
 * •	Разпределяне на работата между служители и управители в два модула (модул служител, модул администратор)
+
+## :chart_with_upwards_trend: Product perspective
+The payment, inventory and logistics system has great prospects for the near and distant future. Trade together with information systems is developing at a high pace, the interaction and dependence between them is growing. Therefore, such systems will continue to enter, develop and improve in these areas. If the main users of the system maintain the application well, load it with various goods, update its content and use it effectively for the workflow, then this software will never be out of use. One of the important qualities of this type of systems is accessibility and usability, as they are accessible and can be used by any employee from a computer or tablet.
+
+## :chart_with_upwards_trend: Перспектива на продукта
+Системата за разплащане, инвентаризация и логистика има голяма преспективав близкото и далечното бъдеще. Търговията заедно с информационните системи се разиват с високи темпове, взаймодействието и зависимостта между тях става вся по-голяма. Затова подобен вид системи ще продължат да навлизат, да се развиват и да се подобряват в тези сфери. Ако основните ползватели на системата подържа добре приложнието, зарежда го с различни стоки, актуализира неговото съдържание и го използват ефективно за работния процес, то тогава този софтуер никога няма да бъде извън употреба. Едно от важните качества на този вид системи са достъпността и използваемостта, тъй като те са достъпни и могат да се използват от всеки един служител от компютър или таблет.
