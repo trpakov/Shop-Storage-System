@@ -7,10 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Shop_Store_System.Interfaces;
 
 namespace Shop_Store_System.DataAccess
 {
-    class transactionDetailDataAccess
+    class transactionDetailDataAccess:transactionDetailBusinessLogic,ITransactionDetail
     {
         static string myconnstrng = ConfigurationManager.ConnectionStrings["connstrng"].ConnectionString;
 

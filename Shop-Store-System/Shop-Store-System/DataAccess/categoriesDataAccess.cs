@@ -1,4 +1,5 @@
 ﻿using Shop_Store_System.BusinessLogic;
+using Shop_Store_System.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -11,7 +12,7 @@ using System.Windows.Forms;
 
 namespace Shop_Store_System.DataAccess
 {
-    class categoriesDataAccess
+    class categoriesDataAccess:categoriesBusinessLogic,ICrudCategory
     {
         static string myconnstrng = ConfigurationManager.ConnectionStrings["connstrng"].ConnectionString;
 
