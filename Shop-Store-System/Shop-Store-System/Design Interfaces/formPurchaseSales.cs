@@ -90,13 +90,23 @@ namespace Shop_Store_System.Design_Interfaces
         private void btnAdd_Click(object sender, EventArgs e)
         {
             string productName = txtProductName.Text;
-            decimal Rate = decimal.Parse(txtRate.Text);
-            decimal Qty = decimal.Parse(txtQty.Text);
+            decimal price = decimal.Parse(txtRate.Text);
+            decimal qty;
 
-            decimal Total = Rate * Qty;
+            try
+            {
+                qty = decimal.Parse(txtQty.Text);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Select quantity!");
+                return;
+            }
+
+            decimal total = price * qty;
 
             decimal subTotal = decimal.Parse(txtSubTotal.Text);
-            subTotal = subTotal + Total;
+            subTotal = subTotal + total;
 
             //Проверка дали има избран продукт 
             if (productName == "")
@@ -106,7 +116,7 @@ namespace Shop_Store_System.Design_Interfaces
             else
             {
                 //Добавяне на продукта в таблицата
-                transactionTable.Rows.Add(productName, Rate, Qty, Total);
+                transactionTable.Rows.Add(productName, price, qty, total);
 
                 dgvAddedProducts.DataSource = transactionTable;
 
@@ -165,7 +175,17 @@ namespace Shop_Store_System.Design_Interfaces
         private void txtPaidAmount_TextChanged(object sender, EventArgs e)
         {
             decimal grandTotal = decimal.Parse(txtGrandTotal.Text);
-            decimal paidAmount = decimal.Parse(txtPaidAmount.Text);
+            decimal paidAmount;
+
+            try
+            {
+                paidAmount = decimal.Parse(txtPaidAmount.Text);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Please add paid amount!");
+                return;
+            }
 
             decimal returnAmount = paidAmount - grandTotal;
 

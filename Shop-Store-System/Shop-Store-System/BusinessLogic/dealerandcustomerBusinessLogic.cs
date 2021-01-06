@@ -11,6 +11,7 @@ namespace Shop_Store_System.BusinessLogic
     {
         private string name;
         private string email;
+        private string contact;
         public int Id { get; set; }
         public string Type { get; set; }
         
@@ -46,7 +47,20 @@ namespace Shop_Store_System.BusinessLogic
                 }
             }
         }
-        public string Contact { get; set; }
+        public string Contact
+        {
+            get => this.contact;
+            set
+            {
+                //Валидация на името..
+                if (value.Length <= 9)
+                {
+                    throw new ArgumentException(@"Invalid contact!");
+                }
+
+                this.name = value;
+            }
+        }
         public string Address { get; set; }
         public DateTime AddedDate { get; set; }
         public int AddedBy { get; set; }

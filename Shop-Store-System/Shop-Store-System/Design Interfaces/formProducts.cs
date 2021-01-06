@@ -43,12 +43,30 @@ namespace Shop_Store_System.Design_Interfaces
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            product.Name = txtName.Text;
-            product.Category = cmbCategory.Text;
-            product.Description = txtDescription.Text;
-            product.Rate = decimal.Parse(txtRate.Text);
-            product.Quantity = 0;
-            product.AddedDate = DateTime.Now;
+            try
+            {
+                product.Rate = decimal.Parse(txtRate.Text);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Please add valid price!");
+                return;
+            }
+
+            try
+            {
+                product.Name = txtName.Text;
+                product.Category = cmbCategory.Text;
+                product.Description = txtDescription.Text;
+                product.Quantity = 0;
+                product.AddedDate = DateTime.Now;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Invalid input!");
+                return;
+            }
+            
 
             //Вземане на името и id на влезналия потребител
             String loggedUsr = formLogin.loggedIn;
@@ -97,11 +115,30 @@ namespace Shop_Store_System.Design_Interfaces
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             product.Id = int.Parse(txtID.Text);
-            product.Name = txtName.Text;
-            product.Category = cmbCategory.Text;
-            product.Description = txtDescription.Text;
-            product.Rate = decimal.Parse(txtRate.Text);
-            product.AddedDate = DateTime.Now;
+
+            try
+            {
+                product.Rate = decimal.Parse(txtRate.Text);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Please add valid price!");
+                return;
+            }
+
+            try
+            {
+                product.Name = txtName.Text;
+                product.Category = cmbCategory.Text;
+                product.Description = txtDescription.Text;
+                product.Quantity = 0;
+                product.AddedDate = DateTime.Now;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Invalid input!");
+                return;
+            }
 
             String loggedUsr = formLogin.loggedIn;
             userBusinessLogic user = userDataAccess.GetIDFromUsername(loggedUsr);
