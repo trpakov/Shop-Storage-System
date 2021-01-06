@@ -69,7 +69,7 @@ namespace Shop_Store_System.Design_Interfaces
             
 
             //Вземане на името и id на влезналия потребител
-            String loggedUsr = formLogin.loggedIn;
+            string loggedUsr = formLogin.loggedIn;
             userBusinessLogic user = userDataAccess.GetIDFromUsername(loggedUsr);
 
             product.AddedBy = user.Id;
@@ -140,7 +140,7 @@ namespace Shop_Store_System.Design_Interfaces
                 return;
             }
 
-            String loggedUsr = formLogin.loggedIn;
+            string loggedUsr = formLogin.loggedIn;
             userBusinessLogic user = userDataAccess.GetIDFromUsername(loggedUsr);
 
             product.AddedBy = user.Id;

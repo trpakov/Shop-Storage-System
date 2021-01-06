@@ -17,3 +17,4 @@ D:\Programing\Github\Shop-Storage-System\Shop-Store-System\Shop-Store-System\obj
 D:\Programing\Github\Shop-Storage-System\Shop-Store-System\Shop-Store-System\obj\Debug\Shop_Store_System.Design_Interfaces.formPurchaseSales.resources
 D:\Programing\Github\Shop-Storage-System\Shop-Store-System\Shop-Store-System\obj\Debug\Shop_Store_System.Design_Interfaces.formTransactions.resources
 D:\Programing\Github\Shop-Storage-System\Shop-Store-System\Shop-Store-System\obj\Debug\Shop_Store_System.Design_Interfaces.formInventory.resources
+D:\Programing\Github\Shop-Storage-System\Shop-Store-System\Shop-Store-System\obj\Debug\Shop_Store_System.Design_Interfaces.formLogistic.resources

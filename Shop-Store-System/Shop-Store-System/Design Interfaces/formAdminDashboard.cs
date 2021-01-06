@@ -66,5 +66,11 @@ namespace Shop_Store_System
             formInventory inventory = new formInventory();
             inventory.Show();
         }
+
+        private void logisticToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formLogistic logistic = new formLogistic();
+            logistic.Show();
+        }
     }
 }

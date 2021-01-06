@@ -42,6 +42,7 @@
             this.labelAppFName = new System.Windows.Forms.Label();
             this.labelAppLName = new System.Windows.Forms.Label();
             this.labelDescription = new System.Windows.Forms.Label();
+            this.logisticToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelFooter.SuspendLayout();
             this.menuStripTop.SuspendLayout();
             this.SuspendLayout();
@@ -76,7 +77,8 @@
             this.productsToolStripMenuItem,
             this.dealerAndCustomerToolStripMenuItem,
             this.inventoryToolStripMenuItem,
-            this.transactionsToolStripMenuItem});
+            this.transactionsToolStripMenuItem,
+            this.logisticToolStripMenuItem});
             this.menuStripTop.Location = new System.Drawing.Point(0, 0);
             this.menuStripTop.Name = "menuStripTop";
             this.menuStripTop.Size = new System.Drawing.Size(1519, 28);
@@ -176,6 +178,13 @@
             this.labelDescription.TabIndex = 6;
             this.labelDescription.Text = "Billing and Inventory Managment";
             // 
+            // logisticToolStripMenuItem
+            // 
+            this.logisticToolStripMenuItem.Name = "logisticToolStripMenuItem";
+            this.logisticToolStripMenuItem.Size = new System.Drawing.Size(74, 24);
+            this.logisticToolStripMenuItem.Text = "Logistic";
+            this.logisticToolStripMenuItem.Click += new System.EventHandler(this.logisticToolStripMenuItem_Click);
+            // 
             // formAdminDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -220,6 +229,7 @@
         private System.Windows.Forms.Label labelAppLName;
         private System.Windows.Forms.Label labelDescription;
         private System.Windows.Forms.ToolStripMenuItem dealerAndCustomerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem logisticToolStripMenuItem;
     }
 }
 

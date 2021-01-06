@@ -52,6 +52,7 @@
     <Compile Include="BusinessLogic\categoriesBusinessLogic.cs" />
     <Compile Include="BusinessLogic\dealerandcustomerBusinessLogic.cs" />
     <Compile Include="BusinessLogic\loginBusinessLogic.cs" />
+    <Compile Include="BusinessLogic\logisticBusinessLogic.cs" />
     <Compile Include="BusinessLogic\productsBusinessLogic.cs" />
     <Compile Include="BusinessLogic\transactionDetailBusinessLogic.cs" />
     <Compile Include="BusinessLogic\transactionBusinessLogic.cs" />
@@ -59,6 +60,7 @@
     <Compile Include="DataAccess\categoriesDataAccess.cs" />
     <Compile Include="DataAccess\dealerandcustomerDataAccess.cs" />
     <Compile Include="DataAccess\loginDataAccess.cs" />
+    <Compile Include="DataAccess\logisticDataAccess.cs" />
     <Compile Include="DataAccess\productsDataAccess.cs" />
     <Compile Include="DataAccess\transactionDataAccess.cs" />
     <Compile Include="DataAccess\transactionDetailDataAccess.cs" />
@@ -92,6 +94,12 @@
     </Compile>
     <Compile Include="Design Interfaces\formLogin.Designer.cs">
       <DependentUpon>formLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design Interfaces\formLogistic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design Interfaces\formLogistic.Designer.cs">
+      <DependentUpon>formLogistic.cs</DependentUpon>
     </Compile>
     <Compile Include="Design Interfaces\formProducts.cs">
       <SubType>Form</SubType>
@@ -148,6 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Design Interfaces\formLogin.resx">
       <DependentUpon>formLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design Interfaces\formLogistic.resx">
+      <DependentUpon>formLogistic.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Design Interfaces\formProducts.resx">
       <DependentUpon>formProducts.cs</DependentUpon>

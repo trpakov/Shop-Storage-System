@@ -58,7 +58,7 @@ namespace Shop_Store_System.BusinessLogic
                     throw new ArgumentException(@"Invalid contact!");
                 }
 
-                this.name = value;
+                this.contact = value;
             }
         }
         public string Address { get; set; }
