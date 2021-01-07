@@ -11,9 +11,7 @@ namespace Shop_Store_System.BusinessLogic
         private string contact;
 
         public int Id { get; set; }
-
         public string Empleyee { get; set; }
-
         public string Contact
         {
             get => this.contact;
@@ -30,9 +28,7 @@ namespace Shop_Store_System.BusinessLogic
         }
 
         public string Address { get; set; }
-
         public string Date { get; set; }
-
         public DateTime AddedDate { get; set; }
         public int AddedBy { get; set; }
     }

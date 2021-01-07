@@ -58,7 +58,7 @@ namespace Shop_Store_System.Design_Interfaces
                 return;
             }
 
-                    string loggedUsr = formLogin.loggedIn;
+            string loggedUsr = formLogin.loggedIn;
             userBusinessLogic user = userDataAccess.GetIDFromUsername(loggedUsr);
             dealerCustomer.AddedBy = user.Id;
 

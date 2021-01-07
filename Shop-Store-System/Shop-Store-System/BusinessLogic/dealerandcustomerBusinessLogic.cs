@@ -52,7 +52,6 @@ namespace Shop_Store_System.BusinessLogic
             get => this.contact;
             set
             {
-                //Валидация на името..
                 if (value.Length <= 9)
                 {
                     throw new ArgumentException(@"Invalid contact!");
