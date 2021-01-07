@@ -14,6 +14,7 @@ namespace Shop_Store_System.BusinesLogic
         private string email;
         private string username;
         private string password;
+
         public int Id { get; set; }
         public string FirstName
         {

@@ -9,13 +9,43 @@ namespace Shop_Store_System.BusinessLogic
 {
     class transactionBusinessLogic
     {
+        private decimal tax;
+        private decimal discount;
+
         public int Id { get; set; }
         public string Type { get; set; }
         public int DealerCustomerId { get; set; }
         public decimal GrandTotal { get; set; }
         public DateTime TransactionDate { get; set; }
-        public decimal Tax { get; set; }
-        public decimal Discount { get; set; }
+
+        public decimal Tax
+        {
+            get => this.tax;
+            set
+            {
+                if (value <= 0)
+                {
+                    throw new ArgumentException(@"Invalid tax!");
+                }
+
+                this.tax = value;
+            }
+        }
+
+        public decimal Discount
+        {
+            get => this.discount;
+            set
+            {
+                if (value <= 0)
+                {
+                    throw new ArgumentException(@"Invalid discount!");
+                }
+
+                this.discount = value;
+            }
+        }
+
         public int AddedBy { get; set; }
         public DataTable TransactionDetails { get; set; }
     }

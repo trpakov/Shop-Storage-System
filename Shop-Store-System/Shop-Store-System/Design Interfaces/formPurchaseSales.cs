@@ -142,7 +142,17 @@ namespace Shop_Store_System.Design_Interfaces
             else
             {
                 decimal subTotal = decimal.Parse(txtSubTotal.Text);
-                decimal discount = decimal.Parse(txtDiscount.Text);
+                decimal discount;
+
+                try
+                {
+                    discount = decimal.Parse(txtDiscount.Text);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Please add discount!");
+                    return;
+                }
 
                 decimal grandTotal = ((100 - discount) / 100) * subTotal;
 
@@ -163,7 +173,18 @@ namespace Shop_Store_System.Design_Interfaces
             else
             {
                 decimal previousGT = decimal.Parse(txtGrandTotal.Text);
-                decimal tax = decimal.Parse(txtVat.Text);
+                decimal tax;
+
+                try
+                {
+                    tax = decimal.Parse(txtVat.Text);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Please add tax!");
+                    return;
+                }
+
                 decimal grandTotal = ((100 + tax) / 100) * previousGT;
 
                 grandTotal = Math.Round(grandTotal, 2);
