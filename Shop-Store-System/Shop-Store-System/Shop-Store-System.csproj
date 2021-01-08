@@ -61,6 +61,7 @@
     <Compile Include="DataAccess\dealerandcustomerDataAccess.cs" />
     <Compile Include="DataAccess\loginDataAccess.cs" />
     <Compile Include="DataAccess\logisticDataAccess.cs" />
+    <Compile Include="DataAccess\personalLogisticDataAccess.cs" />
     <Compile Include="DataAccess\productsDataAccess.cs" />
     <Compile Include="DataAccess\transactionDataAccess.cs" />
     <Compile Include="DataAccess\transactionDetailDataAccess.cs" />
@@ -100,6 +101,12 @@
     </Compile>
     <Compile Include="Design Interfaces\formLogistic.Designer.cs">
       <DependentUpon>formLogistic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design Interfaces\formPersonalLogistic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design Interfaces\formPersonalLogistic.Designer.cs">
+      <DependentUpon>formPersonalLogistic.cs</DependentUpon>
     </Compile>
     <Compile Include="Design Interfaces\formProducts.cs">
       <SubType>Form</SubType>
@@ -160,6 +167,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Design Interfaces\formLogistic.resx">
       <DependentUpon>formLogistic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design Interfaces\formPersonalLogistic.resx">
+      <DependentUpon>formPersonalLogistic.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Design Interfaces\formProducts.resx">
       <DependentUpon>formProducts.cs</DependentUpon>

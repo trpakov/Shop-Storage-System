@@ -40,6 +40,7 @@
             this.labelLoginUser = new System.Windows.Forms.Label();
             this.panelFooter = new System.Windows.Forms.Panel();
             this.labelFooter = new System.Windows.Forms.Label();
+            this.logisticToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripTop.SuspendLayout();
             this.panelFooter.SuspendLayout();
             this.SuspendLayout();
@@ -51,7 +52,8 @@
             this.purchaseToolStripMenuItem,
             this.salesToolStripMenuItem,
             this.inventoryToolStripMenuItem,
-            this.dealerAndCustomerToolStripMenuItem});
+            this.dealerAndCustomerToolStripMenuItem,
+            this.logisticToolStripMenuItem});
             this.menuStripTop.Location = new System.Drawing.Point(0, 0);
             this.menuStripTop.Name = "menuStripTop";
             this.menuStripTop.Size = new System.Drawing.Size(1390, 28);
@@ -158,6 +160,13 @@
             this.labelFooter.TabIndex = 0;
             this.labelFooter.Text = "Developed by: Group 12";
             // 
+            // logisticToolStripMenuItem
+            // 
+            this.logisticToolStripMenuItem.Name = "logisticToolStripMenuItem";
+            this.logisticToolStripMenuItem.Size = new System.Drawing.Size(74, 24);
+            this.logisticToolStripMenuItem.Text = "Logistic";
+            this.logisticToolStripMenuItem.Click += new System.EventHandler(this.logisticToolStripMenuItem_Click);
+            // 
             // formUserDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -200,5 +209,6 @@
         private System.Windows.Forms.Panel panelFooter;
         private System.Windows.Forms.Label labelFooter;
         private System.Windows.Forms.ToolStripMenuItem dealerAndCustomerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem logisticToolStripMenuItem;
     }
 }

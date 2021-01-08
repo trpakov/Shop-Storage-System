@@ -450,7 +450,7 @@
             this.Controls.Add(this.labelLogisticID);
             this.Name = "formLogistic";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "formLogistic";
+            this.Text = "Logistic";
             this.Load += new System.EventHandler(this.formLogistic_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLogistic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAddedProducts)).EndInit();
