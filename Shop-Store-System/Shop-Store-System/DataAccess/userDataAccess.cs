@@ -250,5 +250,43 @@ namespace Shop_Store_System.DataAccess
             }
             return user;
         }
+
+        public userBusinessLogic SearchUserForLogistic(string keyword)
+        {
+            userBusinessLogic user = new userBusinessLogic();
+
+            SqlConnection conn = new SqlConnection(myconnstrng);
+
+            DataTable dt = new DataTable();
+
+            try
+            {
+                string sql = "SELECT first_name, last_name from table_users WHERE username LIKE '%" + keyword + "%'";
+
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, conn);
+
+                conn.Open();
+
+                adapter.Fill(dt);
+
+                //Ако успешно имам намерени данни ние ги запазваме в обекта от business logic 
+                if (dt.Rows.Count > 0)
+                {
+                    user.FirstName = dt.Rows[0]["first_name"].ToString();
+                    user.LastName = dt.Rows[0]["last_name"].ToString();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return user;
+        }
     }
 }

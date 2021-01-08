@@ -21,7 +21,7 @@ namespace Shop_Store_System.BusinessLogic
             get => this.rate;
             set
             {
-                if (value <= 0)
+                if (value < 0)
                 {
                     throw new ArgumentException(@"Invalid price!");
                 }
@@ -35,7 +35,7 @@ namespace Shop_Store_System.BusinessLogic
             get => this.quantity;
             set
             {
-                if (value <= 0)
+                if (value < 0)
                 {
                     throw new ArgumentException(@"Invalid quantity!");
                 }

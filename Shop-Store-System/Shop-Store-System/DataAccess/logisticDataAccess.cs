@@ -61,14 +61,18 @@ namespace Shop_Store_System.DataAccess
 
             try
             {
-                String sql = "INSERT INTO table_logistic (employee, address, contact, date, added_date, added_by) VALUES (@employee, @address, @contact, @date, @added_date, @added_by)";
+                String sql = "INSERT INTO table_logistic (employee, first_name_employee, last_name_employee, address, contact, date, description, price, added_date, added_by) VALUES (@employee, @first_name_employee, @last_name_employee, @address, @contact, @date, @description, @price, @added_date, @added_by)";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
                 cmd.Parameters.AddWithValue("@employee", logistic.Empleyee);
+                cmd.Parameters.AddWithValue("@first_name_employee", logistic.FirstNameEmployee);
+                cmd.Parameters.AddWithValue("@last_name_employee", logistic.LastNameEmployee);
                 cmd.Parameters.AddWithValue("@address", logistic.Address);
                 cmd.Parameters.AddWithValue("@contact", logistic.Contact);
                 cmd.Parameters.AddWithValue("@date", logistic.Date);
+                cmd.Parameters.AddWithValue("@description", logistic.Description);
+                cmd.Parameters.AddWithValue("@price", logistic.Price);
                 cmd.Parameters.AddWithValue("@added_date", logistic.AddedDate);
                 cmd.Parameters.AddWithValue("@added_by", logistic.AddedBy);
 
@@ -106,14 +110,18 @@ namespace Shop_Store_System.DataAccess
 
             try
             {
-                String sql = "UPDATE table_logistic SET employee=@employee, address=@address, contact=@contact, date=@date, added_date=@added_date, added_by=@added_by WHERE id=@id";
+                String sql = "UPDATE table_logistic SET employee=@employee, first_name_employee=@first_name_employee, last_name_employee=@last_name_employee, address=@address, contact=@contact, date=@date, description=@description, price=@price, added_date=@added_date, added_by=@added_by WHERE id=@id";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
-                cmd.Parameters.AddWithValue("@name", logistic.Empleyee);
-                cmd.Parameters.AddWithValue("@category", logistic.Address);
-                cmd.Parameters.AddWithValue("@description", logistic.Contact);
-                cmd.Parameters.AddWithValue("@rate", logistic.Date);
+                cmd.Parameters.AddWithValue("@employee", logistic.Empleyee);
+                cmd.Parameters.AddWithValue("@first_name_employee", logistic.FirstNameEmployee);
+                cmd.Parameters.AddWithValue("@last_name_employee", logistic.LastNameEmployee);
+                cmd.Parameters.AddWithValue("@address", logistic.Address);
+                cmd.Parameters.AddWithValue("@contact", logistic.Contact);
+                cmd.Parameters.AddWithValue("@date", logistic.Date);
+                cmd.Parameters.AddWithValue("@description", logistic.Description);
+                cmd.Parameters.AddWithValue("@price", logistic.Price);
                 cmd.Parameters.AddWithValue("@added_date", logistic.AddedDate);
                 cmd.Parameters.AddWithValue("@added_by", logistic.AddedBy);
                 cmd.Parameters.AddWithValue("@id", logistic.Id);

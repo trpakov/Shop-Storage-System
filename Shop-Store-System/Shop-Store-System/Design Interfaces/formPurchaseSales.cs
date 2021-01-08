@@ -125,9 +125,9 @@ namespace Shop_Store_System.Design_Interfaces
                 //Clear the Textboxes
                 txtSearchProduct.Text = "";
                 txtProductName.Text = "";
-                txtInventory.Text = "0.00";
-                txtRate.Text = "0.00";
-                txtQty.Text = "0.00";
+                txtInventory.Text = "";
+                txtRate.Text = "";
+                txtQty.Text = "";
             }
         }
 
