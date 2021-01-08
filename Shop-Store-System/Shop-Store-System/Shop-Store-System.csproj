@@ -134,6 +134,7 @@
     <Compile Include="Interfaces\IClear.cs" />
     <Compile Include="Interfaces\ICrudCategory.cs" />
     <Compile Include="Interfaces\ICrudDealerCustomer.cs" />
+    <Compile Include="Interfaces\ICrudLogistic.cs" />
     <Compile Include="Interfaces\ICrudProduct.cs" />
     <Compile Include="Interfaces\ICrudUser.cs" />
     <Compile Include="Interfaces\IQuantityProduct.cs" />

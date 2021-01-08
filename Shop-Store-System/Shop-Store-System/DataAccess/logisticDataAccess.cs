@@ -12,7 +12,7 @@ using Shop_Store_System.Interfaces;
 
 namespace Shop_Store_System.DataAccess
 {
-    class logisticDataAccess
+    class logisticDataAccess: logisticBusinessLogic, ICrudLogistic
     {
         static string myconnstrng = ConfigurationManager.ConnectionStrings["connstrng"].ConnectionString;
 
