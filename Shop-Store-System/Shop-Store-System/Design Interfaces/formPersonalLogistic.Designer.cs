@@ -32,6 +32,7 @@
             this.cmbDate = new System.Windows.Forms.ComboBox();
             this.labelDate = new System.Windows.Forms.Label();
             this.dgvLogistic = new System.Windows.Forms.DataGridView();
+            this.btnDelivered = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLogistic)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,12 +81,27 @@
             this.dgvLogistic.RowTemplate.Height = 24;
             this.dgvLogistic.Size = new System.Drawing.Size(1326, 453);
             this.dgvLogistic.TabIndex = 7;
+            this.dgvLogistic.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvLogistic_RowHeaderMouseClick);
+            // 
+            // btnDelivered
+            // 
+            this.btnDelivered.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnDelivered.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelivered.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelivered.Location = new System.Drawing.Point(665, 17);
+            this.btnDelivered.Name = "btnDelivered";
+            this.btnDelivered.Size = new System.Drawing.Size(132, 42);
+            this.btnDelivered.TabIndex = 8;
+            this.btnDelivered.Text = "Delivered";
+            this.btnDelivered.UseVisualStyleBackColor = false;
+            this.btnDelivered.Click += new System.EventHandler(this.btnDelivered_Click);
             // 
             // formPersonalLogistic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1350, 538);
+            this.Controls.Add(this.btnDelivered);
             this.Controls.Add(this.dgvLogistic);
             this.Controls.Add(this.btnAll);
             this.Controls.Add(this.cmbDate);
@@ -106,5 +122,6 @@
         private System.Windows.Forms.ComboBox cmbDate;
         private System.Windows.Forms.Label labelDate;
         private System.Windows.Forms.DataGridView dgvLogistic;
+        private System.Windows.Forms.Button btnDelivered;
     }
 }

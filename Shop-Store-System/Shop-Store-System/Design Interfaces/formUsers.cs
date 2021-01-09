@@ -281,5 +281,10 @@ namespace Shop_Store_System.Design_Interfaces
             //System.Diagnostics.Process.GetCurrentProcess().Kill();
             //Application.Exit();
         }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            Clear();
+        }
     }
 }

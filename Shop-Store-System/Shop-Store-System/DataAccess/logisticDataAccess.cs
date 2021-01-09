@@ -222,5 +222,43 @@ namespace Shop_Store_System.DataAccess
             return dt;
         }
 
+        public productsBusinessLogic GetProductsForLogistic(string keyword)
+        {
+            productsBusinessLogic product = new productsBusinessLogic();
+
+            SqlConnection conn = new SqlConnection(myconnstrng);
+
+            DataTable dt = new DataTable();
+
+            try
+            {
+                string sql = "SELECT id, name, rate, qty FROM table_products WHERE name LIKE '%" + keyword + "%'";
+
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, conn);
+
+                conn.Open();
+
+                adapter.Fill(dt);
+
+                if (dt.Rows.Count > 0)
+                {
+                    product.Id = int.Parse(dt.Rows[0]["id"].ToString());
+                    product.Name = dt.Rows[0]["name"].ToString();
+                    product.Rate = decimal.Parse(dt.Rows[0]["rate"].ToString());
+                    product.Quantity = decimal.Parse(dt.Rows[0]["qty"].ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return product;
+        }
+
     }
 }

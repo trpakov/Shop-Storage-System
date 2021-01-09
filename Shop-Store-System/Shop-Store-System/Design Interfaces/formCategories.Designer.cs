@@ -40,6 +40,7 @@
             this.dgvCategories = new System.Windows.Forms.DataGridView();
             this.labelSearch = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
+            this.btnClear = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategories)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,7 +48,7 @@
             // 
             this.labelCategoryID.AutoSize = true;
             this.labelCategoryID.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCategoryID.Location = new System.Drawing.Point(12, 40);
+            this.labelCategoryID.Location = new System.Drawing.Point(12, 21);
             this.labelCategoryID.Name = "labelCategoryID";
             this.labelCategoryID.Size = new System.Drawing.Size(107, 23);
             this.labelCategoryID.TabIndex = 0;
@@ -57,7 +58,7 @@
             // 
             this.labelTitle.AutoSize = true;
             this.labelTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitle.Location = new System.Drawing.Point(73, 99);
+            this.labelTitle.Location = new System.Drawing.Point(73, 80);
             this.labelTitle.Name = "labelTitle";
             this.labelTitle.Size = new System.Drawing.Size(46, 23);
             this.labelTitle.TabIndex = 1;
@@ -67,7 +68,7 @@
             // 
             this.labelDescription.AutoSize = true;
             this.labelDescription.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDescription.Location = new System.Drawing.Point(19, 158);
+            this.labelDescription.Location = new System.Drawing.Point(19, 139);
             this.labelDescription.Name = "labelDescription";
             this.labelDescription.Size = new System.Drawing.Size(100, 23);
             this.labelDescription.TabIndex = 2;
@@ -76,27 +77,27 @@
             // txtCategoryID
             // 
             this.txtCategoryID.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCategoryID.Location = new System.Drawing.Point(141, 37);
+            this.txtCategoryID.Location = new System.Drawing.Point(141, 18);
             this.txtCategoryID.Name = "txtCategoryID";
             this.txtCategoryID.ReadOnly = true;
-            this.txtCategoryID.Size = new System.Drawing.Size(275, 30);
+            this.txtCategoryID.Size = new System.Drawing.Size(302, 30);
             this.txtCategoryID.TabIndex = 3;
             // 
             // txtTitle
             // 
             this.txtTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTitle.Location = new System.Drawing.Point(141, 99);
+            this.txtTitle.Location = new System.Drawing.Point(141, 80);
             this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(275, 30);
+            this.txtTitle.Size = new System.Drawing.Size(302, 30);
             this.txtTitle.TabIndex = 4;
             // 
             // txtDescription
             // 
             this.txtDescription.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescription.Location = new System.Drawing.Point(141, 158);
+            this.txtDescription.Location = new System.Drawing.Point(141, 136);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(275, 163);
+            this.txtDescription.Size = new System.Drawing.Size(302, 163);
             this.txtDescription.TabIndex = 5;
             // 
             // btnAdd
@@ -105,9 +106,9 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnAdd.Location = new System.Drawing.Point(23, 392);
+            this.btnAdd.Location = new System.Drawing.Point(12, 360);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(116, 54);
+            this.btnAdd.Size = new System.Drawing.Size(106, 54);
             this.btnAdd.TabIndex = 6;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
@@ -118,9 +119,9 @@
             this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(173, 392);
+            this.btnUpdate.Location = new System.Drawing.Point(141, 360);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(116, 54);
+            this.btnUpdate.Size = new System.Drawing.Size(106, 54);
             this.btnUpdate.TabIndex = 7;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
@@ -131,9 +132,9 @@
             this.btnDelete.BackColor = System.Drawing.Color.Red;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(332, 392);
+            this.btnDelete.Location = new System.Drawing.Point(267, 360);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(116, 54);
+            this.btnDelete.Size = new System.Drawing.Size(106, 54);
             this.btnDelete.TabIndex = 8;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
@@ -142,11 +143,11 @@
             // dgvCategories
             // 
             this.dgvCategories.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCategories.Location = new System.Drawing.Point(492, 88);
+            this.dgvCategories.Location = new System.Drawing.Point(525, 65);
             this.dgvCategories.Name = "dgvCategories";
             this.dgvCategories.RowHeadersWidth = 51;
             this.dgvCategories.RowTemplate.Height = 24;
-            this.dgvCategories.Size = new System.Drawing.Size(597, 390);
+            this.dgvCategories.Size = new System.Drawing.Size(768, 390);
             this.dgvCategories.TabIndex = 9;
             this.dgvCategories.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvCategories_RowHeaderMouseClick);
             // 
@@ -154,7 +155,7 @@
             // 
             this.labelSearch.AutoSize = true;
             this.labelSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSearch.Location = new System.Drawing.Point(517, 40);
+            this.labelSearch.Location = new System.Drawing.Point(543, 21);
             this.labelSearch.Name = "labelSearch";
             this.labelSearch.Size = new System.Drawing.Size(65, 23);
             this.labelSearch.TabIndex = 10;
@@ -163,17 +164,31 @@
             // txtSearch
             // 
             this.txtSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(598, 37);
+            this.txtSearch.Location = new System.Drawing.Point(624, 18);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(464, 30);
             this.txtSearch.TabIndex = 11;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
+            // btnClear
+            // 
+            this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClear.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.Location = new System.Drawing.Point(396, 360);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(106, 54);
+            this.btnClear.TabIndex = 27;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
             // formCategories
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1118, 509);
+            this.ClientSize = new System.Drawing.Size(1305, 479);
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.labelSearch);
             this.Controls.Add(this.dgvCategories);
@@ -210,5 +225,6 @@
         private System.Windows.Forms.DataGridView dgvCategories;
         private System.Windows.Forms.Label labelSearch;
         private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Button btnClear;
     }
 }

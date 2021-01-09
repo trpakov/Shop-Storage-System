@@ -141,5 +141,10 @@ namespace Shop_Store_System.Design_Interfaces
                 dgvCategories.DataSource = dt;
             }
         }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            Clear();
+        }
     }
 }

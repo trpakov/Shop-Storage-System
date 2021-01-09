@@ -46,6 +46,7 @@
             this.dgvDeaCust = new System.Windows.Forms.DataGridView();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.labelSearch = new System.Windows.Forms.Label();
+            this.btnClear = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDeaCust)).BeginInit();
             this.SuspendLayout();
             // 
@@ -169,9 +170,9 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnAdd.Location = new System.Drawing.Point(33, 486);
+            this.btnAdd.Location = new System.Drawing.Point(33, 478);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(133, 51);
+            this.btnAdd.Size = new System.Drawing.Size(115, 51);
             this.btnAdd.TabIndex = 12;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
@@ -183,9 +184,9 @@
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnUpdate.Location = new System.Drawing.Point(215, 486);
+            this.btnUpdate.Location = new System.Drawing.Point(172, 478);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(133, 51);
+            this.btnUpdate.Size = new System.Drawing.Size(115, 51);
             this.btnUpdate.TabIndex = 13;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
@@ -197,9 +198,9 @@
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnDelete.Location = new System.Drawing.Point(396, 486);
+            this.btnDelete.Location = new System.Drawing.Point(309, 478);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(133, 51);
+            this.btnDelete.Size = new System.Drawing.Size(115, 51);
             this.btnDelete.TabIndex = 14;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
@@ -212,7 +213,7 @@
             this.dgvDeaCust.Name = "dgvDeaCust";
             this.dgvDeaCust.RowHeadersWidth = 51;
             this.dgvDeaCust.RowTemplate.Height = 24;
-            this.dgvDeaCust.Size = new System.Drawing.Size(614, 476);
+            this.dgvDeaCust.Size = new System.Drawing.Size(739, 469);
             this.dgvDeaCust.TabIndex = 15;
             this.dgvDeaCust.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvDeaCust_RowHeaderMouseClick);
             // 
@@ -235,11 +236,26 @@
             this.labelSearch.TabIndex = 16;
             this.labelSearch.Text = "Search:";
             // 
+            // btnClear
+            // 
+            this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClear.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnClear.Location = new System.Drawing.Point(445, 478);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(115, 51);
+            this.btnClear.TabIndex = 18;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
             // formDealerCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1226, 585);
+            this.ClientSize = new System.Drawing.Size(1340, 564);
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.labelSearch);
             this.Controls.Add(this.dgvDeaCust);
@@ -288,5 +304,6 @@
         private System.Windows.Forms.DataGridView dgvDeaCust;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label labelSearch;
+        private System.Windows.Forms.Button btnClear;
     }
 }

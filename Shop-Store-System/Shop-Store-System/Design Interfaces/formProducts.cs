@@ -200,5 +200,10 @@ namespace Shop_Store_System.Design_Interfaces
                 dgvProducts.DataSource = dt;
             }
         }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            Clear();
+        }
     }
 }

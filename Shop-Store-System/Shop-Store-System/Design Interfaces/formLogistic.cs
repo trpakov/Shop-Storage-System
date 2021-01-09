@@ -27,6 +27,8 @@ namespace Shop_Store_System.Design_Interfaces
 
         DataTable transactionTable = new DataTable();
 
+        int productId;
+
         string description = null;
 
         private void formLogistic_Load(object sender, EventArgs e)
@@ -242,7 +244,9 @@ namespace Shop_Store_System.Design_Interfaces
                 return;
             }
 
-            productsBusinessLogic product = productDataAccess.GetProductsForTransaction(keyword);
+            productsBusinessLogic product = logisticDataAccess.GetProductsForLogistic(keyword);
+
+            productId = product.Id;
 
             txtProductName.Text = product.Name;
             txtInventory.Text = product.Quantity.ToString();
@@ -279,6 +283,7 @@ namespace Shop_Store_System.Design_Interfaces
             else
             {
                 description = description + txtProductName.Text + "-" + txtQty.Text + "";
+
                 //Добавяне на продукта в таблицата
                 transactionTable.Rows.Add(productName, price, qty, total);
 
@@ -286,6 +291,19 @@ namespace Shop_Store_System.Design_Interfaces
 
                 txtTotal.Text = result.ToString();
                 txtDescription.Text = description;
+
+                bool changeQuantity = productDataAccess.DecreaseProduct(productId, qty);
+
+                if (changeQuantity)
+                {
+                    MessageBox.Show("Added Sucesfully!");
+                }
+                else
+                {
+                    MessageBox.Show("No products in inventory!");
+                    return;
+                }
+
 
                 //Clear the Textboxes
                 txtSearchProduct.Text = "";
@@ -295,6 +313,24 @@ namespace Shop_Store_System.Design_Interfaces
                 txtQty.Text = "";
             }
 
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtID.Text = "";
+            cmbEmployee.Text = "";
+            txtFirstName.Text = "";
+            txtLastName.Text = "";
+            txtAddress.Text = "";
+            txtContact.Text = "";
+            txtDate.Text = "";
+            txtSearch.Text = "";
+            txtSearchProduct.Text = "";
+            txtProductName.Text = "";
+            txtInventory.Text = "";
+            txtRate.Text = "";
+            txtQty.Text = "";
+            txtTotal.Text = "0";
         }
     }
 }

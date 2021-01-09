@@ -1,4 +1,5 @@
 ﻿using Shop_Store_System.BusinesLogic;
+using Shop_Store_System.BusinessLogic;
 using Shop_Store_System.DataAccess;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,7 @@ namespace Shop_Store_System.Design_Interfaces
         logisticDataAccess logisticDataAccess = new logisticDataAccess();
         userDataAccess userDataAccess = new userDataAccess();
         personalLogisticDataAccess personal = new personalLogisticDataAccess();
+        logisticBusinessLogic logistic = new logisticBusinessLogic();
 
         private void formPersonalLogistic_Load(object sender, EventArgs e)
         {
@@ -50,6 +52,31 @@ namespace Shop_Store_System.Design_Interfaces
 
             DataTable dt = personal.DisplayLogisticByUsername(loggedUsr);
             dgvLogistic.DataSource = dt;
+        }
+
+        private void btnDelivered_Click(object sender, EventArgs e)
+        {
+            string loggedUsr = formLogin.loggedIn;
+            bool success = logisticDataAccess.Delete(logistic);
+
+            if (success == true)
+            {
+                MessageBox.Show("Logistic successfully delevered.");
+
+                DataTable dt = personal.DisplayLogisticByUsername(loggedUsr);
+                dgvLogistic.DataSource = dt;
+            }
+            else
+            {
+                MessageBox.Show("Failed!");
+            }
+        }
+
+        private void dgvLogistic_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            int rowIndex = e.RowIndex;
+
+            logistic.Id = int.Parse(dgvLogistic.Rows[rowIndex].Cells[0].Value.ToString());
         }
     }
 }
