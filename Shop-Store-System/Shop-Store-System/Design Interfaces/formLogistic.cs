@@ -182,6 +182,7 @@ namespace Shop_Store_System.Design_Interfaces
         {
             logistic.Id = int.Parse(txtID.Text);
 
+            //Връщане на количестото
             string info = txtDescription.Text;
 
             string[] arr = info.Split(new char[] { ' ' },StringSplitOptions.RemoveEmptyEntries).ToArray();

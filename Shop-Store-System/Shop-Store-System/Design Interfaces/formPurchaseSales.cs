@@ -30,6 +30,8 @@ namespace Shop_Store_System.Design_Interfaces
 
         DataTable transactionTable = new DataTable();
 
+        string description = null;
+
         private void formPurchaseSales_Load(object sender, EventArgs e)
         {
             string type = formUserDashboard.transactionType;
@@ -116,6 +118,9 @@ namespace Shop_Store_System.Design_Interfaces
             }
             else
             {
+
+                description = description + txtProductName.Text + "=" + txtQty.Text + " ";
+
                 //Добавяне на продукта в таблицата
                 transactionTable.Rows.Add(productName, price, qty, total);
 
@@ -218,6 +223,7 @@ namespace Shop_Store_System.Design_Interfaces
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+
             //Вземане на въпросната форма purchase/sales
             BusinessLogic.Transaction transaction = new BusinessLogic.Transaction();
             transaction.Type = labelTop.Text;
@@ -227,10 +233,13 @@ namespace Shop_Store_System.Design_Interfaces
             DealerCustomer dealerCustomer = dealerCustomerData.GetDeaCustIDFromName(deaCustName);
 
             transaction.DealerCustomerId = dealerCustomer.Id;
+            transaction.Description = description;
             transaction.GrandTotal = Math.Round(decimal.Parse(txtGrandTotal.Text), 2);
             transaction.TransactionDate = DateTime.Now;
             transaction.Tax = decimal.Parse(txtVat.Text);
             transaction.Discount = decimal.Parse(txtDiscount.Text);
+            transaction.PaidAmount = decimal.Parse(txtPaidAmount.Text);
+            transaction.ReturnAmount = decimal.Parse(txtReturnAmount.Text);
 
             //Вземане на потребителското име на потребителя
             string username = formLogin.loggedIn;
@@ -313,6 +322,7 @@ namespace Shop_Store_System.Design_Interfaces
 
                     //Изтриване на всички редове 
                     transactionTable.Clear();
+                    description = null;
                     dgvAddedProducts.DataSource = null;
                     dgvAddedProducts.Rows.Clear();
 

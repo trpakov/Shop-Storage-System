@@ -27,16 +27,19 @@ namespace Shop_Store_System.DataAccess
             SqlConnection conn = new SqlConnection(myconnstrng);
             try
             {
-                string sql = "INSERT INTO table_transactions (type, dea_cust_id, grandTotal, transaction_date, tax, discount, added_by) VALUES (@type, @dea_cust_id, @grandTotal, @transaction_date, @tax, @discount, @added_by); SELECT @@IDENTITY;";
+                string sql = "INSERT INTO table_transactions (type, dea_cust_id, description, grandTotal, transaction_date, tax, discount, paid_amount, return_amount, added_by) VALUES (@type, @dea_cust_id, @description, @grandTotal, @transaction_date, @tax, @discount, @paid_amount, @return_amount, @added_by); SELECT @@IDENTITY;";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
                 cmd.Parameters.AddWithValue("@type", transaction.Type);
                 cmd.Parameters.AddWithValue("@dea_cust_id", transaction.DealerCustomerId);
+                cmd.Parameters.AddWithValue("@description", transaction.Description);
                 cmd.Parameters.AddWithValue("@grandTotal", transaction.GrandTotal);
                 cmd.Parameters.AddWithValue("@transaction_date", transaction.TransactionDate);
                 cmd.Parameters.AddWithValue("@tax", transaction.Tax);
                 cmd.Parameters.AddWithValue("@discount", transaction.Discount);
+                cmd.Parameters.AddWithValue("@paid_amount", transaction.PaidAmount);
+                cmd.Parameters.AddWithValue("@return_amount", transaction.ReturnAmount);
                 cmd.Parameters.AddWithValue("@added_by", transaction.AddedBy);
 
                 conn.Open();

@@ -100,11 +100,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1188, 537);
+            this.Controls.Add(this.dgvTransactions);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnAll);
             this.Controls.Add(this.cmbTransactionType);
             this.Controls.Add(this.labelTransactionType);
-            this.Controls.Add(this.dgvTransactions);
             this.Name = "formTransactions";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Transactions";
