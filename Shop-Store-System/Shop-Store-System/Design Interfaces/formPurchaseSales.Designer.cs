@@ -74,6 +74,8 @@
             this.labelDiscount = new System.Windows.Forms.Label();
             this.labelSubTotal = new System.Windows.Forms.Label();
             this.labelCalculationTitle = new System.Windows.Forms.Label();
+            this.txtType = new System.Windows.Forms.TextBox();
+            this.labelType = new System.Windows.Forms.Label();
             this.pnlDeaCust.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelDataGridView.SuspendLayout();
@@ -83,6 +85,8 @@
             // 
             // pnlDeaCust
             // 
+            this.pnlDeaCust.Controls.Add(this.txtType);
+            this.pnlDeaCust.Controls.Add(this.labelType);
             this.pnlDeaCust.Controls.Add(this.dtpBillDate);
             this.pnlDeaCust.Controls.Add(this.txtAddress);
             this.pnlDeaCust.Controls.Add(this.txtContact);
@@ -104,7 +108,7 @@
             // dtpBillDate
             // 
             this.dtpBillDate.CalendarFont = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpBillDate.Location = new System.Drawing.Point(984, 132);
+            this.dtpBillDate.Location = new System.Drawing.Point(983, 118);
             this.dtpBillDate.Name = "dtpBillDate";
             this.dtpBillDate.Size = new System.Drawing.Size(302, 22);
             this.dtpBillDate.TabIndex = 12;
@@ -112,10 +116,10 @@
             // txtAddress
             // 
             this.txtAddress.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAddress.Location = new System.Drawing.Point(984, 33);
+            this.txtAddress.Location = new System.Drawing.Point(983, 33);
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(302, 79);
+            this.txtAddress.Size = new System.Drawing.Size(302, 66);
             this.txtAddress.TabIndex = 11;
             // 
             // txtContact
@@ -155,7 +159,7 @@
             // 
             this.labelBillDate.AutoSize = true;
             this.labelBillDate.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBillDate.Location = new System.Drawing.Point(883, 131);
+            this.labelBillDate.Location = new System.Drawing.Point(882, 117);
             this.labelBillDate.Name = "labelBillDate";
             this.labelBillDate.Size = new System.Drawing.Size(77, 23);
             this.labelBillDate.TabIndex = 6;
@@ -165,7 +169,7 @@
             // 
             this.labelAddress.AutoSize = true;
             this.labelAddress.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAddress.Location = new System.Drawing.Point(883, 36);
+            this.labelAddress.Location = new System.Drawing.Point(882, 36);
             this.labelAddress.Name = "labelAddress";
             this.labelAddress.Size = new System.Drawing.Size(74, 23);
             this.labelAddress.TabIndex = 5;
@@ -554,6 +558,24 @@
             this.labelCalculationTitle.TabIndex = 0;
             this.labelCalculationTitle.Text = "Calculation Details";
             // 
+            // txtType
+            // 
+            this.txtType.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtType.Location = new System.Drawing.Point(983, 158);
+            this.txtType.Name = "txtType";
+            this.txtType.Size = new System.Drawing.Size(284, 30);
+            this.txtType.TabIndex = 14;
+            // 
+            // labelType
+            // 
+            this.labelType.AutoSize = true;
+            this.labelType.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelType.Location = new System.Drawing.Point(906, 161);
+            this.labelType.Name = "labelType";
+            this.labelType.Size = new System.Drawing.Size(50, 23);
+            this.labelType.TabIndex = 13;
+            this.labelType.Text = "Type:";
+            // 
             // formPurchaseSales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -628,5 +650,7 @@
         private System.Windows.Forms.Label labelSubTotal;
         private System.Windows.Forms.Label labelCalculationTitle;
         private System.Windows.Forms.Label labelTop;
+        private System.Windows.Forms.TextBox txtType;
+        private System.Windows.Forms.Label labelType;
     }
 }

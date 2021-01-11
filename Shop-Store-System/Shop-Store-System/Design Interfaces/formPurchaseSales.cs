@@ -59,6 +59,7 @@ namespace Shop_Store_System.Design_Interfaces
             DealerCustomer dc = dealerCustomerData.SearchDealerCustomerForTransaction(keyword);
 
             //Визуализация на намерените данни в текстовите кутии
+            txtType.Text = dc.Type;
             txtName.Text = dc.Name;
             txtEmail.Text = dc.Email;
             txtContact.Text = dc.Contact;
@@ -311,6 +312,7 @@ namespace Shop_Store_System.Design_Interfaces
                     MessageBox.Show("Transaction Completed Sucessfully.");
 
                     //Изтриване на всички редове 
+                    transactionTable.Clear();
                     dgvAddedProducts.DataSource = null;
                     dgvAddedProducts.Rows.Clear();
 

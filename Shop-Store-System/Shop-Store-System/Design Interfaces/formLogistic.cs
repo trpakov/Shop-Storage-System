@@ -91,6 +91,9 @@ namespace Shop_Store_System.Design_Interfaces
                 DataTable dt = logisticData.Select();
                 dgvLogistic.DataSource = dt;
 
+                transactionTable.Clear();
+                description = null;
+
             }
             else
             {
@@ -111,7 +114,7 @@ namespace Shop_Store_System.Design_Interfaces
             txtAddress.Text = "";
             txtContact.Text = "";
             txtDate.Text = "";
-            txtTotal.Text = "";
+            txtTotal.Text = "0";
             txtDescription.Text = "";
         }
 
@@ -179,11 +182,31 @@ namespace Shop_Store_System.Design_Interfaces
         {
             logistic.Id = int.Parse(txtID.Text);
 
+            string info = txtDescription.Text;
+
+            string[] arr = info.Split(new char[] { ' ' },StringSplitOptions.RemoveEmptyEntries).ToArray();
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                string pair = arr[i];
+
+                string[] arr2 = pair.Split('=').ToArray();
+
+                string productName = arr2[0];
+                int qty = int.Parse(arr2[1]);
+
+                Product product = productData.GetProductIDFromName(productName);
+
+                bool changeQuantity = productData.IncreaseProduct(product.Id, qty);
+            }
+
+
             bool success = logisticData.Delete(logistic);
 
             if (success == true)
             {
                 MessageBox.Show("Logistic successfully deleted.");
+
 
                 Clear();
 
@@ -282,7 +305,7 @@ namespace Shop_Store_System.Design_Interfaces
             }
             else
             {
-                description = description + txtProductName.Text + "-" + txtQty.Text + "";
+                description = description + txtProductName.Text + "=" + txtQty.Text + " ";
 
                 //Добавяне на продукта в таблицата
                 transactionTable.Rows.Add(productName, price, qty, total);

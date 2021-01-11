@@ -222,7 +222,7 @@ namespace Shop_Store_System.DataAccess
 
             try
             {
-                string sql = "SELECT name, email, contact, address from table_dealer_customer WHERE id LIKE '%" + keyword + "%' OR name LIKE '%" + keyword + "%'";
+                string sql = "SELECT type, name, email, contact, address from table_dealer_customer WHERE id LIKE '%" + keyword + "%' OR name LIKE '%" + keyword + "%'";
 
                 SqlDataAdapter adapter = new SqlDataAdapter(sql, conn);
 
@@ -233,6 +233,7 @@ namespace Shop_Store_System.DataAccess
                 //Ако успешно имам намерени данни ние ги запазваме в обекта от business logic 
                 if (dt.Rows.Count > 0)
                 {
+                    dealerCustomer.Type = dt.Rows[0]["type"].ToString();
                     dealerCustomer.Name = dt.Rows[0]["name"].ToString();
                     dealerCustomer.Email = dt.Rows[0]["email"].ToString();
                     dealerCustomer.Contact = dt.Rows[0]["contact"].ToString();
