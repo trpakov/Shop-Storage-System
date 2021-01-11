@@ -145,7 +145,7 @@ namespace Shop_Store_System.DataAccess
                 //SELECT t1.*, t2.* FROM t1, t2;
                 //string sql = "SELECT table_transactions.*, table_transactions_detail.* FROM table_transactions, table_transactions_detail";
 
-                string sql = "DELETE table_transactions.*, table_transactions_detail.* FROM table_transactions, table_transactions_detail";
+                string sql = "DELETE FROM table_transactions";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
