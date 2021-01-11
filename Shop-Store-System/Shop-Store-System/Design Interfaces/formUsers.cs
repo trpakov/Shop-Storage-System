@@ -19,8 +19,8 @@ namespace Shop_Store_System.Design_Interfaces
             InitializeComponent();
         }
 
-        userBusinessLogic user = new userBusinessLogic();
-        userDataAccess userDataAccess = new userDataAccess();
+        User user = new User();
+        UserData userData = new UserData();
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -85,13 +85,13 @@ namespace Shop_Store_System.Design_Interfaces
             }
             //Вземане на името на влезналия потребител
             string loggedUser = formLogin.loggedIn;
-            userBusinessLogic usr = userDataAccess.GetIDFromUsername(loggedUser);
+            User usr = userData.GetIDFromUsername(loggedUser);
 
             user.AddedBy = usr.Id;
 
 
             //Вкарване на данни в базата данни
-            bool success = userDataAccess.Insert(user);
+            bool success = userData.Insert(user);
             
             if (success == true)
             {
@@ -105,13 +105,13 @@ namespace Shop_Store_System.Design_Interfaces
             }
 
             //Обновяване на таблицата във формата за потребители
-            DataTable dt = userDataAccess.Select();
+            DataTable dt = userData.Select();
             dgvUsers.DataSource = dt;
         }
 
         private void formUsers_Load(object sender, EventArgs e)
         {
-            DataTable dt = userDataAccess.Select();
+            DataTable dt = userData.Select();
             dgvUsers.DataSource = dt;
         }
 
@@ -211,13 +211,13 @@ namespace Shop_Store_System.Design_Interfaces
 
             //---------------------------------------------------------------------------------------
             string loggedUser = formLogin.loggedIn;
-            userBusinessLogic usr = userDataAccess.GetIDFromUsername(loggedUser);
+            User usr = userData.GetIDFromUsername(loggedUser);
 
             user.AddedBy = usr.Id;
             //---------------------------------------------------------------------------------------
 
             //Редактиране на данните в базата данни
-            bool success = userDataAccess.Update(user);
+            bool success = userData.Update(user);
 
             
             if (success == true)
@@ -230,7 +230,7 @@ namespace Shop_Store_System.Design_Interfaces
                 MessageBox.Show("Failed to update user.");
             }
 
-            DataTable dt = userDataAccess.Select();
+            DataTable dt = userData.Select();
             dgvUsers.DataSource = dt;
         }
 
@@ -239,7 +239,7 @@ namespace Shop_Store_System.Design_Interfaces
             //Вземане на id-то за потребителя от формата
             user.Id = int.Parse(txtUserID.Text);
 
-            bool success = userDataAccess.Delete(user);
+            bool success = userData.Delete(user);
 
             if (success == true)
             {
@@ -252,7 +252,7 @@ namespace Shop_Store_System.Design_Interfaces
 
             }
 
-            DataTable dt = userDataAccess.Select();
+            DataTable dt = userData.Select();
             dgvUsers.DataSource = dt;
         }
 
@@ -265,13 +265,13 @@ namespace Shop_Store_System.Design_Interfaces
             if (keywords != null)
             {
                 //Показване на потребителя
-                DataTable dt = userDataAccess.Search(keywords);
+                DataTable dt = userData.Search(keywords);
                 dgvUsers.DataSource = dt;
             }
             else
             {
                 //Показване на всички потребители
-                DataTable dt = userDataAccess.Select();
+                DataTable dt = userData.Select();
                 dgvUsers.DataSource = dt;
             }
         }

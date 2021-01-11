@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Shop_Store_System.BusinessLogic
 {
-    class transactionBusinessLogic
+    class Transaction
     {
         private decimal tax;
         private decimal discount;
@@ -20,6 +20,7 @@ namespace Shop_Store_System.BusinessLogic
 
         public decimal Tax
         {
+            //Валидация на таксите
             get => this.tax;
             set
             {
@@ -34,6 +35,7 @@ namespace Shop_Store_System.BusinessLogic
 
         public decimal Discount
         {
+            //Валидация на отсъпка
             get => this.discount;
             set
             {

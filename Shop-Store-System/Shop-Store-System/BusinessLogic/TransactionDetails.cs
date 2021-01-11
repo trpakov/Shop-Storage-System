@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Shop_Store_System.BusinessLogic
 {
-    class transactionDetailBusinessLogic
+    class TransactionDetails
     {
         public int Id { get; set; }
         public int ProductId { get; set; }

@@ -12,7 +12,7 @@ using Shop_Store_System.Interfaces;
 
 namespace Shop_Store_System.DataAccess
 {
-    class productsDataAccess:productsBusinessLogic,ICrudProduct,IQuantityProduct
+    class ProductData:Product,ICrudProduct,IQuantityProduct
     {
         static string myconnstrng = ConfigurationManager.ConnectionStrings["connstrng"].ConnectionString;
 
@@ -53,7 +53,7 @@ namespace Shop_Store_System.DataAccess
         }
 
         //Вкарване на данни в базата
-        public bool Insert(productsBusinessLogic product)
+        public bool Insert(Product product)
         {
             bool isSuccess = false;
 
@@ -99,7 +99,7 @@ namespace Shop_Store_System.DataAccess
         }
 
         //Редактиране на данни
-        public bool Update(productsBusinessLogic product)
+        public bool Update(Product product)
         {
             bool isSuccess = false;
 
@@ -146,7 +146,7 @@ namespace Shop_Store_System.DataAccess
         }
 
         //Изтриване на данни
-        public bool Delete(productsBusinessLogic product)
+        public bool Delete(Product product)
         {
             bool isSuccess = false;
 
@@ -217,9 +217,9 @@ namespace Shop_Store_System.DataAccess
         }
 
         //Търсене на продукт за транзакциите
-        public productsBusinessLogic GetProductsForTransaction(string keyword)
+        public Product GetProductsForTransaction(string keyword)
         {
-            productsBusinessLogic product = new productsBusinessLogic();
+            Product product = new Product();
 
             SqlConnection conn = new SqlConnection(myconnstrng);
 
@@ -255,9 +255,9 @@ namespace Shop_Store_System.DataAccess
         }
 
         //Вземане на id 
-        public productsBusinessLogic GetProductIDFromName(string productName)
+        public Product GetProductIDFromName(string productName)
         {
-            productsBusinessLogic product = new productsBusinessLogic();
+            Product product = new Product();
 
             SqlConnection conn = new SqlConnection(myconnstrng);
 

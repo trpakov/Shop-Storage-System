@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Shop_Store_System.BusinessLogic
 {
-    class logisticBusinessLogic
+    class Logistic
     {
         private string contact;
 
@@ -19,7 +19,7 @@ namespace Shop_Store_System.BusinessLogic
             get => this.contact;
             set
             {
-                //Валидация на името..
+                //Валидация на контакта
                 if (value.Length <= 9)
                 {
                     throw new ArgumentException(@"Invalid contact!");

@@ -12,7 +12,7 @@ using Shop_Store_System.Interfaces;
 
 namespace Shop_Store_System.DataAccess
 {
-    class dealerandcustomerDataAccess:dealerandcustomerBusinessLogic,ICrudDealerCustomer
+    class DealerCustomerData:DealerCustomer,ICrudDealerCustomer
     {
         static string myconnstrng = ConfigurationManager.ConnectionStrings["connstrng"].ConnectionString;
 
@@ -48,7 +48,7 @@ namespace Shop_Store_System.DataAccess
         }
 
         //Вкарване на данни
-        public bool Insert(dealerandcustomerBusinessLogic dealerAndCustomer)
+        public bool Insert(DealerCustomer dealerAndCustomer)
         {
             SqlConnection conn = new SqlConnection(myconnstrng);
 
@@ -94,7 +94,7 @@ namespace Shop_Store_System.DataAccess
         }
 
         //Редактиране на данни
-        public bool Update(dealerandcustomerBusinessLogic dealerAndCustomer)
+        public bool Update(DealerCustomer dealerAndCustomer)
         {
             SqlConnection conn = new SqlConnection(myconnstrng);
 
@@ -140,7 +140,7 @@ namespace Shop_Store_System.DataAccess
         }
 
         //Изтриване на данни
-        public bool Delete(dealerandcustomerBusinessLogic dealerAndCustomer)
+        public bool Delete(DealerCustomer dealerAndCustomer)
         {
             SqlConnection conn = new SqlConnection(myconnstrng);
 
@@ -212,9 +212,9 @@ namespace Shop_Store_System.DataAccess
         }
 
         //Търсене в данните
-        public dealerandcustomerBusinessLogic SearchDealerCustomerForTransaction(string keyword)
+        public DealerCustomer SearchDealerCustomerForTransaction(string keyword)
         {
-            dealerandcustomerBusinessLogic dealerCustomer = new dealerandcustomerBusinessLogic();
+            DealerCustomer dealerCustomer = new DealerCustomer();
 
             SqlConnection conn = new SqlConnection(myconnstrng);
 
@@ -253,9 +253,9 @@ namespace Shop_Store_System.DataAccess
         }
 
         //Вземане на id-то от името 
-        public dealerandcustomerBusinessLogic GetDeaCustIDFromName(string Name)
+        public DealerCustomer GetDeaCustIDFromName(string Name)
         {
-            dealerandcustomerBusinessLogic dealerCustomer = new dealerandcustomerBusinessLogic();
+            DealerCustomer dealerCustomer = new DealerCustomer();
 
             SqlConnection conn = new SqlConnection(myconnstrng);
 

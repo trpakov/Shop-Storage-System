@@ -13,12 +13,14 @@ namespace Shop_Store_System.Interfaces
 
         DataTable Select();
 
-        bool Insert(logisticBusinessLogic logistic);
+        bool Insert(Logistic logistic);
 
-        bool Update(logisticBusinessLogic logistic);
+        bool Update(Logistic logistic);
 
-        bool Delete(logisticBusinessLogic logistic);
+        bool Delete(Logistic logistic);
 
         DataTable Search(string keywords);
+
+        Product GetProductsForLogistic(string keyword);
     }
 }

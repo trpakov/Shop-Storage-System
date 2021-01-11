@@ -12,7 +12,7 @@ using Shop_Store_System.Interfaces;
 
 namespace Shop_Store_System.DataAccess
 {
-    class logisticDataAccess: logisticBusinessLogic, ICrudLogistic
+    class LogisticData: Logistic, ICrudLogistic
     {
         static string myconnstrng = ConfigurationManager.ConnectionStrings["connstrng"].ConnectionString;
 
@@ -53,7 +53,7 @@ namespace Shop_Store_System.DataAccess
         }
 
         //Вмъкване на данни
-        public bool Insert(logisticBusinessLogic logistic)
+        public bool Insert(Logistic logistic)
         {
             bool isSuccess = false;
 
@@ -102,7 +102,7 @@ namespace Shop_Store_System.DataAccess
         }
         
         //Редактиране на данни
-        public bool Update(logisticBusinessLogic logistic)
+        public bool Update(Logistic logistic)
         {
             bool isSuccess = false;
 
@@ -152,7 +152,7 @@ namespace Shop_Store_System.DataAccess
         }
 
         //Изтриване на данни
-        public bool Delete(logisticBusinessLogic logistic)
+        public bool Delete(Logistic logistic)
         {
             bool isSuccess = false;
 
@@ -191,7 +191,7 @@ namespace Shop_Store_System.DataAccess
             return isSuccess;
         }
 
-        //Търсене
+        //Търсене на данни
         public DataTable Search(string keywords)
         {
             SqlConnection conn = new SqlConnection(myconnstrng);
@@ -222,9 +222,10 @@ namespace Shop_Store_System.DataAccess
             return dt;
         }
 
-        public productsBusinessLogic GetProductsForLogistic(string keyword)
+        //Вземане на продукт за логистика
+        public Product GetProductsForLogistic(string keyword)
         {
-            productsBusinessLogic product = new productsBusinessLogic();
+            Product product = new Product();
 
             SqlConnection conn = new SqlConnection(myconnstrng);
 

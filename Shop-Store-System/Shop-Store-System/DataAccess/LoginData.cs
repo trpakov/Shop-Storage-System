@@ -9,16 +9,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Shop_Store_System.Interfaces;
-using Shop_Store_System.Abstract;
 namespace Shop_Store_System.DataAccess
 {
-    class loginDataAccess:LoginAbstract
+    class LoginData
     {
         //Връзка с базата данни
         static string myconnstrng = ConfigurationManager.ConnectionStrings["connstrng"].ConnectionString;
 
-        
-        public bool loginCheck(loginBusinessLogic login)
+        //Метод за влизане в системата
+        public bool loginCheck(Login login)
         {
             bool isSuccess = false;
 

@@ -12,11 +12,12 @@ using Shop_Store_System.Interfaces;
 
 namespace Shop_Store_System.DataAccess
 {
-    class personalLogisticDataAccess
+    class PersonalLogisticData : Logistic, IPersonalLogistic
     {
 
         static string myconnstrng = ConfigurationManager.ConnectionStrings["connstrng"].ConnectionString;
 
+        //Показване на данните според влезналия потребител
         public DataTable DisplayLogisticByUsername(string username)
         {
             SqlConnection conn = new SqlConnection(myconnstrng);
@@ -47,6 +48,7 @@ namespace Shop_Store_System.DataAccess
             return dt;
         }
 
+        //Показване на данните според датата 
         public DataTable DisplayLogisticnByDate(string date, string username)
         {
             SqlConnection conn = new SqlConnection(myconnstrng);

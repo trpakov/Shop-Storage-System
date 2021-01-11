@@ -12,12 +12,12 @@ using Shop_Store_System.Interfaces;
 
 namespace Shop_Store_System.DataAccess
 {
-    class transactionDataAccess:transactionBusinessLogic,ITransaction
+    class TransactionData:Transaction,ITransaction
     {
         static string myconnstrng = ConfigurationManager.ConnectionStrings["connstrng"].ConnectionString;
 
         //Добавяне на транзакция
-        public bool InsertTransaction(transactionBusinessLogic transaction, out int transactionID)
+        public bool InsertTransaction(Transaction transaction, out int transactionID)
         {
             bool isSuccess = false;
 
@@ -76,6 +76,7 @@ namespace Shop_Store_System.DataAccess
 
             try
             {
+                //SELECT t1.*, t2.* FROM t1, t2;
                 string sql = "SELECT * FROM table_transactions";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
@@ -128,5 +129,40 @@ namespace Shop_Store_System.DataAccess
 
             return dt;
         }
+
+        //Изтриване на всички транзакции и детайли
+        public DataTable DeleteAllTransactions()
+        {
+            SqlConnection conn = new SqlConnection(myconnstrng);
+
+            DataTable dt = new DataTable();
+
+            try
+            {
+                //SELECT t1.*, t2.* FROM t1, t2;
+                //string sql = "SELECT table_transactions.*, table_transactions_detail.* FROM table_transactions, table_transactions_detail";
+
+                string sql = "DELETE table_transactions.*, table_transactions_detail.* FROM table_transactions, table_transactions_detail";
+
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+                conn.Open();
+
+                adapter.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return dt;
+        }
+
     }
 }

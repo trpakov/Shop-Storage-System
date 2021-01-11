@@ -20,10 +20,10 @@ namespace Shop_Store_System.Design_Interfaces
             InitializeComponent();
         }
 
-        userDataAccess userDataAccess = new userDataAccess();
-        logisticBusinessLogic logistic = new logisticBusinessLogic();
-        logisticDataAccess logisticDataAccess = new logisticDataAccess();
-        productsDataAccess productDataAccess = new productsDataAccess();
+        UserData userData = new UserData();
+        Logistic logistic = new Logistic();
+        LogisticData logisticData = new LogisticData();
+        ProductData productData = new ProductData();
 
         DataTable transactionTable = new DataTable();
 
@@ -34,9 +34,9 @@ namespace Shop_Store_System.Design_Interfaces
         private void formLogistic_Load(object sender, EventArgs e)
         {
             //Създаване на таблица за взимане на данните от категориите
-            DataTable logisticDT = userDataAccess.Select();
+            DataTable logisticDT = userData.Select();
 
-            DataTable dt = logisticDataAccess.Select();
+            DataTable dt = logisticData.Select();
             dgvLogistic.DataSource = dt;
 
             //Зареждане на категориите в комбо бокса
@@ -76,11 +76,11 @@ namespace Shop_Store_System.Design_Interfaces
 
             //Вземане на името и id на влезналия потребител
             string loggedUsr = formLogin.loggedIn;
-            userBusinessLogic user = userDataAccess.GetIDFromUsername(loggedUsr);
+            User user = userData.GetIDFromUsername(loggedUsr);
 
             logistic.AddedBy = user.Id;
 
-            bool success = logisticDataAccess.Insert(logistic);
+            bool success = logisticData.Insert(logistic);
 
             if (success == true)
             {
@@ -88,7 +88,7 @@ namespace Shop_Store_System.Design_Interfaces
 
                 Clear();
 
-                DataTable dt = logisticDataAccess.Select();
+                DataTable dt = logisticData.Select();
                 dgvLogistic.DataSource = dt;
 
             }
@@ -154,11 +154,11 @@ namespace Shop_Store_System.Design_Interfaces
             }
 
             string loggedUsr = formLogin.loggedIn;
-            userBusinessLogic user = userDataAccess.GetIDFromUsername(loggedUsr);
+            User user = userData.GetIDFromUsername(loggedUsr);
 
             logistic.AddedBy = user.Id;
 
-            bool success = logisticDataAccess.Update(logistic);
+            bool success = logisticData.Update(logistic);
 
             if (success == true)
             {
@@ -166,7 +166,7 @@ namespace Shop_Store_System.Design_Interfaces
 
                 Clear();
 
-                DataTable dt = logisticDataAccess.Select();
+                DataTable dt = logisticData.Select();
                 dgvLogistic.DataSource = dt;
             }
             else
@@ -179,7 +179,7 @@ namespace Shop_Store_System.Design_Interfaces
         {
             logistic.Id = int.Parse(txtID.Text);
 
-            bool success = logisticDataAccess.Delete(logistic);
+            bool success = logisticData.Delete(logistic);
 
             if (success == true)
             {
@@ -187,7 +187,7 @@ namespace Shop_Store_System.Design_Interfaces
 
                 Clear();
 
-                DataTable dt = logisticDataAccess.Select();
+                DataTable dt = logisticData.Select();
                 dgvLogistic.DataSource = dt;
             }
             else
@@ -203,13 +203,13 @@ namespace Shop_Store_System.Design_Interfaces
             if (keywords != null)
             {
                 //Визуализация на търсения продукт
-                DataTable dt = logisticDataAccess.Search(keywords);
+                DataTable dt = logisticData.Search(keywords);
                 dgvLogistic.DataSource = dt;
             }
             else
             {
                 //Визуализация на всички продукти
-                DataTable dt = logisticDataAccess.Select();
+                DataTable dt = logisticData.Select();
                 dgvLogistic.DataSource = dt;
             }
         }
@@ -225,7 +225,7 @@ namespace Shop_Store_System.Design_Interfaces
                 return;
             }
 
-            userBusinessLogic user = userDataAccess.SearchUserForLogistic(keyword);
+            User user = userData.SearchUserForLogistic(keyword);
 
             txtFirstName.Text = user.FirstName;
             txtLastName.Text = user.LastName;
@@ -244,7 +244,7 @@ namespace Shop_Store_System.Design_Interfaces
                 return;
             }
 
-            productsBusinessLogic product = logisticDataAccess.GetProductsForLogistic(keyword);
+            Product product = logisticData.GetProductsForLogistic(keyword);
 
             productId = product.Id;
 
@@ -292,7 +292,7 @@ namespace Shop_Store_System.Design_Interfaces
                 txtTotal.Text = result.ToString();
                 txtDescription.Text = description;
 
-                bool changeQuantity = productDataAccess.DecreaseProduct(productId, qty);
+                bool changeQuantity = productData.DecreaseProduct(productId, qty);
 
                 if (changeQuantity)
                 {

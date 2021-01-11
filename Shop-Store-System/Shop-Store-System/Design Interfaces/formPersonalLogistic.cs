@@ -20,16 +20,16 @@ namespace Shop_Store_System.Design_Interfaces
             InitializeComponent();
         }
 
-        logisticDataAccess logisticDataAccess = new logisticDataAccess();
-        userDataAccess userDataAccess = new userDataAccess();
-        personalLogisticDataAccess personal = new personalLogisticDataAccess();
-        logisticBusinessLogic logistic = new logisticBusinessLogic();
+        LogisticData logisticData = new LogisticData();
+        UserData userData = new UserData();
+        PersonalLogisticData personalData = new PersonalLogisticData();
+        Logistic logistic = new Logistic();
 
         private void formPersonalLogistic_Load(object sender, EventArgs e)
         {
             string loggedUsr = formLogin.loggedIn;
 
-            DataTable logisticDT = personal.DisplayLogisticByUsername(loggedUsr);
+            DataTable logisticDT = personalData.DisplayLogisticByUsername(loggedUsr);
 
             cmbDate.DataSource = logisticDT;
 
@@ -42,7 +42,7 @@ namespace Shop_Store_System.Design_Interfaces
             string loggedUsr = formLogin.loggedIn;
             string date = cmbDate.Text;
 
-            DataTable dt = personal.DisplayLogisticnByDate(date, loggedUsr);
+            DataTable dt = personalData.DisplayLogisticnByDate(date, loggedUsr);
             dgvLogistic.DataSource = dt;
         }
 
@@ -50,20 +50,20 @@ namespace Shop_Store_System.Design_Interfaces
         {
             string loggedUsr = formLogin.loggedIn;
 
-            DataTable dt = personal.DisplayLogisticByUsername(loggedUsr);
+            DataTable dt = personalData.DisplayLogisticByUsername(loggedUsr);
             dgvLogistic.DataSource = dt;
         }
 
         private void btnDelivered_Click(object sender, EventArgs e)
         {
             string loggedUsr = formLogin.loggedIn;
-            bool success = logisticDataAccess.Delete(logistic);
+            bool success = logisticData.Delete(logistic);
 
             if (success == true)
             {
                 MessageBox.Show("Logistic successfully delevered.");
 
-                DataTable dt = personal.DisplayLogisticByUsername(loggedUsr);
+                DataTable dt = personalData.DisplayLogisticByUsername(loggedUsr);
                 dgvLogistic.DataSource = dt;
             }
             else

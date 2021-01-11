@@ -19,8 +19,8 @@ namespace Shop_Store_System.Design_Interfaces
             InitializeComponent();
         }
 
-        loginBusinessLogic login = new loginBusinessLogic();
-        loginDataAccess loginDataAccess = new loginDataAccess();
+        Login login = new Login();
+        LoginData loginData = new LoginData();
         public static string loggedIn;
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -30,7 +30,7 @@ namespace Shop_Store_System.Design_Interfaces
             login.UserType = cmbUserType.Text.Trim();
 
             //Проверка дали данните съвпадат
-            bool sucess = loginDataAccess.loginCheck(login);
+            bool sucess = loginData.loginCheck(login);
 
             if (sucess == true)
             {

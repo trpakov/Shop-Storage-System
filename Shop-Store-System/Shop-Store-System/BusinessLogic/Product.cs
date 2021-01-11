@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Shop_Store_System.BusinessLogic
 {
-    class productsBusinessLogic
+    class Product
     {
         private decimal rate;
         private decimal quantity;
@@ -18,6 +18,7 @@ namespace Shop_Store_System.BusinessLogic
 
         public decimal Rate
         {
+            //Валидация на цена
             get => this.rate;
             set
             {
@@ -32,6 +33,7 @@ namespace Shop_Store_System.BusinessLogic
 
         public decimal Quantity
         {
+            //Валидация на количество
             get => this.quantity;
             set
             {

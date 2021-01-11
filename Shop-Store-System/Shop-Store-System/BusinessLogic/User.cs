@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Shop_Store_System.BusinesLogic
 {
-    class userBusinessLogic
+    class User
     {
         private string firstName;
         private string lastName;
@@ -21,7 +21,7 @@ namespace Shop_Store_System.BusinesLogic
             get => this.firstName;
             set
             {
-                //Валидация на първото име..
+                //Валидация на първото име
                 if (value.Length <= 3)
                 {
                     throw new ArgumentException("Invalid first name!");
@@ -35,7 +35,7 @@ namespace Shop_Store_System.BusinesLogic
             get => this.lastName;
             set
             {
-                //Валидация на фамилията..
+                //Валидация на фамилията
                 if (value.Length <= 3)
                 {
                     throw new ArgumentException("Invalid last name!");
@@ -49,7 +49,7 @@ namespace Shop_Store_System.BusinesLogic
             get => this.email;
             set
             {
-                //Валидация на emaila..
+                //Валидация на emaila
                 Regex regex = new Regex(@"^([\w-.]+)@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.)|(([\w-]+.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(]?)$");
                 Match match = regex.Match(value);
                 if (match.Success)
@@ -67,7 +67,7 @@ namespace Shop_Store_System.BusinesLogic
             get => this.username;
             set
             {
-                //Валидация на потребителското име..
+                //Валидация на потребителското име
                 if (value.Length < 3)
                 {
                     throw new ArgumentException("Invalid username!");
@@ -81,7 +81,7 @@ namespace Shop_Store_System.BusinesLogic
             get => this.password;
             set
             {
-                //Валидация на паролата..
+                //Валидация на паролата
                 if (value.Length < 5)
                 {
                     throw new ArgumentException("Invalid password!");

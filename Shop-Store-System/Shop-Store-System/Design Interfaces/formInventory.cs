@@ -18,20 +18,20 @@ namespace Shop_Store_System.Design_Interfaces
             InitializeComponent();
         }
 
-        categoriesDataAccess categoriesAcceess = new categoriesDataAccess();
-        productsDataAccess productAccess = new productsDataAccess();
+        CategoryData categoryData = new CategoryData();
+        ProductData productData = new ProductData();
 
         private void formInventory_Load(object sender, EventArgs e)
         {
             //Визуализация на категориите в комбо бокса
-            DataTable categoriesDataTable = categoriesAcceess.Select();
+            DataTable categoriesDataTable = categoryData.Select();
             cmbCategories.DataSource = categoriesDataTable;
 
             cmbCategories.DisplayMember = "title";
             cmbCategories.ValueMember = "title";
 
             //Визуализация на всички продукти
-            DataTable productDataTable = productAccess.Select();
+            DataTable productDataTable = productData.Select();
             dgvProducts.DataSource = productDataTable;
         }
 
@@ -39,13 +39,13 @@ namespace Shop_Store_System.Design_Interfaces
         {
             string category = cmbCategories.Text;
 
-            DataTable dt = productAccess.DisplayProductsByCategory(category);
+            DataTable dt = productData.DisplayProductsByCategory(category);
             dgvProducts.DataSource = dt;
         }
 
         private void btnAll_Click(object sender, EventArgs e)
         {
-            DataTable dt = productAccess.Select();
+            DataTable dt = productData.Select();
             dgvProducts.DataSource = dt;
         }
     }

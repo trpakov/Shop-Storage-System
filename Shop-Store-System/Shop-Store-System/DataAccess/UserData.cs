@@ -11,7 +11,7 @@ using System.Windows.Forms;
 using Shop_Store_System.Interfaces;
 namespace Shop_Store_System.DataAccess
 {
-    class userDataAccess:userBusinessLogic,ICrudUser
+    class UserData:User,ICrudUser
     {
         static string myconnstrng = ConfigurationManager.ConnectionStrings["connstrng"].ConnectionString;
 
@@ -57,7 +57,7 @@ namespace Shop_Store_System.DataAccess
         }
 
         //Добавяне на данни
-        public bool Insert(userBusinessLogic user)
+        public bool Insert(User user)
         {
             bool isSuccess = false;
             SqlConnection conn = new SqlConnection(myconnstrng);
@@ -106,7 +106,7 @@ namespace Shop_Store_System.DataAccess
         }
 
         //Редактиране на данни
-        public bool Update(userBusinessLogic user)
+        public bool Update(User user)
         {
             bool isSuccess = false;
             SqlConnection conn = new SqlConnection(myconnstrng);
@@ -155,7 +155,7 @@ namespace Shop_Store_System.DataAccess
         }
 
         //Изтриване на данни
-        public bool Delete(userBusinessLogic user)
+        public bool Delete(User user)
         {
             bool isSuccess = false;
             SqlConnection conn = new SqlConnection(myconnstrng);
@@ -221,9 +221,9 @@ namespace Shop_Store_System.DataAccess
         }
 
         //Вземане на id от влезналия потребител
-        public userBusinessLogic GetIDFromUsername(string username)
+        public User GetIDFromUsername(string username)
         {
-            userBusinessLogic user = new userBusinessLogic();
+            User user = new User();
             SqlConnection conn = new SqlConnection(myconnstrng);
             DataTable dt = new DataTable();
 
@@ -251,9 +251,10 @@ namespace Shop_Store_System.DataAccess
             return user;
         }
 
-        public userBusinessLogic SearchUserForLogistic(string keyword)
+        //Търсене на потребител за логистиката
+        public User SearchUserForLogistic(string keyword)
         {
-            userBusinessLogic user = new userBusinessLogic();
+            User user = new User();
 
             SqlConnection conn = new SqlConnection(myconnstrng);
 

@@ -12,7 +12,7 @@ namespace Shop_Store_System.Interfaces
     {
         DataTable DisplayAllTransactions();
 
-        bool InsertTransaction(transactionBusinessLogic insertedTransaction, out int transactionID);
+        bool InsertTransaction(Transaction insertedTransaction, out int transactionID);
 
     }
 }

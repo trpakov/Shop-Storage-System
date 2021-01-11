@@ -12,11 +12,11 @@ namespace Shop_Store_System.Interfaces
     {
         DataTable Select();
 
-        bool Insert(dealerandcustomerBusinessLogic insertedDealerCustomer);
+        bool Insert(DealerCustomer insertedDealerCustomer);
 
-        bool Update(dealerandcustomerBusinessLogic updatedDealerCustomer);
+        bool Update(DealerCustomer updatedDealerCustomer);
 
-        bool Delete(dealerandcustomerBusinessLogic deletedDealerCustomer);
+        bool Delete(DealerCustomer deletedDealerCustomer);
 
         DataTable Search(string keyword);
     }

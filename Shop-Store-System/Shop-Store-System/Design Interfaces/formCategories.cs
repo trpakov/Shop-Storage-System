@@ -20,9 +20,9 @@ namespace Shop_Store_System.Design_Interfaces
             InitializeComponent();
         }
 
-        categoriesBusinessLogic category = new categoriesBusinessLogic();
-        categoriesDataAccess categoryDataAccess = new categoriesDataAccess();
-        userDataAccess userDataAccess = new userDataAccess();
+        Category category = new Category();
+        CategoryData categoryData = new CategoryData();
+        UserData userData = new UserData();
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -33,19 +33,19 @@ namespace Shop_Store_System.Design_Interfaces
 
             //Вземане на Idна влезналия потребител
             string loggedUser = formLogin.loggedIn;
-            userBusinessLogic user = userDataAccess.GetIDFromUsername(loggedUser);
+            User user = userData.GetIDFromUsername(loggedUser);
 
             category.AddedBy = user.Id;
 
             //Вкарване на данните в базата данни
-            bool success = categoryDataAccess.Insert(category);
+            bool success = categoryData.Insert(category);
 
             if (success == true)
             {
                 MessageBox.Show("New Category Inserted Successfully.");
                 Clear();
 
-                DataTable dt = categoryDataAccess.Select();
+                DataTable dt = categoryData.Select();
                 dgvCategories.DataSource = dt;
             }
             else
@@ -64,7 +64,7 @@ namespace Shop_Store_System.Design_Interfaces
 
         private void formCategories_Load(object sender, EventArgs e)
         {
-            DataTable dt = categoryDataAccess.Select();
+            DataTable dt = categoryData.Select();
             dgvCategories.DataSource = dt;
         }
 
@@ -86,18 +86,18 @@ namespace Shop_Store_System.Design_Interfaces
             category.AddedDate = DateTime.Now;
 
             string loggedUser = formLogin.loggedIn;
-            userBusinessLogic user = userDataAccess.GetIDFromUsername(loggedUser);
+            User user = userData.GetIDFromUsername(loggedUser);
 
             category.AddedBy = user.Id;
 
-            bool success = categoryDataAccess.Update(category);
+            bool success = categoryData.Update(category);
 
             if (success == true)
             {
                 MessageBox.Show("Category Updated Successfully.");
                 Clear();
 
-                DataTable dt = categoryDataAccess.Select();
+                DataTable dt = categoryData.Select();
                 dgvCategories.DataSource = dt;
             }
             else
@@ -110,14 +110,14 @@ namespace Shop_Store_System.Design_Interfaces
         {
             category.Id = int.Parse(txtCategoryID.Text);
 
-            bool success = categoryDataAccess.Delete(category);
+            bool success = categoryData.Delete(category);
 
             if (success == true)
             {
                 MessageBox.Show("Category Deleted Successfully.");
                 Clear();
 
-                DataTable dt = categoryDataAccess.Select();
+                DataTable dt = categoryData.Select();
                 dgvCategories.DataSource = dt;
             }
             else
@@ -132,12 +132,12 @@ namespace Shop_Store_System.Design_Interfaces
 
             if (keywords != null)
             {
-                DataTable dt = categoryDataAccess.Search(keywords);
+                DataTable dt = categoryData.Search(keywords);
                 dgvCategories.DataSource = dt;
             }
             else
             {
-                DataTable dt = categoryDataAccess.Select();
+                DataTable dt = categoryData.Select();
                 dgvCategories.DataSource = dt;
             }
         }

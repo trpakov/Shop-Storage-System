@@ -20,9 +20,9 @@ namespace Shop_Store_System.Design_Interfaces
             InitializeComponent();
         }
 
-        dealerandcustomerBusinessLogic dealerCustomer = new dealerandcustomerBusinessLogic();
-        dealerandcustomerDataAccess dealerCustomerDataAccess = new dealerandcustomerDataAccess();
-        userDataAccess userDataAccess = new userDataAccess();
+        DealerCustomer dealerCustomer = new DealerCustomer();
+        DealerCustomerData dealerCustomerData = new DealerCustomerData();
+        UserData userData = new UserData();
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -59,17 +59,17 @@ namespace Shop_Store_System.Design_Interfaces
             }
 
             string loggedUsr = formLogin.loggedIn;
-            userBusinessLogic user = userDataAccess.GetIDFromUsername(loggedUsr);
+            User user = userData.GetIDFromUsername(loggedUsr);
             dealerCustomer.AddedBy = user.Id;
 
-            bool success = dealerCustomerDataAccess.Insert(dealerCustomer);
+            bool success = dealerCustomerData.Insert(dealerCustomer);
 
             if (success == true)
             {
                 MessageBox.Show("Person Added Successfully.");
                 Clear();
 
-                DataTable dt = dealerCustomerDataAccess.Select();
+                DataTable dt = dealerCustomerData.Select();
                 dgvDeaCust.DataSource = dt;
             }
             else
@@ -90,7 +90,7 @@ namespace Shop_Store_System.Design_Interfaces
 
         private void formDealerCustomer_Load(object sender, EventArgs e)
         {
-            DataTable dt = dealerCustomerDataAccess.Select();
+            DataTable dt = dealerCustomerData.Select();
             dgvDeaCust.DataSource = dt;
         }
 
@@ -144,17 +144,17 @@ namespace Shop_Store_System.Design_Interfaces
 
 
             string loggedUsr = formLogin.loggedIn;
-            userBusinessLogic user = userDataAccess.GetIDFromUsername(loggedUsr);
+            User user = userData.GetIDFromUsername(loggedUsr);
             dealerCustomer.AddedBy = user.Id;
 
-            bool success = dealerCustomerDataAccess.Update(dealerCustomer);
+            bool success = dealerCustomerData.Update(dealerCustomer);
 
             if (success == true)
             {
                 MessageBox.Show("Person Updated Successfully.");
 
                 Clear();
-                DataTable dt = dealerCustomerDataAccess.Select();
+                DataTable dt = dealerCustomerData.Select();
 
                 dgvDeaCust.DataSource = dt;
             }
@@ -168,7 +168,7 @@ namespace Shop_Store_System.Design_Interfaces
         {
             dealerCustomer.Id = int.Parse(txtDeaCustID.Text);
 
-            bool success = dealerCustomerDataAccess.Delete(dealerCustomer);
+            bool success = dealerCustomerData.Delete(dealerCustomer);
 
             if (success == true)
             {
@@ -176,7 +176,7 @@ namespace Shop_Store_System.Design_Interfaces
 
                 Clear();
 
-                DataTable dt = dealerCustomerDataAccess.Select();
+                DataTable dt = dealerCustomerData.Select();
                 dgvDeaCust.DataSource = dt;
             }
             else
@@ -191,12 +191,12 @@ namespace Shop_Store_System.Design_Interfaces
 
             if (keyword != null)
             {
-                DataTable dt = dealerCustomerDataAccess.Search(keyword);
+                DataTable dt = dealerCustomerData.Search(keyword);
                 dgvDeaCust.DataSource = dt;
             }
             else
             {
-                DataTable dt = dealerCustomerDataAccess.Select();
+                DataTable dt = dealerCustomerData.Select();
                 dgvDeaCust.DataSource = dt;
             }
         }

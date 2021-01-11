@@ -20,15 +20,15 @@ namespace Shop_Store_System.Design_Interfaces
             InitializeComponent();
         }
 
-        categoriesDataAccess categoryDataAccess = new categoriesDataAccess();
-        productsBusinessLogic product = new productsBusinessLogic();
-        productsDataAccess productDataAccess = new productsDataAccess();
-        userDataAccess userDataAccess = new userDataAccess();
+        CategoryData categoryData = new CategoryData();
+        Product product = new Product();
+        ProductData productData = new ProductData();
+        UserData userData = new UserData();
 
         private void formProducts_Load(object sender, EventArgs e)
         {
             //Създаване на таблица за взимане на данните от категориите
-            DataTable categoriesDT = categoryDataAccess.Select();
+            DataTable categoriesDT = categoryData.Select();
 
             //Зареждане на категориите в комбо бокса
             cmbCategory.DataSource = categoriesDT;
@@ -37,7 +37,7 @@ namespace Shop_Store_System.Design_Interfaces
             cmbCategory.DisplayMember = "title";
             cmbCategory.ValueMember = "title";
 
-            DataTable dt = productDataAccess.Select();
+            DataTable dt = productData.Select();
             dgvProducts.DataSource = dt;
         }
 
@@ -70,11 +70,11 @@ namespace Shop_Store_System.Design_Interfaces
 
             //Вземане на името и id на влезналия потребител
             string loggedUsr = formLogin.loggedIn;
-            userBusinessLogic user = userDataAccess.GetIDFromUsername(loggedUsr);
+            User user = userData.GetIDFromUsername(loggedUsr);
 
             product.AddedBy = user.Id;
 
-            bool success = productDataAccess.Insert(product);
+            bool success = productData.Insert(product);
 
             if (success == true)
             {
@@ -82,7 +82,7 @@ namespace Shop_Store_System.Design_Interfaces
 
                 Clear();
 
-                DataTable dt = productDataAccess.Select();
+                DataTable dt = productData.Select();
                 dgvProducts.DataSource = dt;
             }
             else
@@ -141,11 +141,11 @@ namespace Shop_Store_System.Design_Interfaces
             }
 
             string loggedUsr = formLogin.loggedIn;
-            userBusinessLogic user = userDataAccess.GetIDFromUsername(loggedUsr);
+            User user = userData.GetIDFromUsername(loggedUsr);
 
             product.AddedBy = user.Id;
 
-            bool success = productDataAccess.Update(product);
+            bool success = productData.Update(product);
 
             if (success == true)
             {
@@ -153,7 +153,7 @@ namespace Shop_Store_System.Design_Interfaces
 
                 Clear();
 
-                DataTable dt = productDataAccess.Select();
+                DataTable dt = productData.Select();
                 dgvProducts.DataSource = dt;
             }
             else
@@ -166,7 +166,7 @@ namespace Shop_Store_System.Design_Interfaces
         {
             product.Id = int.Parse(txtID.Text);
 
-            bool success = productDataAccess.Delete(product);
+            bool success = productData.Delete(product);
 
             if (success == true)
             {
@@ -174,7 +174,7 @@ namespace Shop_Store_System.Design_Interfaces
 
                 Clear();
 
-                DataTable dt = productDataAccess.Select();
+                DataTable dt = productData.Select();
                 dgvProducts.DataSource = dt;
             }
             else
@@ -190,13 +190,13 @@ namespace Shop_Store_System.Design_Interfaces
             if (keywords != null)
             {
                 //Визуализация на търсения продукт
-                DataTable dt = productDataAccess.Search(keywords);
+                DataTable dt = productData.Search(keywords);
                 dgvProducts.DataSource = dt;
             }
             else
             {
                 //Визуализация на всички продукти
-                DataTable dt = productDataAccess.Select();
+                DataTable dt = productData.Select();
                 dgvProducts.DataSource = dt;
             }
         }

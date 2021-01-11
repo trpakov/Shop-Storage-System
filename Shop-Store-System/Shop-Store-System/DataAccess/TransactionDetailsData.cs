@@ -11,12 +11,12 @@ using Shop_Store_System.Interfaces;
 
 namespace Shop_Store_System.DataAccess
 {
-    class transactionDetailDataAccess:transactionDetailBusinessLogic,ITransactionDetail
+    class TransactionDetailsData:TransactionDetails,ITransactionDetail
     {
         static string myconnstrng = ConfigurationManager.ConnectionStrings["connstrng"].ConnectionString;
 
         //Добавяне на детайли по транзакцията
-        public bool InsertTransactionDetail(transactionDetailBusinessLogic transactionDetail)
+        public bool InsertTransactionDetail(TransactionDetails transactionDetail)
         {
             bool isSuccess = false;
 

@@ -18,11 +18,11 @@ namespace Shop_Store_System.Design_Interfaces
             InitializeComponent();
         }
 
-        transactionDataAccess transactionDataAccess = new transactionDataAccess();
+        TransactionData transactionData = new TransactionData();
 
         private void formTransactions_Load(object sender, EventArgs e)
         {
-            DataTable dt = transactionDataAccess.DisplayAllTransactions();
+            DataTable dt = transactionData.DisplayAllTransactions();
             dgvTransactions.DataSource = dt;
         }
 
@@ -30,13 +30,19 @@ namespace Shop_Store_System.Design_Interfaces
         {
             string type = cmbTransactionType.Text;
 
-            DataTable dt = transactionDataAccess.DisplayTransactionByType(type);
+            DataTable dt = transactionData.DisplayTransactionByType(type);
             dgvTransactions.DataSource = dt;
         }
 
         private void btnAll_Click(object sender, EventArgs e)
         {
-            DataTable dt = transactionDataAccess.DisplayAllTransactions();
+            DataTable dt = transactionData.DisplayAllTransactions();
+            dgvTransactions.DataSource = dt;
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            DataTable dt = transactionData.DeleteAllTransactions();
             dgvTransactions.DataSource = dt;
         }
     }

@@ -32,6 +32,7 @@
             this.labelTransactionType = new System.Windows.Forms.Label();
             this.cmbTransactionType = new System.Windows.Forms.ComboBox();
             this.btnAll = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransactions)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,11 +82,25 @@
             this.btnAll.UseVisualStyleBackColor = false;
             this.btnAll.Click += new System.EventHandler(this.btnAll_Click);
             // 
+            // btnClear
+            // 
+            this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClear.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.Location = new System.Drawing.Point(757, 15);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(132, 42);
+            this.btnClear.TabIndex = 4;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
             // formTransactions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1188, 537);
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnAll);
             this.Controls.Add(this.cmbTransactionType);
             this.Controls.Add(this.labelTransactionType);
@@ -106,5 +121,6 @@
         private System.Windows.Forms.Label labelTransactionType;
         private System.Windows.Forms.ComboBox cmbTransactionType;
         private System.Windows.Forms.Button btnAll;
+        private System.Windows.Forms.Button btnClear;
     }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Shop_Store_System.BusinessLogic
 {
-    class dealerandcustomerBusinessLogic
+    class DealerCustomer
     {
         private string name;
         private string email;
@@ -20,7 +20,7 @@ namespace Shop_Store_System.BusinessLogic
             get => this.name;
             set
             {
-                //Валидация на името..
+                //Валидация на името
                 if (value.Length <= 2)
                 {
                     throw new ArgumentException(@"Invalid name!");
@@ -34,7 +34,7 @@ namespace Shop_Store_System.BusinessLogic
             get => this.email;
             set
             {
-                //Валидация на emaila..
+                //Валидация на emailа
                 Regex regex = new Regex(@"^([\w-.]+)@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.)|(([\w-]+.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(]?)$");
                 Match match = regex.Match(value);
                 if (match.Success)
@@ -49,6 +49,7 @@ namespace Shop_Store_System.BusinessLogic
         }
         public string Contact
         {
+            //Валидация на контакта
             get => this.contact;
             set
             {

@@ -9,7 +9,7 @@ namespace Shop_Store_System.Interfaces
 {
     interface ITransactionDetail
     {
-        bool InsertTransactionDetail(transactionDetailBusinessLogic insertedTransactionDetail);
+        bool InsertTransactionDetail(TransactionDetails insertedTransactionDetail);
       
 
     }

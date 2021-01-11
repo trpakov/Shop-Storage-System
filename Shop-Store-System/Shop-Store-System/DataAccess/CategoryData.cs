@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace Shop_Store_System.DataAccess
 {
-    class categoriesDataAccess:categoriesBusinessLogic,ICrudCategory
+    class CategoryData:Category,ICrudCategory
     {
         static string myconnstrng = ConfigurationManager.ConnectionStrings["connstrng"].ConnectionString;
 
@@ -50,7 +50,7 @@ namespace Shop_Store_System.DataAccess
         }
 
         //Създаване на нова категория
-        public bool Insert(categoriesBusinessLogic category)
+        public bool Insert(Category category)
         {
             bool isSucces = false;
 
@@ -96,7 +96,7 @@ namespace Shop_Store_System.DataAccess
         }
 
         //Редактиране на данните
-        public bool Update(categoriesBusinessLogic category)
+        public bool Update(Category category)
         {
             bool isSuccess = false;
 
@@ -141,7 +141,7 @@ namespace Shop_Store_System.DataAccess
         }
 
         //Изтриване на данни
-        public bool Delete(categoriesBusinessLogic category)
+        public bool Delete(Category category)
         {
             bool isSuccess = false;
 

@@ -22,11 +22,11 @@ namespace Shop_Store_System.Design_Interfaces
             InitializeComponent();
         }
 
-        dealerandcustomerDataAccess dcDataAccess = new dealerandcustomerDataAccess();
-        productsDataAccess productDataAccess = new productsDataAccess();
-        userDataAccess userDataAccess = new userDataAccess();
-        transactionDataAccess transactionDataAccess = new transactionDataAccess();
-        transactionDetailDataAccess transactionDetailData = new transactionDetailDataAccess();
+        DealerCustomerData dealerCustomerData = new DealerCustomerData();
+        ProductData productData = new ProductData();
+        UserData userData = new UserData();
+        TransactionData transactionData = new TransactionData();
+        TransactionDetailsData transactionDetailData = new TransactionDetailsData();
 
         DataTable transactionTable = new DataTable();
 
@@ -56,7 +56,7 @@ namespace Shop_Store_System.Design_Interfaces
             }
 
             //Търсене в данните и връщане в обект от dealer and customer business logic 
-            dealerandcustomerBusinessLogic dc = dcDataAccess.SearchDealerCustomerForTransaction(keyword);
+            DealerCustomer dc = dealerCustomerData.SearchDealerCustomerForTransaction(keyword);
 
             //Визуализация на намерените данни в текстовите кутии
             txtName.Text = dc.Name;
@@ -79,7 +79,7 @@ namespace Shop_Store_System.Design_Interfaces
             }
 
             //Търсене на продукт в базата данни
-            productsBusinessLogic product = productDataAccess.GetProductsForTransaction(keyword);
+            Product product = productData.GetProductsForTransaction(keyword);
 
             //Визуализация на намерените данни в текстовите кутии
             txtProductName.Text = product.Name;
@@ -218,12 +218,12 @@ namespace Shop_Store_System.Design_Interfaces
         private void btnSave_Click(object sender, EventArgs e)
         {
             //Вземане на въпросната форма purchase/sales
-            transactionBusinessLogic transaction = new transactionBusinessLogic();
+            BusinessLogic.Transaction transaction = new BusinessLogic.Transaction();
             transaction.Type = labelTop.Text;
 
             //Вземане на името и id-то на доставчика или купувача
             string deaCustName = txtName.Text;
-            dealerandcustomerBusinessLogic dealerCustomer = dcDataAccess.GetDeaCustIDFromName(deaCustName);
+            DealerCustomer dealerCustomer = dealerCustomerData.GetDeaCustIDFromName(deaCustName);
 
             transaction.DealerCustomerId = dealerCustomer.Id;
             transaction.GrandTotal = Math.Round(decimal.Parse(txtGrandTotal.Text), 2);
@@ -233,7 +233,7 @@ namespace Shop_Store_System.Design_Interfaces
 
             //Вземане на потребителското име на потребителя
             string username = formLogin.loggedIn;
-            userBusinessLogic user = userDataAccess.GetIDFromUsername(username);
+            User user = userData.GetIDFromUsername(username);
 
             transaction.AddedBy = user.Id;
             transaction.TransactionDetails = transactionTable;
@@ -246,17 +246,17 @@ namespace Shop_Store_System.Design_Interfaces
                 int transactionID = -1;
 
                 //Добавяне на транзакция
-                bool insertTransaction = transactionDataAccess.InsertTransaction(transaction, out transactionID);
+                bool insertTransaction = transactionData.InsertTransaction(transaction, out transactionID);
 
                 //Use for loop to insert Transaction Details
                 for (int i = 0; i < transactionTable.Rows.Count; i++)
                 {
                     //Вземане на всички детайли за продукта
-                    transactionDetailBusinessLogic transactionDetail = new transactionDetailBusinessLogic();
+                    TransactionDetails transactionDetail = new TransactionDetails();
 
                     //Вземане на id чрез името на продукта
                     string productName = transactionTable.Rows[i][0].ToString();
-                    productsBusinessLogic product = productDataAccess.GetProductIDFromName(productName);
+                    Product product = productData.GetProductIDFromName(productName);
 
                     transactionDetail.ProductId = product.Id;
                     transactionDetail.Rate = decimal.Parse(transactionTable.Rows[i][1].ToString());
@@ -274,12 +274,12 @@ namespace Shop_Store_System.Design_Interfaces
                     if (transactionType == "Purchase")
                     {
                         //Увеличаване на количеството на продуктите
-                        changeQuantity = productDataAccess.IncreaseProduct(transactionDetail.ProductId, transactionDetail.Quantity);
+                        changeQuantity = productData.IncreaseProduct(transactionDetail.ProductId, transactionDetail.Quantity);
                     }
                     else if (transactionType == "Sales")
                     {
                         //Намаляне на количеството на продуктите
-                        changeQuantity = productDataAccess.DecreaseProduct(transactionDetail.ProductId, transactionDetail.Quantity);
+                        changeQuantity = productData.DecreaseProduct(transactionDetail.ProductId, transactionDetail.Quantity);
                     }
 
                     //Добавяне на транзакцията с детайлите около продукта в базата данни
@@ -313,6 +313,7 @@ namespace Shop_Store_System.Design_Interfaces
                     //Изтриване на всички редове 
                     dgvAddedProducts.DataSource = null;
                     dgvAddedProducts.Rows.Clear();
+
                     //Изтриване на текстовите полета
                     ClearAll();
                    
