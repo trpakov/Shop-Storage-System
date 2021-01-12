@@ -55,6 +55,7 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
+            this.checkPass = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             this.SuspendLayout();
             // 
@@ -158,7 +159,7 @@
             // 
             this.txtContact.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtContact.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContact.Location = new System.Drawing.Point(128, 288);
+            this.txtContact.Location = new System.Drawing.Point(128, 313);
             this.txtContact.Name = "txtContact";
             this.txtContact.Size = new System.Drawing.Size(224, 30);
             this.txtContact.TabIndex = 11;
@@ -167,7 +168,7 @@
             // 
             this.labelContact.AutoSize = true;
             this.labelContact.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelContact.Location = new System.Drawing.Point(12, 290);
+            this.labelContact.Location = new System.Drawing.Point(12, 315);
             this.labelContact.Name = "labelContact";
             this.labelContact.Size = new System.Drawing.Size(74, 23);
             this.labelContact.TabIndex = 10;
@@ -177,7 +178,7 @@
             // 
             this.txtAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtAddress.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAddress.Location = new System.Drawing.Point(128, 336);
+            this.txtAddress.Location = new System.Drawing.Point(128, 361);
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(224, 131);
@@ -187,7 +188,7 @@
             // 
             this.labelAddress.AutoSize = true;
             this.labelAddress.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAddress.Location = new System.Drawing.Point(12, 338);
+            this.labelAddress.Location = new System.Drawing.Point(12, 363);
             this.labelAddress.Name = "labelAddress";
             this.labelAddress.Size = new System.Drawing.Size(74, 23);
             this.labelAddress.TabIndex = 12;
@@ -197,7 +198,7 @@
             // 
             this.labelGender.AutoSize = true;
             this.labelGender.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelGender.Location = new System.Drawing.Point(12, 487);
+            this.labelGender.Location = new System.Drawing.Point(12, 512);
             this.labelGender.Name = "labelGender";
             this.labelGender.Size = new System.Drawing.Size(71, 23);
             this.labelGender.TabIndex = 14;
@@ -211,7 +212,7 @@
             "Male",
             "Female",
             "Not Specified"});
-            this.cmbGender.Location = new System.Drawing.Point(128, 484);
+            this.cmbGender.Location = new System.Drawing.Point(128, 509);
             this.cmbGender.Name = "cmbGender";
             this.cmbGender.Size = new System.Drawing.Size(224, 31);
             this.cmbGender.TabIndex = 15;
@@ -223,7 +224,7 @@
             this.cmbUserType.Items.AddRange(new object[] {
             "User",
             "Admin"});
-            this.cmbUserType.Location = new System.Drawing.Point(128, 530);
+            this.cmbUserType.Location = new System.Drawing.Point(128, 555);
             this.cmbUserType.Name = "cmbUserType";
             this.cmbUserType.Size = new System.Drawing.Size(224, 31);
             this.cmbUserType.TabIndex = 17;
@@ -232,7 +233,7 @@
             // 
             this.labelUserType.AutoSize = true;
             this.labelUserType.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUserType.Location = new System.Drawing.Point(12, 533);
+            this.labelUserType.Location = new System.Drawing.Point(12, 558);
             this.labelUserType.Name = "labelUserType";
             this.labelUserType.Size = new System.Drawing.Size(89, 23);
             this.labelUserType.TabIndex = 16;
@@ -265,7 +266,7 @@
             this.dgvUsers.Name = "dgvUsers";
             this.dgvUsers.RowHeadersWidth = 51;
             this.dgvUsers.RowTemplate.Height = 24;
-            this.dgvUsers.Size = new System.Drawing.Size(731, 393);
+            this.dgvUsers.Size = new System.Drawing.Size(731, 425);
             this.dgvUsers.TabIndex = 20;
             this.dgvUsers.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvUsers_RowHeaderMouseClick);
             // 
@@ -294,7 +295,7 @@
             this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(438, 497);
+            this.btnAdd.Location = new System.Drawing.Point(442, 522);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(133, 59);
             this.btnAdd.TabIndex = 23;
@@ -307,7 +308,7 @@
             this.btnUpdate.BackColor = System.Drawing.Color.Orange;
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(609, 497);
+            this.btnUpdate.Location = new System.Drawing.Point(613, 522);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(133, 59);
             this.btnUpdate.TabIndex = 24;
@@ -320,7 +321,7 @@
             this.btnDelete.BackColor = System.Drawing.Color.Red;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(775, 497);
+            this.btnDelete.Location = new System.Drawing.Point(779, 522);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(133, 59);
             this.btnDelete.TabIndex = 25;
@@ -333,7 +334,7 @@
             this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(938, 497);
+            this.btnClear.Location = new System.Drawing.Point(942, 522);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(133, 59);
             this.btnClear.TabIndex = 26;
@@ -341,11 +342,23 @@
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
+            // checkPass
+            // 
+            this.checkPass.AutoSize = true;
+            this.checkPass.Location = new System.Drawing.Point(229, 277);
+            this.checkPass.Name = "checkPass";
+            this.checkPass.Size = new System.Drawing.Size(123, 21);
+            this.checkPass.TabIndex = 27;
+            this.checkPass.Text = "View password";
+            this.checkPass.UseVisualStyleBackColor = true;
+            this.checkPass.CheckedChanged += new System.EventHandler(this.checkPass_CheckedChanged);
+            // 
             // formUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1148, 585);
+            this.ClientSize = new System.Drawing.Size(1148, 606);
+            this.Controls.Add(this.checkPass);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
@@ -413,5 +426,6 @@
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.CheckBox checkPass;
     }
 }

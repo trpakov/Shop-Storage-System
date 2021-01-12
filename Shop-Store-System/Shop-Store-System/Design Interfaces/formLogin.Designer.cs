@@ -37,12 +37,14 @@
             this.labelPassword = new System.Windows.Forms.Label();
             this.labelUsername = new System.Windows.Forms.Label();
             this.labelHeader = new System.Windows.Forms.Label();
+            this.checkPass = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.checkPass);
             this.panel1.Controls.Add(this.btnLogin);
             this.panel1.Controls.Add(this.cmbUserType);
             this.panel1.Controls.Add(this.txtPassword);
@@ -141,6 +143,17 @@
             this.labelHeader.TabIndex = 0;
             this.labelHeader.Text = "Login";
             // 
+            // checkPass
+            // 
+            this.checkPass.AutoSize = true;
+            this.checkPass.Location = new System.Drawing.Point(226, 221);
+            this.checkPass.Name = "checkPass";
+            this.checkPass.Size = new System.Drawing.Size(123, 21);
+            this.checkPass.TabIndex = 8;
+            this.checkPass.Text = "View password";
+            this.checkPass.UseVisualStyleBackColor = true;
+            this.checkPass.CheckedChanged += new System.EventHandler(this.checkPass_CheckedChanged);
+            // 
             // formLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -169,5 +182,6 @@
         private System.Windows.Forms.Label labelPassword;
         private System.Windows.Forms.Label labelUsername;
         private System.Windows.Forms.Label labelHeader;
+        private System.Windows.Forms.CheckBox checkPass;
     }
 }

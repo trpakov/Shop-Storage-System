@@ -286,5 +286,10 @@ namespace Shop_Store_System.Design_Interfaces
         {
             Clear();
         }
+
+        private void checkPass_CheckedChanged(object sender, EventArgs e)
+        {
+            txtPassword.PasswordChar = checkPass.Checked ? '\0' : '*';
+        }
     }
 }

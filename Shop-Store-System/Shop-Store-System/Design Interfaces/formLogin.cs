@@ -75,5 +75,10 @@ namespace Shop_Store_System.Design_Interfaces
             System.Diagnostics.Process.GetCurrentProcess().Kill();
             Application.Exit();
         }
+
+        private void checkPass_CheckedChanged(object sender, EventArgs e)
+        {
+            txtPassword.PasswordChar = checkPass.Checked ? '\0' : '*';
+        }
     }
 }
