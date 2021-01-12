@@ -37,12 +37,13 @@
             this.dealerAndCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inventoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.transactionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logisticToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.labelLoginUser = new System.Windows.Forms.Label();
             this.labelLoggedUser = new System.Windows.Forms.Label();
             this.labelAppFName = new System.Windows.Forms.Label();
             this.labelAppLName = new System.Windows.Forms.Label();
             this.labelDescription = new System.Windows.Forms.Label();
-            this.logisticToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelFooter.SuspendLayout();
             this.menuStripTop.SuspendLayout();
             this.SuspendLayout();
@@ -78,7 +79,8 @@
             this.dealerAndCustomerToolStripMenuItem,
             this.inventoryToolStripMenuItem,
             this.transactionsToolStripMenuItem,
-            this.logisticToolStripMenuItem});
+            this.logisticToolStripMenuItem,
+            this.logOutToolStripMenuItem});
             this.menuStripTop.Location = new System.Drawing.Point(0, 0);
             this.menuStripTop.Name = "menuStripTop";
             this.menuStripTop.Size = new System.Drawing.Size(1519, 28);
@@ -126,6 +128,13 @@
             this.transactionsToolStripMenuItem.Size = new System.Drawing.Size(104, 24);
             this.transactionsToolStripMenuItem.Text = "Transactions";
             this.transactionsToolStripMenuItem.Click += new System.EventHandler(this.transactionsToolStripMenuItem_Click);
+            // 
+            // logisticToolStripMenuItem
+            // 
+            this.logisticToolStripMenuItem.Name = "logisticToolStripMenuItem";
+            this.logisticToolStripMenuItem.Size = new System.Drawing.Size(74, 24);
+            this.logisticToolStripMenuItem.Text = "Logistic";
+            this.logisticToolStripMenuItem.Click += new System.EventHandler(this.logisticToolStripMenuItem_Click);
             // 
             // labelLoginUser
             // 
@@ -178,12 +187,12 @@
             this.labelDescription.TabIndex = 6;
             this.labelDescription.Text = "Billing and Inventory Managment";
             // 
-            // logisticToolStripMenuItem
+            // logOutToolStripMenuItem
             // 
-            this.logisticToolStripMenuItem.Name = "logisticToolStripMenuItem";
-            this.logisticToolStripMenuItem.Size = new System.Drawing.Size(74, 24);
-            this.logisticToolStripMenuItem.Text = "Logistic";
-            this.logisticToolStripMenuItem.Click += new System.EventHandler(this.logisticToolStripMenuItem_Click);
+            this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(74, 24);
+            this.logOutToolStripMenuItem.Text = "Log out";
+            this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             // 
             // formAdminDashboard
             // 
@@ -230,6 +239,7 @@
         private System.Windows.Forms.Label labelDescription;
         private System.Windows.Forms.ToolStripMenuItem dealerAndCustomerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logisticToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
     }
 }
 

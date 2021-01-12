@@ -64,5 +64,14 @@ namespace Shop_Store_System
             formPersonalLogistic logistic = new formPersonalLogistic();
             logistic.Show();
         }
+
+        private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formLogin login = new formLogin();
+            login.Show();
+            this.Hide();
+           
+            
+        }
     }
 }

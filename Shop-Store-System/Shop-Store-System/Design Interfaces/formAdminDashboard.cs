@@ -72,5 +72,15 @@ namespace Shop_Store_System
             formLogistic logistic = new formLogistic();
             logistic.Show();
         }
+
+        private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formAdminDashboard admin = new formAdminDashboard();
+            admin.Close();
+            admin.Hide();
+            formLogin login = new formLogin();
+            login.Show();
+            
+        }
     }
 }
