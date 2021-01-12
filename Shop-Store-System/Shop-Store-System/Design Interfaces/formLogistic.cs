@@ -58,10 +58,18 @@ namespace Shop_Store_System.Design_Interfaces
         {
             try
             {
+                logistic.Contact = txtContact.Text;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Invalid contact!");
+                return;
+            }
+            try
+            {
                 logistic.Empleyee = cmbEmployee.Text;
                 logistic.FirstNameEmployee = txtFirstName.Text;
                 logistic.LastNameEmployee = txtLastName.Text;
-                logistic.Contact = txtContact.Text;
                 logistic.Address = txtAddress.Text;
                 logistic.Date = txtDate.Text;
                 logistic.Description = description;
@@ -355,6 +363,7 @@ namespace Shop_Store_System.Design_Interfaces
             txtRate.Text = "";
             txtQty.Text = "";
             txtTotal.Text = "0";
+            txtDescription.Text = "";
         }
     }
 }

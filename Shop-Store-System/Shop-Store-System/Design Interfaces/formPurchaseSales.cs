@@ -54,6 +54,7 @@ namespace Shop_Store_System.Design_Interfaces
                 txtEmail.Text = "";
                 txtContact.Text = "";
                 txtAddress.Text = "";
+                txtType.Text = "";
                 return;
             }
 
