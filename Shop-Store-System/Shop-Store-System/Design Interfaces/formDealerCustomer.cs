@@ -33,7 +33,7 @@ namespace Shop_Store_System.Design_Interfaces
             }
             catch (Exception)
             {
-                MessageBox.Show("Invalid name!");
+                MessageBox.Show("Invalid name! Try again.");
                 return;
             }
             try

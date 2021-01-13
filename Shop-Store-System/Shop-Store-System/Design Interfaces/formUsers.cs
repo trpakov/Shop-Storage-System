@@ -207,7 +207,6 @@ namespace Shop_Store_System.Design_Interfaces
                 MessageBox.Show("Invalid input");
                 return;
             }
-            //user.AddedBy = 1;
 
             //---------------------------------------------------------------------------------------
             string loggedUser = formLogin.loggedIn;

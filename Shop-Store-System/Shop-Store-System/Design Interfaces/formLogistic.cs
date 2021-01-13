@@ -62,7 +62,7 @@ namespace Shop_Store_System.Design_Interfaces
             }
             catch (Exception)
             {
-                MessageBox.Show("Invalid contact!");
+                MessageBox.Show("Invalid contact! Try again.");
                 return;
             }
             try
@@ -78,7 +78,7 @@ namespace Shop_Store_System.Design_Interfaces
             }
             catch (Exception)
             {
-                MessageBox.Show("Invalid input!");
+                MessageBox.Show("Invalid input! Try again.");
                 return;
             }
 
@@ -148,10 +148,19 @@ namespace Shop_Store_System.Design_Interfaces
 
             try
             {
+                logistic.Contact = txtContact.Text;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Invalid contact! Try again.");
+                return;
+            }
+
+            try
+            {
                 logistic.Empleyee = cmbEmployee.Text;
                 logistic.FirstNameEmployee = txtFirstName.Text;
                 logistic.LastNameEmployee = txtLastName.Text;
-                logistic.Contact = txtContact.Text;
                 logistic.Address = txtAddress.Text;
                 logistic.Date = txtDate.Text;
                 logistic.Description = txtDescription.Text;
@@ -297,7 +306,7 @@ namespace Shop_Store_System.Design_Interfaces
             }
             catch (Exception)
             {
-                MessageBox.Show("Select quantity!");
+                MessageBox.Show("Select quantity first!");
                 return;
             }
 

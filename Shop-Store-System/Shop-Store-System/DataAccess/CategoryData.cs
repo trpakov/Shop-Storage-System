@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace Shop_Store_System.DataAccess
 {
-    class CategoryData:Category,ICrudCategory
+    class CategoryData : Category,ICrudCategory
     {
-        static string myconnstrng = ConfigurationManager.ConnectionStrings["connstrng"].ConnectionString;
+        public string myconnstrng = ConfigurationManager.ConnectionStrings["connstrng"].ConnectionString;
 
         //Вземане на данните
         public DataTable Select()
