@@ -27,7 +27,7 @@ namespace Shop_Store_System.DataAccess
             SqlConnection conn = new SqlConnection(myconnstrng);
             try
             {
-                string sql = "INSERT INTO table_transactions (type, dea_cust_id, description, grandTotal, transaction_date, tax, discount, paid_amount, return_amount, added_by) VALUES (@type, @dea_cust_id, @description, @grandTotal, @transaction_date, @tax, @discount, @paid_amount, @return_amount, @added_by); SELECT @@IDENTITY;";
+                string sql = "INSERT INTO table_transactions (type, dea_cust_id, description, grandTotal, transaction_date, tax, discount, paid_amount, return_amount, added_by, added_by_name) VALUES (@type, @dea_cust_id, @description, @grandTotal, @transaction_date, @tax, @discount, @paid_amount, @return_amount, @added_by, @added_by_name); SELECT @@IDENTITY;";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
@@ -41,6 +41,8 @@ namespace Shop_Store_System.DataAccess
                 cmd.Parameters.AddWithValue("@paid_amount", transaction.PaidAmount);
                 cmd.Parameters.AddWithValue("@return_amount", transaction.ReturnAmount);
                 cmd.Parameters.AddWithValue("@added_by", transaction.AddedBy);
+                cmd.Parameters.AddWithValue("@added_by_name", transaction.AddedByName);
+
 
                 conn.Open();
 

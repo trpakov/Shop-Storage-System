@@ -35,6 +35,7 @@ namespace Shop_Store_System.Design_Interfaces
             dgvTransactions.Columns[8].HeaderText = "Paid Amount";
             dgvTransactions.Columns[9].HeaderText = "Return Amount";
             dgvTransactions.Columns[10].HeaderText = "Added By ID";
+            dgvTransactions.Columns[11].HeaderText = "Added By Name";
 
         }
 

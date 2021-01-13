@@ -56,7 +56,7 @@ namespace Shop_Store_System.DataAccess
 
             try
             {
-                string sql = "INSERT INTO table_dealer_customer (type, name, email, contact, address, added_date, added_by) VALUES (@type, @name, @email, @contact, @address, @added_date, @added_by)";
+                string sql = "INSERT INTO table_dealer_customer (type, name, email, contact, address, added_date, added_by, added_by_name) VALUES (@type, @name, @email, @contact, @address, @added_date, @added_by, @added_by_name)";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
@@ -67,6 +67,7 @@ namespace Shop_Store_System.DataAccess
                 cmd.Parameters.AddWithValue("@address", dealerAndCustomer.Address);
                 cmd.Parameters.AddWithValue("@added_date", dealerAndCustomer.AddedDate);
                 cmd.Parameters.AddWithValue("@added_by", dealerAndCustomer.AddedBy);
+                cmd.Parameters.AddWithValue("@added_by_name", dealerAndCustomer.AddedByName);
 
                 conn.Open();
 
@@ -102,7 +103,7 @@ namespace Shop_Store_System.DataAccess
 
             try
             {
-                string sql = "UPDATE table_dealer_customer SET type=@type, name=@name, email=@email, contact=@contact, address=@address, added_date=@added_date, added_by=@added_by WHERE id=@id";
+                string sql = "UPDATE table_dealer_customer SET type=@type, name=@name, email=@email, contact=@contact, address=@address, added_date=@added_date, added_by=@added_by, added_by_name=@added_by_name WHERE id=@id";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
@@ -113,6 +114,7 @@ namespace Shop_Store_System.DataAccess
                 cmd.Parameters.AddWithValue("@address", dealerAndCustomer.Address);
                 cmd.Parameters.AddWithValue("@added_date", dealerAndCustomer.AddedDate);
                 cmd.Parameters.AddWithValue("@added_by", dealerAndCustomer.AddedBy);
+                cmd.Parameters.AddWithValue("@added_by_name", dealerAndCustomer.AddedByName);
                 cmd.Parameters.AddWithValue("@id", dealerAndCustomer.Id);
 
                 conn.Open();

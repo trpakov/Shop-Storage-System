@@ -88,7 +88,7 @@ namespace Shop_Store_System.Design_Interfaces
             User usr = userData.GetIDFromUsername(loggedUser);
 
             user.AddedBy = usr.Id;
-
+            user.AddedByName = loggedUser;
 
             //Вкарване на данни в базата данни
             bool success = userData.Insert(user);
@@ -125,6 +125,8 @@ namespace Shop_Store_System.Design_Interfaces
             dgvUsers.Columns[9].HeaderText = "User Type";
             dgvUsers.Columns[10].HeaderText = "Added Date";
             dgvUsers.Columns[11].HeaderText = "Added By ID";
+            dgvUsers.Columns[12].HeaderText = "Added By Name";
+
 
         }
 
@@ -226,6 +228,7 @@ namespace Shop_Store_System.Design_Interfaces
             User usr = userData.GetIDFromUsername(loggedUser);
 
             user.AddedBy = usr.Id;
+            user.AddedByName = loggedUser;
             //---------------------------------------------------------------------------------------
 
             //Редактиране на данните в базата данни

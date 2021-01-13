@@ -36,6 +36,7 @@ namespace Shop_Store_System.Design_Interfaces
             User user = userData.GetIDFromUsername(loggedUser);
 
             category.AddedBy = user.Id;
+            category.AddedByName = loggedUser;
 
             //Вкарване на данните в базата данни
             bool success = categoryData.Insert(category);
@@ -71,8 +72,7 @@ namespace Shop_Store_System.Design_Interfaces
             dgvCategories.Columns[2].HeaderText = "Description";
             dgvCategories.Columns[3].HeaderText = "Added Date";
             dgvCategories.Columns[4].HeaderText = "Added By ID";
-
-
+            dgvCategories.Columns[5].HeaderText = "Added By Name";
         }
 
         private void dgvCategories_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -96,6 +96,7 @@ namespace Shop_Store_System.Design_Interfaces
             User user = userData.GetIDFromUsername(loggedUser);
 
             category.AddedBy = user.Id;
+            category.AddedByName = loggedUser;
 
             bool success = categoryData.Update(category);
 

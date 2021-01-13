@@ -67,6 +67,7 @@ namespace Shop_Store_System.BusinessLogic
 
         public decimal ReturnAmount { get; set; }
         public int AddedBy { get; set; }
+        public string AddedByName { get; set; }
         public DataTable TransactionDetails { get; set; }
     }
 }

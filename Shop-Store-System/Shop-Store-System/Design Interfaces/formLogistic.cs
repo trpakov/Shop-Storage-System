@@ -49,6 +49,7 @@ namespace Shop_Store_System.Design_Interfaces
             dgvLogistic.Columns[8].HeaderText = "Total Price";
             dgvLogistic.Columns[9].HeaderText = "Added Date";
             dgvLogistic.Columns[10].HeaderText = "Added By ID";
+            dgvLogistic.Columns[11].HeaderText = "Added By Name";
 
             //Зареждане на категориите в комбо бокса
             cmbEmployee.DataSource = logisticDT;
@@ -98,6 +99,7 @@ namespace Shop_Store_System.Design_Interfaces
             User user = userData.GetIDFromUsername(loggedUsr);
 
             logistic.AddedBy = user.Id;
+            logistic.AddedByName = loggedUsr;
 
             bool success = logisticData.Insert(logistic);
 
@@ -188,6 +190,7 @@ namespace Shop_Store_System.Design_Interfaces
             User user = userData.GetIDFromUsername(loggedUsr);
 
             logistic.AddedBy = user.Id;
+            logistic.AddedByName = loggedUsr;
 
             bool success = logisticData.Update(logistic);
 

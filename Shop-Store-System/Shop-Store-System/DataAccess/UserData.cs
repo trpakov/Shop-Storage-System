@@ -64,7 +64,7 @@ namespace Shop_Store_System.DataAccess
 
             try
             {
-                String sql = "INSERT INTO table_users (first_name, last_name, email, username, password, contact, address, gender, user_type, added_date, added_by) VALUES (@first_name, @last_name, @email, @username, @password, @contact, @address, @gender, @user_type, @added_date, @added_by)";
+                String sql = "INSERT INTO table_users (first_name, last_name, email, username, password, contact, address, gender, user_type, added_date, added_by, added_by_name) VALUES (@first_name, @last_name, @email, @username, @password, @contact, @address, @gender, @user_type, @added_date, @added_by, @added_by_name)";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
@@ -79,6 +79,7 @@ namespace Shop_Store_System.DataAccess
                 cmd.Parameters.AddWithValue("@user_type", user.UserType ?? (object)DBNull.Value);
                 cmd.Parameters.AddWithValue("@added_date", user.AddedDate);
                 cmd.Parameters.AddWithValue("@added_by", user.AddedBy);
+                cmd.Parameters.AddWithValue("@added_by_name", user.AddedByName);
 
                 conn.Open();
 
@@ -113,7 +114,7 @@ namespace Shop_Store_System.DataAccess
 
             try
             {
-                string sql = "UPDATE table_users SET first_name=@first_name, last_name=@last_name, email=@email, username=@username, password=@password, contact=@contact, address=@address, gender=@gender, user_type=@user_type, added_date=@added_date, added_by=@added_by WHERE id=@id";
+                string sql = "UPDATE table_users SET first_name=@first_name, last_name=@last_name, email=@email, username=@username, password=@password, contact=@contact, address=@address, gender=@gender, user_type=@user_type, added_date=@added_date, added_by=@added_by, added_by_name=@added_by_name WHERE id=@id";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
@@ -128,6 +129,7 @@ namespace Shop_Store_System.DataAccess
                 cmd.Parameters.AddWithValue("@user_type", user.UserType);
                 cmd.Parameters.AddWithValue("@added_date", user.AddedDate);
                 cmd.Parameters.AddWithValue("@added_by", user.AddedBy);
+                cmd.Parameters.AddWithValue("@added_by_name", user.AddedByName);
                 cmd.Parameters.AddWithValue("@id", user.Id);
 
                 conn.Open();

@@ -60,7 +60,9 @@ namespace Shop_Store_System.Design_Interfaces
 
             string loggedUsr = formLogin.loggedIn;
             User user = userData.GetIDFromUsername(loggedUsr);
+
             dealerCustomer.AddedBy = user.Id;
+            dealerCustomer.AddedByName = loggedUsr;
 
             bool success = dealerCustomerData.Insert(dealerCustomer);
 
@@ -100,7 +102,7 @@ namespace Shop_Store_System.Design_Interfaces
             dgvDeaCust.Columns[5].HeaderText = "Address";
             dgvDeaCust.Columns[6].HeaderText = "Added Date";
             dgvDeaCust.Columns[7].HeaderText = "Added By ID";
-
+            dgvDeaCust.Columns[8].HeaderText = "Added By Name";
         }
 
         private void dgvDeaCust_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -154,7 +156,9 @@ namespace Shop_Store_System.Design_Interfaces
 
             string loggedUsr = formLogin.loggedIn;
             User user = userData.GetIDFromUsername(loggedUsr);
+
             dealerCustomer.AddedBy = user.Id;
+            dealerCustomer.AddedByName = loggedUsr;
 
             bool success = dealerCustomerData.Update(dealerCustomer);
 

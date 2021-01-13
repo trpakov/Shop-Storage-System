@@ -59,7 +59,7 @@ namespace Shop_Store_System.DataAccess
             try
             {
                 //Създаване на query
-                string sql = "INSERT INTO table_categories (title, description, added_date, added_by) VALUES (@title, @description, @added_date, @added_by)";
+                string sql = "INSERT INTO table_categories (title, description, added_date, added_by, added_by_name) VALUES (@title, @description, @added_date, @added_by, @added_by_name)";
 
                 //Creating SQL Command to pass values in our query
                 SqlCommand cmd = new SqlCommand(sql, conn);
@@ -68,6 +68,7 @@ namespace Shop_Store_System.DataAccess
                 cmd.Parameters.AddWithValue("@description", category.Description);
                 cmd.Parameters.AddWithValue("@added_date", category.AddedDate);
                 cmd.Parameters.AddWithValue("@added_by", category.AddedBy);
+                cmd.Parameters.AddWithValue("@added_by_name", category.AddedByName);
 
                 conn.Open();
 
@@ -104,7 +105,7 @@ namespace Shop_Store_System.DataAccess
 
             try
             {
-                string sql = "UPDATE table_categories SET title=@title, description=@description, added_date=@added_date, added_by=@added_by WHERE id=@id";
+                string sql = "UPDATE table_categories SET title=@title, description=@description, added_date=@added_date, added_by=@added_by, added_by_name=@added_by_name WHERE id=@id";
 
                 //SQL команда за изпълнение на query-то
                 SqlCommand cmd = new SqlCommand(sql, conn);
@@ -113,6 +114,7 @@ namespace Shop_Store_System.DataAccess
                 cmd.Parameters.AddWithValue("@description", category.Description);
                 cmd.Parameters.AddWithValue("@added_date", category.AddedDate);
                 cmd.Parameters.AddWithValue("@added_by", category.AddedBy);
+                cmd.Parameters.AddWithValue("@added_by_name", category.AddedByName);
                 cmd.Parameters.AddWithValue("@id", category.Id);
 
                 conn.Open();

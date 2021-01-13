@@ -41,6 +41,7 @@ namespace Shop_Store_System.Design_Interfaces
             dgvProducts.Columns[5].HeaderText = "Quantity";
             dgvProducts.Columns[6].HeaderText = "Added Date";
             dgvProducts.Columns[7].HeaderText = "Added By ID";
+            dgvProducts.Columns[8].HeaderText = "Added By Name";
         }
 
         private void cmbCategories_SelectedIndexChanged(object sender, EventArgs e)

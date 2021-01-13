@@ -61,7 +61,7 @@ namespace Shop_Store_System.DataAccess
 
             try
             {
-                String sql = "INSERT INTO table_logistic (employee, first_name_employee, last_name_employee, address, contact, date, description, price, added_date, added_by) VALUES (@employee, @first_name_employee, @last_name_employee, @address, @contact, @date, @description, @price, @added_date, @added_by)";
+                String sql = "INSERT INTO table_logistic (employee, first_name_employee, last_name_employee, address, contact, date, description, price, added_date, added_by, added_by_name) VALUES (@employee, @first_name_employee, @last_name_employee, @address, @contact, @date, @description, @price, @added_date, @added_by, @added_by_name)";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
@@ -75,6 +75,7 @@ namespace Shop_Store_System.DataAccess
                 cmd.Parameters.AddWithValue("@price", logistic.Price);
                 cmd.Parameters.AddWithValue("@added_date", logistic.AddedDate);
                 cmd.Parameters.AddWithValue("@added_by", logistic.AddedBy);
+                cmd.Parameters.AddWithValue("@added_by_name", logistic.AddedByName);
 
                 conn.Open();
 
@@ -110,7 +111,7 @@ namespace Shop_Store_System.DataAccess
 
             try
             {
-                String sql = "UPDATE table_logistic SET employee=@employee, first_name_employee=@first_name_employee, last_name_employee=@last_name_employee, address=@address, contact=@contact, date=@date, description=@description, price=@price, added_date=@added_date, added_by=@added_by WHERE id=@id";
+                String sql = "UPDATE table_logistic SET employee=@employee, first_name_employee=@first_name_employee, last_name_employee=@last_name_employee, address=@address, contact=@contact, date=@date, description=@description, price=@price, added_date=@added_date, added_by=@added_by, added_by_name=@added_by_name WHERE id=@id";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
@@ -124,6 +125,7 @@ namespace Shop_Store_System.DataAccess
                 cmd.Parameters.AddWithValue("@price", logistic.Price);
                 cmd.Parameters.AddWithValue("@added_date", logistic.AddedDate);
                 cmd.Parameters.AddWithValue("@added_by", logistic.AddedBy);
+                cmd.Parameters.AddWithValue("@added_by_name", logistic.AddedByName);
                 cmd.Parameters.AddWithValue("@id", logistic.Id);
 
                 conn.Open();

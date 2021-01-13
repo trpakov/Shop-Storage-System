@@ -247,6 +247,7 @@ namespace Shop_Store_System.Design_Interfaces
             User user = userData.GetIDFromUsername(username);
 
             transaction.AddedBy = user.Id;
+            transaction.AddedByName = username;
             transaction.TransactionDetails = transactionTable;
 
             bool success = false;
@@ -276,6 +277,7 @@ namespace Shop_Store_System.Design_Interfaces
                     transactionDetail.DealerCustomerId = dealerCustomer.Id;
                     transactionDetail.AddedDate = DateTime.Now;
                     transactionDetail.AddedBy = user.Id;
+                    transactionDetail.AddedByName = username;
 
                     //Вземане на типа purchase/sales за намаляне или увеличаване на количеството на продуктите 
                     string transactionType = labelTop.Text;

@@ -97,6 +97,7 @@ namespace Shop_Store_System.BusinesLogic
         public string UserType { get; set; }
         public DateTime AddedDate { get; set; }
         public int AddedBy { get; set; }
+        public string AddedByName { get; set; }
     }
 
 }

@@ -30,6 +30,7 @@ namespace Shop_Store_System.Design_Interfaces
             string loggedUsr = formLogin.loggedIn;
 
             DataTable logisticDT = personalData.DisplayLogisticByUsername(loggedUsr);
+            
 
             cmbDate.DataSource = logisticDT;
 
@@ -44,6 +45,18 @@ namespace Shop_Store_System.Design_Interfaces
 
             DataTable dt = personalData.DisplayLogisticnByDate(date, loggedUsr);
             dgvLogistic.DataSource = dt;
+            dgvLogistic.Columns[0].HeaderText = "Logistic ID";
+            dgvLogistic.Columns[1].HeaderText = "Employee";
+            dgvLogistic.Columns[2].HeaderText = "Employee Name";
+            dgvLogistic.Columns[3].HeaderText = "Employee Last Name";
+            dgvLogistic.Columns[4].HeaderText = "Address";
+            dgvLogistic.Columns[5].HeaderText = "Contact";
+            dgvLogistic.Columns[6].HeaderText = "Date";
+            dgvLogistic.Columns[7].HeaderText = "Description";
+            dgvLogistic.Columns[8].HeaderText = "Total Price";
+            dgvLogistic.Columns[9].HeaderText = "Added Date";
+            dgvLogistic.Columns[10].HeaderText = "Added By ID";
+            dgvLogistic.Columns[11].HeaderText = "Added By Name";
         }
 
         private void btnAll_Click(object sender, EventArgs e)
@@ -52,6 +65,18 @@ namespace Shop_Store_System.Design_Interfaces
 
             DataTable dt = personalData.DisplayLogisticByUsername(loggedUsr);
             dgvLogistic.DataSource = dt;
+            dgvLogistic.Columns[0].HeaderText = "Logistic ID";
+            dgvLogistic.Columns[1].HeaderText = "Employee";
+            dgvLogistic.Columns[2].HeaderText = "Employee Name";
+            dgvLogistic.Columns[3].HeaderText = "Employee Last Name";
+            dgvLogistic.Columns[4].HeaderText = "Address";
+            dgvLogistic.Columns[5].HeaderText = "Contact";
+            dgvLogistic.Columns[6].HeaderText = "Date";
+            dgvLogistic.Columns[7].HeaderText = "Description";
+            dgvLogistic.Columns[8].HeaderText = "Total Price";
+            dgvLogistic.Columns[9].HeaderText = "Added Date";
+            dgvLogistic.Columns[10].HeaderText = "Added By ID";
+            dgvLogistic.Columns[11].HeaderText = "Added By Name";
         }
 
         private void btnDelivered_Click(object sender, EventArgs e)

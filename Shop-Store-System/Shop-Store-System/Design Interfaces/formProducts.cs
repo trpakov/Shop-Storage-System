@@ -46,8 +46,8 @@ namespace Shop_Store_System.Design_Interfaces
             dgvProducts.Columns[4].HeaderText = "Price";
             dgvProducts.Columns[5].HeaderText = "Quantity";
             dgvProducts.Columns[6].HeaderText = "Added Date";
-            dgvProducts.Columns[7].HeaderText = "Added By";
-
+            dgvProducts.Columns[7].HeaderText = "Added By ID";
+            dgvProducts.Columns[8].HeaderText = "Added By Name";
 
         }
 
@@ -83,6 +83,7 @@ namespace Shop_Store_System.Design_Interfaces
             User user = userData.GetIDFromUsername(loggedUsr);
 
             product.AddedBy = user.Id;
+            product.AddedByName = loggedUsr;
 
             bool success = productData.Insert(product);
 
@@ -154,6 +155,7 @@ namespace Shop_Store_System.Design_Interfaces
             User user = userData.GetIDFromUsername(loggedUsr);
 
             product.AddedBy = user.Id;
+            product.AddedByName = loggedUsr;
 
             bool success = productData.Update(product);
 

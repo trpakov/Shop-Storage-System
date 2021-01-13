@@ -61,7 +61,7 @@ namespace Shop_Store_System.DataAccess
 
             try
             {
-                String sql = "INSERT INTO table_products (name, category, description, rate, qty, added_date, added_by) VALUES (@name, @category, @description, @rate, @qty, @added_date, @added_by)";
+                String sql = "INSERT INTO table_products (name, category, description, rate, qty, added_date, added_by, added_by_name) VALUES (@name, @category, @description, @rate, @qty, @added_date, @added_by, @added_by_name)";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
@@ -72,6 +72,7 @@ namespace Shop_Store_System.DataAccess
                 cmd.Parameters.AddWithValue("@qty", product.Quantity);
                 cmd.Parameters.AddWithValue("@added_date", product.AddedDate);
                 cmd.Parameters.AddWithValue("@added_by", product.AddedBy);
+                cmd.Parameters.AddWithValue("@added_by_name", product.AddedByName);
 
                 conn.Open();
 
@@ -107,7 +108,7 @@ namespace Shop_Store_System.DataAccess
 
             try
             {
-                String sql = "UPDATE table_products SET name=@name, category=@category, description=@description, rate=@rate, added_date=@added_date, added_by=@added_by WHERE id=@id";
+                String sql = "UPDATE table_products SET name=@name, category=@category, description=@description, rate=@rate, added_date=@added_date, added_by=@added_by, added_by_name=@added_by_name WHERE id=@id";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
@@ -118,6 +119,7 @@ namespace Shop_Store_System.DataAccess
                 cmd.Parameters.AddWithValue("@qty", product.Quantity);
                 cmd.Parameters.AddWithValue("@added_date", product.AddedDate);
                 cmd.Parameters.AddWithValue("@added_by", product.AddedBy);
+                cmd.Parameters.AddWithValue("@added_by_name", product.AddedByName);
                 cmd.Parameters.AddWithValue("@id", product.Id);
 
                 conn.Open();

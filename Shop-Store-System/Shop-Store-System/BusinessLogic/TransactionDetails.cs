@@ -16,5 +16,6 @@ namespace Shop_Store_System.BusinessLogic
         public int DealerCustomerId { get; set; }
         public DateTime AddedDate { get; set; }
         public int AddedBy { get; set; }
+        public string AddedByName { get; set; }
     }
 }
