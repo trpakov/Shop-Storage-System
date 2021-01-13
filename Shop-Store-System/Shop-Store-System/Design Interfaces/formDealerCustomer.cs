@@ -92,6 +92,15 @@ namespace Shop_Store_System.Design_Interfaces
         {
             DataTable dt = dealerCustomerData.Select();
             dgvDeaCust.DataSource = dt;
+            dgvDeaCust.Columns[0].HeaderText = "Dealer or Customer ID";
+            dgvDeaCust.Columns[1].HeaderText = "Type";
+            dgvDeaCust.Columns[2].HeaderText = "Name";
+            dgvDeaCust.Columns[3].HeaderText = "Email";
+            dgvDeaCust.Columns[4].HeaderText = "Contact";
+            dgvDeaCust.Columns[5].HeaderText = "Address";
+            dgvDeaCust.Columns[6].HeaderText = "Added Date";
+            dgvDeaCust.Columns[7].HeaderText = "Added By ID";
+
         }
 
         private void dgvDeaCust_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)

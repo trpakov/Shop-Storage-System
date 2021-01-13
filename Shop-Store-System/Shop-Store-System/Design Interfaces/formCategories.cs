@@ -66,6 +66,13 @@ namespace Shop_Store_System.Design_Interfaces
         {
             DataTable dt = categoryData.Select();
             dgvCategories.DataSource = dt;
+            dgvCategories.Columns[0].HeaderText = "Category ID";
+            dgvCategories.Columns[1].HeaderText = "Title";
+            dgvCategories.Columns[2].HeaderText = "Description";
+            dgvCategories.Columns[3].HeaderText = "Added Date";
+            dgvCategories.Columns[4].HeaderText = "Added By ID";
+
+
         }
 
         private void dgvCategories_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)

@@ -113,6 +113,19 @@ namespace Shop_Store_System.Design_Interfaces
         {
             DataTable dt = userData.Select();
             dgvUsers.DataSource = dt;
+            dgvUsers.Columns[0].HeaderText = "User ID";
+            dgvUsers.Columns[1].HeaderText = "First Name";
+            dgvUsers.Columns[2].HeaderText = "Last Name";
+            dgvUsers.Columns[3].HeaderText = "Email";
+            dgvUsers.Columns[4].HeaderText = "Username";
+            dgvUsers.Columns[5].HeaderText = "Password";
+            dgvUsers.Columns[6].HeaderText = "Contact";
+            dgvUsers.Columns[7].HeaderText = "Address";
+            dgvUsers.Columns[8].HeaderText = "Gender";
+            dgvUsers.Columns[9].HeaderText = "User Type";
+            dgvUsers.Columns[10].HeaderText = "Added Date";
+            dgvUsers.Columns[11].HeaderText = "Added By ID";
+
         }
 
         private void Clear()

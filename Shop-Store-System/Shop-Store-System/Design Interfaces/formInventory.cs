@@ -33,6 +33,14 @@ namespace Shop_Store_System.Design_Interfaces
             //Визуализация на всички продукти
             DataTable productDataTable = productData.Select();
             dgvProducts.DataSource = productDataTable;
+            dgvProducts.Columns[0].HeaderText = "Product ID";
+            dgvProducts.Columns[1].HeaderText = "Product Name";
+            dgvProducts.Columns[2].HeaderText = "Category";
+            dgvProducts.Columns[3].HeaderText = "Description";
+            dgvProducts.Columns[4].HeaderText = "Price";
+            dgvProducts.Columns[5].HeaderText = "Quantity";
+            dgvProducts.Columns[6].HeaderText = "Added Date";
+            dgvProducts.Columns[7].HeaderText = "Added By ID";
         }
 
         private void cmbCategories_SelectedIndexChanged(object sender, EventArgs e)

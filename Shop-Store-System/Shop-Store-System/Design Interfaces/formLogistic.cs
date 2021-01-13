@@ -38,6 +38,17 @@ namespace Shop_Store_System.Design_Interfaces
 
             DataTable dt = logisticData.Select();
             dgvLogistic.DataSource = dt;
+            dgvLogistic.Columns[0].HeaderText = "Logistic ID";
+            dgvLogistic.Columns[1].HeaderText = "Employee";
+            dgvLogistic.Columns[2].HeaderText = "Employee Name";
+            dgvLogistic.Columns[3].HeaderText = "Employee Last Name";
+            dgvLogistic.Columns[4].HeaderText = "Address";
+            dgvLogistic.Columns[5].HeaderText = "Contact";
+            dgvLogistic.Columns[6].HeaderText = "Date";
+            dgvLogistic.Columns[7].HeaderText = "Description";
+            dgvLogistic.Columns[8].HeaderText = "Total Price";
+            dgvLogistic.Columns[9].HeaderText = "Added Date";
+            dgvLogistic.Columns[10].HeaderText = "Added By ID";
 
             //Зареждане на категориите в комбо бокса
             cmbEmployee.DataSource = logisticDT;

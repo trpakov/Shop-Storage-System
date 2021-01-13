@@ -39,6 +39,16 @@ namespace Shop_Store_System.Design_Interfaces
 
             DataTable dt = productData.Select();
             dgvProducts.DataSource = dt;
+            dgvProducts.Columns[0].HeaderText = "Product ID";
+            dgvProducts.Columns[1].HeaderText = "Product Name";
+            dgvProducts.Columns[2].HeaderText = "Category";
+            dgvProducts.Columns[3].HeaderText = "Description";
+            dgvProducts.Columns[4].HeaderText = "Price";
+            dgvProducts.Columns[5].HeaderText = "Quantity";
+            dgvProducts.Columns[6].HeaderText = "Added Date";
+            dgvProducts.Columns[7].HeaderText = "Added By";
+
+
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

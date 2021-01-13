@@ -24,6 +24,18 @@ namespace Shop_Store_System.Design_Interfaces
         {
             DataTable dt = transactionData.DisplayAllTransactions();
             dgvTransactions.DataSource = dt;
+            dgvTransactions.Columns[0].HeaderText = "Transaction ID";
+            dgvTransactions.Columns[1].HeaderText = "Type";
+            dgvTransactions.Columns[2].HeaderText = "Dealer Customer Id";
+            dgvTransactions.Columns[3].HeaderText = "Description";
+            dgvTransactions.Columns[4].HeaderText = "Total";
+            dgvTransactions.Columns[5].HeaderText = "Date";
+            dgvTransactions.Columns[6].HeaderText = "Tax";
+            dgvTransactions.Columns[7].HeaderText = "Discount";
+            dgvTransactions.Columns[8].HeaderText = "Paid Amount";
+            dgvTransactions.Columns[9].HeaderText = "Return Amount";
+            dgvTransactions.Columns[10].HeaderText = "Added By ID";
+
         }
 
         private void cmbTransactionType_SelectedIndexChanged(object sender, EventArgs e)
