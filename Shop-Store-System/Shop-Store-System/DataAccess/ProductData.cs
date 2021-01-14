@@ -61,12 +61,13 @@ namespace Shop_Store_System.DataAccess
 
             try
             {
-                String sql = "INSERT INTO table_products (name, category, description, rate, qty, added_date, added_by, added_by_name) VALUES (@name, @category, @description, @rate, @qty, @added_date, @added_by, @added_by_name)";
+                String sql = "INSERT INTO table_products (name, category, special_number, description, rate, qty, added_date, added_by, added_by_name) VALUES (@name, @category, @special_number, @description, @rate, @qty, @added_date, @added_by, @added_by_name)";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
                 cmd.Parameters.AddWithValue("@name", product.Name);
                 cmd.Parameters.AddWithValue("@category", product.Category);
+                cmd.Parameters.AddWithValue("@special_number", product.SpecialNumber);
                 cmd.Parameters.AddWithValue("@description", product.Description);
                 cmd.Parameters.AddWithValue("@rate", product.Rate);
                 cmd.Parameters.AddWithValue("@qty", product.Quantity);
@@ -108,12 +109,13 @@ namespace Shop_Store_System.DataAccess
 
             try
             {
-                String sql = "UPDATE table_products SET name=@name, category=@category, description=@description, rate=@rate, added_date=@added_date, added_by=@added_by, added_by_name=@added_by_name WHERE id=@id";
+                String sql = "UPDATE table_products SET name=@name, category=@category, special_number=@special_number, description=@description, rate=@rate, added_date=@added_date, added_by=@added_by, added_by_name=@added_by_name WHERE id=@id";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
                 cmd.Parameters.AddWithValue("@name", product.Name);
                 cmd.Parameters.AddWithValue("@category", product.Category);
+                cmd.Parameters.AddWithValue("@special_number", product.SpecialNumber);
                 cmd.Parameters.AddWithValue("@description", product.Description);
                 cmd.Parameters.AddWithValue("@rate", product.Rate);
                 cmd.Parameters.AddWithValue("@qty", product.Quantity);
@@ -196,7 +198,7 @@ namespace Shop_Store_System.DataAccess
 
             try
             {
-                string sql = "SELECT * FROM table_products WHERE id LIKE '%" + keywords + "%' OR name LIKE '%" + keywords + "%' OR category LIKE '%" + keywords + "%'";
+                string sql = "SELECT * FROM table_products WHERE special_number LIKE '%" + keywords + "%' OR name LIKE '%" + keywords + "%' OR category LIKE '%" + keywords + "%'";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
@@ -229,7 +231,7 @@ namespace Shop_Store_System.DataAccess
 
             try
             {
-                string sql = "SELECT name, rate, qty FROM table_products WHERE id LIKE '%" + keyword + "%' OR name LIKE '%" + keyword + "%'";
+                string sql = "SELECT name, special_number, rate, qty FROM table_products WHERE special_number LIKE '%" + keyword + "%' OR name LIKE '%" + keyword + "%'";
 
                 SqlDataAdapter adapter = new SqlDataAdapter(sql, conn);
 
@@ -240,6 +242,7 @@ namespace Shop_Store_System.DataAccess
                 if (dt.Rows.Count > 0)
                 {
                     product.Name = dt.Rows[0]["name"].ToString();
+                    product.SpecialNumber = dt.Rows[0]["special_number"].ToString();
                     product.Rate = decimal.Parse(dt.Rows[0]["rate"].ToString());
                     product.Quantity = decimal.Parse(dt.Rows[0]["qty"].ToString());
                 }

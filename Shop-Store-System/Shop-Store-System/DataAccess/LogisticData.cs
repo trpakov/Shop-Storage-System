@@ -235,7 +235,7 @@ namespace Shop_Store_System.DataAccess
 
             try
             {
-                string sql = "SELECT id, name, rate, qty FROM table_products WHERE name LIKE '%" + keyword + "%'";
+                string sql = "SELECT id, name, special_number, rate, qty FROM table_products WHERE name LIKE '%" + keyword + "%' OR special_number LIKE '%" + keyword + "%'";
 
                 SqlDataAdapter adapter = new SqlDataAdapter(sql, conn);
 
@@ -247,6 +247,7 @@ namespace Shop_Store_System.DataAccess
                 {
                     product.Id = int.Parse(dt.Rows[0]["id"].ToString());
                     product.Name = dt.Rows[0]["name"].ToString();
+                    product.SpecialNumber = dt.Rows[0]["special_number"].ToString();
                     product.Rate = decimal.Parse(dt.Rows[0]["rate"].ToString());
                     product.Quantity = decimal.Parse(dt.Rows[0]["qty"].ToString());
                 }

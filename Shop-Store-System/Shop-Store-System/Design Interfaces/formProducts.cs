@@ -42,12 +42,13 @@ namespace Shop_Store_System.Design_Interfaces
             dgvProducts.Columns[0].HeaderText = "Product ID";
             dgvProducts.Columns[1].HeaderText = "Product Name";
             dgvProducts.Columns[2].HeaderText = "Category";
-            dgvProducts.Columns[3].HeaderText = "Description";
-            dgvProducts.Columns[4].HeaderText = "Price";
-            dgvProducts.Columns[5].HeaderText = "Quantity";
-            dgvProducts.Columns[6].HeaderText = "Added Date";
-            dgvProducts.Columns[7].HeaderText = "Added By ID";
-            dgvProducts.Columns[8].HeaderText = "Added By Name";
+            dgvProducts.Columns[3].HeaderText = "Special Product Number";
+            dgvProducts.Columns[4].HeaderText = "Description";
+            dgvProducts.Columns[5].HeaderText = "Price";
+            dgvProducts.Columns[6].HeaderText = "Quantity";
+            dgvProducts.Columns[7].HeaderText = "Added Date";
+            dgvProducts.Columns[8].HeaderText = "Added By ID";
+            dgvProducts.Columns[9].HeaderText = "Added By Name";
 
         }
 
@@ -67,6 +68,7 @@ namespace Shop_Store_System.Design_Interfaces
             {
                 product.Name = txtName.Text;
                 product.Category = cmbCategory.Text;
+                product.SpecialNumber = txtSpecialNumber.Text;
                 product.Description = txtDescription.Text;
                 product.Quantity = 0;
                 product.AddedDate = DateTime.Now;
@@ -109,6 +111,7 @@ namespace Shop_Store_System.Design_Interfaces
             txtDescription.Text = "";
             txtRate.Text = "";
             txtSearch.Text = "";
+            txtSpecialNumber.Text = "";
         }
 
         private void dgvProducts_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -119,8 +122,9 @@ namespace Shop_Store_System.Design_Interfaces
             txtID.Text = dgvProducts.Rows[rowIndex].Cells[0].Value.ToString();
             txtName.Text = dgvProducts.Rows[rowIndex].Cells[1].Value.ToString();
             cmbCategory.Text = dgvProducts.Rows[rowIndex].Cells[2].Value.ToString();
-            txtDescription.Text = dgvProducts.Rows[rowIndex].Cells[3].Value.ToString();
-            txtRate.Text = dgvProducts.Rows[rowIndex].Cells[4].Value.ToString();
+            txtSpecialNumber.Text = dgvProducts.Rows[rowIndex].Cells[3].Value.ToString();
+            txtDescription.Text = dgvProducts.Rows[rowIndex].Cells[4].Value.ToString();
+            txtRate.Text = dgvProducts.Rows[rowIndex].Cells[5].Value.ToString();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -141,6 +145,7 @@ namespace Shop_Store_System.Design_Interfaces
             {
                 product.Name = txtName.Text;
                 product.Category = cmbCategory.Text;
+                product.SpecialNumber = txtSpecialNumber.Text;
                 product.Description = txtDescription.Text;
                 product.Quantity = 0;
                 product.AddedDate = DateTime.Now;

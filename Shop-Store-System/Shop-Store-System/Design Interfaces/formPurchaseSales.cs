@@ -31,6 +31,7 @@ namespace Shop_Store_System.Design_Interfaces
         DataTable transactionTable = new DataTable();
 
         string description = null;
+        string specialNumber = null;
 
         private void formPurchaseSales_Load(object sender, EventArgs e)
         {
@@ -38,6 +39,7 @@ namespace Shop_Store_System.Design_Interfaces
             labelTop.Text = type;
 
             //Създаване на колони за таблицата
+            transactionTable.Columns.Add("Special Number");
             transactionTable.Columns.Add("Product Name");
             transactionTable.Columns.Add("Rate");
             transactionTable.Columns.Add("Quantity");
@@ -85,6 +87,8 @@ namespace Shop_Store_System.Design_Interfaces
             //Търсене на продукт в базата данни
             Product product = productData.GetProductsForTransaction(keyword);
 
+            specialNumber = product.SpecialNumber;
+
             //Визуализация на намерените данни в текстовите кутии
             txtProductName.Text = product.Name;
             txtInventory.Text = product.Quantity.ToString();
@@ -123,11 +127,13 @@ namespace Shop_Store_System.Design_Interfaces
                 description = description + txtProductName.Text + "=" + txtQty.Text + " ";
 
                 //Добавяне на продукта в таблицата
-                transactionTable.Rows.Add(productName, price, qty, total);
+                transactionTable.Rows.Add(specialNumber, productName, price, qty, total);
 
                 dgvAddedProducts.DataSource = transactionTable;
 
                 txtSubTotal.Text = subTotal.ToString();
+
+                specialNumber = null;
 
                 //Clear the Textboxes
                 txtSearchProduct.Text = "";
@@ -267,13 +273,13 @@ namespace Shop_Store_System.Design_Interfaces
                     TransactionDetails transactionDetail = new TransactionDetails();
 
                     //Вземане на id чрез името на продукта
-                    string productName = transactionTable.Rows[i][0].ToString();
+                    string productName = transactionTable.Rows[i][1].ToString();
                     Product product = productData.GetProductIDFromName(productName);
 
                     transactionDetail.ProductId = product.Id;
-                    transactionDetail.Rate = decimal.Parse(transactionTable.Rows[i][1].ToString());
-                    transactionDetail.Quantity = decimal.Parse(transactionTable.Rows[i][2].ToString());
-                    transactionDetail.Total = Math.Round(decimal.Parse(transactionTable.Rows[i][3].ToString()), 2);
+                    transactionDetail.Rate = decimal.Parse(transactionTable.Rows[i][2].ToString());
+                    transactionDetail.Quantity = decimal.Parse(transactionTable.Rows[i][3].ToString());
+                    transactionDetail.Total = Math.Round(decimal.Parse(transactionTable.Rows[i][4].ToString()), 2);
                     transactionDetail.DealerCustomerId = dealerCustomer.Id;
                     transactionDetail.AddedDate = DateTime.Now;
                     transactionDetail.AddedBy = user.Id;

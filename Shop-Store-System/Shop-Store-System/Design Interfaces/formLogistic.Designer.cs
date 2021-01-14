@@ -189,7 +189,7 @@
             this.dgvLogistic.Name = "dgvLogistic";
             this.dgvLogistic.RowHeadersWidth = 51;
             this.dgvLogistic.RowTemplate.Height = 24;
-            this.dgvLogistic.Size = new System.Drawing.Size(1517, 283);
+            this.dgvLogistic.Size = new System.Drawing.Size(1587, 283);
             this.dgvLogistic.TabIndex = 20;
             this.dgvLogistic.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvLogistic_RowHeaderMouseClick);
             // 
@@ -366,7 +366,7 @@
             this.dgvAddedProducts.Name = "dgvAddedProducts";
             this.dgvAddedProducts.RowHeadersWidth = 51;
             this.dgvAddedProducts.RowTemplate.Height = 24;
-            this.dgvAddedProducts.Size = new System.Drawing.Size(583, 302);
+            this.dgvAddedProducts.Size = new System.Drawing.Size(653, 302);
             this.dgvAddedProducts.TabIndex = 38;
             // 
             // btnAddProduct
@@ -385,7 +385,7 @@
             // txtTotal
             // 
             this.txtTotal.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotal.Location = new System.Drawing.Point(1181, 322);
+            this.txtTotal.Location = new System.Drawing.Point(1241, 323);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(337, 30);
             this.txtTotal.TabIndex = 41;
@@ -395,7 +395,7 @@
             // 
             this.labelTotal.AutoSize = true;
             this.labelTotal.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotal.Location = new System.Drawing.Point(1118, 326);
+            this.labelTotal.Location = new System.Drawing.Point(1178, 327);
             this.labelTotal.Name = "labelTotal";
             this.labelTotal.Size = new System.Drawing.Size(50, 23);
             this.labelTotal.TabIndex = 40;
@@ -404,7 +404,7 @@
             // txtDescription
             // 
             this.txtDescription.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescription.Location = new System.Drawing.Point(1274, 358);
+            this.txtDescription.Location = new System.Drawing.Point(1334, 359);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(244, 91);
@@ -427,7 +427,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1541, 797);
+            this.ClientSize = new System.Drawing.Size(1611, 797);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.txtTotal);

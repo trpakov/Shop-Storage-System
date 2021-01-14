@@ -30,6 +30,7 @@ namespace Shop_Store_System.Design_Interfaces
         int productId;
 
         string description = null;
+        string specialNumber = null;
 
         private void formLogistic_Load(object sender, EventArgs e)
         {
@@ -59,6 +60,7 @@ namespace Shop_Store_System.Design_Interfaces
             cmbEmployee.ValueMember = "username";
 
             //Създаване на колони за таблицата
+            transactionTable.Columns.Add("Special Number");
             transactionTable.Columns.Add("Product Name");
             transactionTable.Columns.Add("Rate");
             transactionTable.Columns.Add("Quantity");
@@ -106,6 +108,8 @@ namespace Shop_Store_System.Design_Interfaces
             if (success == true)
             {
                 MessageBox.Show("Logistic Added Successfully.");
+
+
 
                 Clear();
 
@@ -303,6 +307,8 @@ namespace Shop_Store_System.Design_Interfaces
 
             productId = product.Id;
 
+            specialNumber = product.SpecialNumber;
+
             txtProductName.Text = product.Name;
             txtInventory.Text = product.Quantity.ToString();
             txtRate.Text = product.Rate.ToString();
@@ -340,7 +346,7 @@ namespace Shop_Store_System.Design_Interfaces
                 description = description + txtProductName.Text + "=" + txtQty.Text + " ";
 
                 //Добавяне на продукта в таблицата
-                transactionTable.Rows.Add(productName, price, qty, total);
+                transactionTable.Rows.Add(specialNumber, productName, price, qty, total);
 
                 dgvAddedProducts.DataSource = transactionTable;
 
@@ -351,10 +357,12 @@ namespace Shop_Store_System.Design_Interfaces
 
                 if (changeQuantity)
                 {
+                    specialNumber = null;
                     MessageBox.Show("Added Sucesfully!");
                 }
                 else
                 {
+                    specialNumber = null;
                     MessageBox.Show("No products in inventory!");
                     return;
                 }

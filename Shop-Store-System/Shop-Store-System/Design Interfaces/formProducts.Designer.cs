@@ -45,6 +45,8 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
+            this.txtSpecialNumber = new System.Windows.Forms.TextBox();
+            this.labelSpecialNumber = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,7 +84,7 @@
             // 
             this.labelDescription.AutoSize = true;
             this.labelDescription.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDescription.Location = new System.Drawing.Point(8, 191);
+            this.labelDescription.Location = new System.Drawing.Point(8, 243);
             this.labelDescription.Name = "labelDescription";
             this.labelDescription.Size = new System.Drawing.Size(100, 23);
             this.labelDescription.TabIndex = 3;
@@ -92,7 +94,7 @@
             // 
             this.labelRate.AutoSize = true;
             this.labelRate.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRate.Location = new System.Drawing.Point(59, 408);
+            this.labelRate.Location = new System.Drawing.Point(59, 445);
             this.labelRate.Name = "labelRate";
             this.labelRate.Size = new System.Drawing.Size(49, 23);
             this.labelRate.TabIndex = 4;
@@ -128,7 +130,7 @@
             // txtDescription
             // 
             this.txtDescription.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescription.Location = new System.Drawing.Point(126, 193);
+            this.txtDescription.Location = new System.Drawing.Point(126, 240);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(329, 181);
@@ -137,7 +139,7 @@
             // txtRate
             // 
             this.txtRate.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRate.Location = new System.Drawing.Point(126, 405);
+            this.txtRate.Location = new System.Drawing.Point(126, 442);
             this.txtRate.Name = "txtRate";
             this.txtRate.Size = new System.Drawing.Size(329, 30);
             this.txtRate.TabIndex = 9;
@@ -149,16 +151,16 @@
             this.dgvProducts.Name = "dgvProducts";
             this.dgvProducts.RowHeadersWidth = 51;
             this.dgvProducts.RowTemplate.Height = 24;
-            this.dgvProducts.Size = new System.Drawing.Size(789, 470);
+            this.dgvProducts.Size = new System.Drawing.Size(789, 495);
             this.dgvProducts.TabIndex = 10;
             this.dgvProducts.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvProducts_RowHeaderMouseClick);
             // 
             // txtSearch
             // 
             this.txtSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(642, 21);
+            this.txtSearch.Location = new System.Drawing.Point(663, 21);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(437, 30);
+            this.txtSearch.Size = new System.Drawing.Size(522, 30);
             this.txtSearch.TabIndex = 12;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
@@ -166,7 +168,7 @@
             // 
             this.labelSearch.AutoSize = true;
             this.labelSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSearch.Location = new System.Drawing.Point(571, 24);
+            this.labelSearch.Location = new System.Drawing.Point(592, 24);
             this.labelSearch.Name = "labelSearch";
             this.labelSearch.Size = new System.Drawing.Size(65, 23);
             this.labelSearch.TabIndex = 11;
@@ -177,7 +179,7 @@
             this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(19, 476);
+            this.btnAdd.Location = new System.Drawing.Point(15, 501);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(116, 55);
             this.btnAdd.TabIndex = 13;
@@ -190,7 +192,7 @@
             this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(154, 476);
+            this.btnUpdate.Location = new System.Drawing.Point(150, 501);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(116, 55);
             this.btnUpdate.TabIndex = 14;
@@ -203,7 +205,7 @@
             this.btnDelete.BackColor = System.Drawing.Color.Red;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(288, 476);
+            this.btnDelete.Location = new System.Drawing.Point(284, 501);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(116, 55);
             this.btnDelete.TabIndex = 15;
@@ -216,7 +218,7 @@
             this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(420, 476);
+            this.btnClear.Location = new System.Drawing.Point(416, 501);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(116, 55);
             this.btnClear.TabIndex = 16;
@@ -224,11 +226,31 @@
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
+            // txtSpecialNumber
+            // 
+            this.txtSpecialNumber.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSpecialNumber.Location = new System.Drawing.Point(126, 184);
+            this.txtSpecialNumber.Name = "txtSpecialNumber";
+            this.txtSpecialNumber.Size = new System.Drawing.Size(329, 30);
+            this.txtSpecialNumber.TabIndex = 18;
+            // 
+            // labelSpecialNumber
+            // 
+            this.labelSpecialNumber.AutoSize = true;
+            this.labelSpecialNumber.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSpecialNumber.Location = new System.Drawing.Point(16, 191);
+            this.labelSpecialNumber.Name = "labelSpecialNumber";
+            this.labelSpecialNumber.Size = new System.Drawing.Size(92, 23);
+            this.labelSpecialNumber.TabIndex = 17;
+            this.labelSpecialNumber.Text = "Special №:";
+            // 
             // formProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1369, 557);
+            this.ClientSize = new System.Drawing.Size(1369, 576);
+            this.Controls.Add(this.txtSpecialNumber);
+            this.Controls.Add(this.labelSpecialNumber);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
@@ -275,5 +297,7 @@
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.TextBox txtSpecialNumber;
+        private System.Windows.Forms.Label labelSpecialNumber;
     }
 }
