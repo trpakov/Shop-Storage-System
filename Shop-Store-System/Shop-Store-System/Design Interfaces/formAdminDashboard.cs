@@ -79,5 +79,11 @@ namespace Shop_Store_System
             login.Show();
             this.Hide();
         }
+
+        private void deliveriesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formArchiveDeliveries archive = new formArchiveDeliveries();
+            archive.Show();
+        }
     }
 }

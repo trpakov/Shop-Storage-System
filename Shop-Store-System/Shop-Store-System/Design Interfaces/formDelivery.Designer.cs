@@ -1,6 +1,6 @@
 ﻿namespace Shop_Store_System.Design_Interfaces
 {
-    partial class formPersonalLogistic
+    partial class formDelivery
     {
         /// <summary>
         /// Required designer variable.
@@ -97,7 +97,7 @@
             this.btnDelivered.UseVisualStyleBackColor = false;
             this.btnDelivered.Click += new System.EventHandler(this.btnDelivered_Click);
             // 
-            // formPersonalLogistic
+            // formDelivery
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -107,9 +107,9 @@
             this.Controls.Add(this.btnAll);
             this.Controls.Add(this.cmbDate);
             this.Controls.Add(this.labelDate);
-            this.Name = "formPersonalLogistic";
+            this.Name = "formDelivery";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Personal Logistic";
+            this.Text = "Delivery";
             this.Load += new System.EventHandler(this.formPersonalLogistic_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLogistic)).EndInit();
             this.ResumeLayout(false);

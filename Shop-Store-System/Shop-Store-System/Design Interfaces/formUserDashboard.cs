@@ -61,7 +61,7 @@ namespace Shop_Store_System
 
         private void logisticToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            formPersonalLogistic logistic = new formPersonalLogistic();
+            formDelivery logistic = new formDelivery();
             logistic.Show();
         }
 

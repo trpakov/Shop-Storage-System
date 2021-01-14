@@ -34,6 +34,7 @@
             this.inventoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dealerAndCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logisticToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.labelDescription = new System.Windows.Forms.Label();
             this.labelAppLName = new System.Windows.Forms.Label();
             this.labelAppFName = new System.Windows.Forms.Label();
@@ -41,7 +42,6 @@
             this.labelLoginUser = new System.Windows.Forms.Label();
             this.panelFooter = new System.Windows.Forms.Panel();
             this.labelFooter = new System.Windows.Forms.Label();
-            this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripTop.SuspendLayout();
             this.panelFooter.SuspendLayout();
             this.SuspendLayout();
@@ -93,9 +93,16 @@
             // logisticToolStripMenuItem
             // 
             this.logisticToolStripMenuItem.Name = "logisticToolStripMenuItem";
-            this.logisticToolStripMenuItem.Size = new System.Drawing.Size(74, 24);
-            this.logisticToolStripMenuItem.Text = "Logistic";
+            this.logisticToolStripMenuItem.Size = new System.Drawing.Size(77, 24);
+            this.logisticToolStripMenuItem.Text = "Delivery";
             this.logisticToolStripMenuItem.Click += new System.EventHandler(this.logisticToolStripMenuItem_Click);
+            // 
+            // logOutToolStripMenuItem
+            // 
+            this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(74, 24);
+            this.logOutToolStripMenuItem.Text = "Log out";
+            this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             // 
             // labelDescription
             // 
@@ -168,13 +175,6 @@
             this.labelFooter.Size = new System.Drawing.Size(231, 28);
             this.labelFooter.TabIndex = 0;
             this.labelFooter.Text = "Developed by: Group 12";
-            // 
-            // logOutToolStripMenuItem
-            // 
-            this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
-            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(74, 24);
-            this.logOutToolStripMenuItem.Text = "Log out";
-            this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             // 
             // formUserDashboard
             // 

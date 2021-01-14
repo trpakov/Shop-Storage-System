@@ -13,9 +13,9 @@ using System.Windows.Forms;
 
 namespace Shop_Store_System.Design_Interfaces
 {
-    public partial class formPersonalLogistic : Form
+    public partial class formDelivery : Form
     {
-        public formPersonalLogistic()
+        public formDelivery()
         {
             InitializeComponent();
         }
@@ -25,13 +25,14 @@ namespace Shop_Store_System.Design_Interfaces
         PersonalLogisticData personalData = new PersonalLogisticData();
         Logistic logistic = new Logistic();
 
+        ArchiveLogisticData archive = new ArchiveLogisticData();
+
         private void formPersonalLogistic_Load(object sender, EventArgs e)
         {
             string loggedUsr = formLogin.loggedIn;
 
             DataTable logisticDT = personalData.DisplayLogisticByUsername(loggedUsr);
             
-
             cmbDate.DataSource = logisticDT;
 
             cmbDate.DisplayMember = "date";
@@ -82,6 +83,19 @@ namespace Shop_Store_System.Design_Interfaces
         private void btnDelivered_Click(object sender, EventArgs e)
         {
             string loggedUsr = formLogin.loggedIn;
+
+            bool inserted = archive.Insert(logistic);
+
+            if (inserted)
+            {
+                MessageBox.Show("Logistic saved.");
+            }
+            else
+            {
+                MessageBox.Show("Failed.");
+                return;
+            }
+
             bool success = logisticData.Delete(logistic);
 
             if (success == true)
@@ -102,6 +116,17 @@ namespace Shop_Store_System.Design_Interfaces
             int rowIndex = e.RowIndex;
 
             logistic.Id = int.Parse(dgvLogistic.Rows[rowIndex].Cells[0].Value.ToString());
+            logistic.Empleyee = dgvLogistic.Rows[rowIndex].Cells[1].Value.ToString();
+            logistic.FirstNameEmployee = dgvLogistic.Rows[rowIndex].Cells[2].Value.ToString();
+            logistic.LastNameEmployee = dgvLogistic.Rows[rowIndex].Cells[3].Value.ToString();
+            logistic.Address = dgvLogistic.Rows[rowIndex].Cells[4].Value.ToString();
+            logistic.Contact = dgvLogistic.Rows[rowIndex].Cells[5].Value.ToString();
+            logistic.Date = dgvLogistic.Rows[rowIndex].Cells[6].Value.ToString();
+            logistic.Description = dgvLogistic.Rows[rowIndex].Cells[7].Value.ToString();
+            logistic.Price = decimal.Parse(dgvLogistic.Rows[rowIndex].Cells[8].Value.ToString());
+            logistic.AddedDate = DateTime.Parse(dgvLogistic.Rows[rowIndex].Cells[9].Value.ToString());
+            logistic.AddedBy = int.Parse(dgvLogistic.Rows[rowIndex].Cells[10].Value.ToString());
+            logistic.AddedByName = dgvLogistic.Rows[rowIndex].Cells[11].Value.ToString();
         }
     }
 }

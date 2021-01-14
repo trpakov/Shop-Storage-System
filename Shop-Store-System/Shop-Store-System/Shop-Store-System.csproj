@@ -56,6 +56,7 @@
     <Compile Include="BusinessLogic\TransactionDetails.cs" />
     <Compile Include="BusinessLogic\Transaction.cs" />
     <Compile Include="BusinessLogic\User.cs" />
+    <Compile Include="DataAccess\ArchiveLogisticData.cs" />
     <Compile Include="DataAccess\CategoryData.cs" />
     <Compile Include="DataAccess\DealerCustomerData.cs" />
     <Compile Include="DataAccess\LoginData.cs" />
@@ -70,6 +71,12 @@
     </Compile>
     <Compile Include="Design Interfaces\formAdminDashboard.Designer.cs">
       <DependentUpon>formAdminDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design Interfaces\formArchiveDeliveries.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design Interfaces\formArchiveDeliveries.Designer.cs">
+      <DependentUpon>formArchiveDeliveries.cs</DependentUpon>
     </Compile>
     <Compile Include="Design Interfaces\formCategories.cs">
       <SubType>Form</SubType>
@@ -101,11 +108,11 @@
     <Compile Include="Design Interfaces\formLogistic.Designer.cs">
       <DependentUpon>formLogistic.cs</DependentUpon>
     </Compile>
-    <Compile Include="Design Interfaces\formPersonalLogistic.cs">
+    <Compile Include="Design Interfaces\formDelivery.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Design Interfaces\formPersonalLogistic.Designer.cs">
-      <DependentUpon>formPersonalLogistic.cs</DependentUpon>
+    <Compile Include="Design Interfaces\formDelivery.Designer.cs">
+      <DependentUpon>formDelivery.cs</DependentUpon>
     </Compile>
     <Compile Include="Design Interfaces\formProducts.cs">
       <SubType>Form</SubType>
@@ -153,6 +160,9 @@
     <EmbeddedResource Include="Design Interfaces\formAdminDashboard.resx">
       <DependentUpon>formAdminDashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Design Interfaces\formArchiveDeliveries.resx">
+      <DependentUpon>formArchiveDeliveries.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Design Interfaces\formCategories.resx">
       <DependentUpon>formCategories.cs</DependentUpon>
     </EmbeddedResource>
@@ -168,8 +178,8 @@
     <EmbeddedResource Include="Design Interfaces\formLogistic.resx">
       <DependentUpon>formLogistic.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Design Interfaces\formPersonalLogistic.resx">
-      <DependentUpon>formPersonalLogistic.cs</DependentUpon>
+    <EmbeddedResource Include="Design Interfaces\formDelivery.resx">
+      <DependentUpon>formDelivery.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Design Interfaces\formProducts.resx">
       <DependentUpon>formProducts.cs</DependentUpon>
