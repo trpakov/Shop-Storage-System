@@ -85,5 +85,11 @@ namespace Shop_Store_System
             formArchiveDeliveries archive = new formArchiveDeliveries();
             archive.Show();
         }
+
+        private void referenceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formOrderReference refForm = new formOrderReference();
+            refForm.Show();
+        }
     }
 }

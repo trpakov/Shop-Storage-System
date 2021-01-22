@@ -169,5 +169,35 @@ namespace Shop_Store_System.DataAccess
             return dt;
         }
 
+        public DataTable GeTransactionsInRange(string date1, string date2)
+        {
+            SqlConnection conn = new SqlConnection(myconnstrng);
+
+            DataTable dt = new DataTable();
+
+            try
+            {
+
+                string sql = "SELECT * FROM table_transactions WHERE transaction_date >= '" + date1 + "' AND transaction_date <= '" + date2 + "'";
+
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+                conn.Open();
+
+                adapter.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return dt;
+        }
     }
 }
