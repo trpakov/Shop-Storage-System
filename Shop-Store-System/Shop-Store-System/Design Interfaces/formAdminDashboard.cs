@@ -1,4 +1,5 @@
-﻿using Shop_Store_System.Design_Interfaces;
+﻿using Shop_Store_System.DataAccess;
+using Shop_Store_System.Design_Interfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,8 +17,9 @@ namespace Shop_Store_System
         public formAdminDashboard()
         {
             InitializeComponent();
+            ShowLowQuantity();
         }
-
+        ProductData productData = new ProductData();
         private void usersToolStripMenuItem_Click(object sender, EventArgs e)
         {
             formUsers user = new formUsers();
@@ -90,6 +92,12 @@ namespace Shop_Store_System
         {
             formOrderReference refForm = new formOrderReference();
             refForm.Show();
+        }
+
+        public void ShowLowQuantity()
+        {
+            DataTable dt = productData.DisplayProductsByLowQuantity();
+            dataGridViewLowQuantity.DataSource = dt;
         }
     }
 }

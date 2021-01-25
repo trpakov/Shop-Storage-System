@@ -92,6 +92,14 @@ namespace Shop_Store_System.Design_Interfaces
             //Визуализация на намерените данни в текстовите кутии
             txtProductName.Text = product.Name;
             txtInventory.Text = product.Quantity.ToString();
+            if (product.Quantity < 5)
+            {
+                txtInventory.BackColor = Color.Red;
+            }
+            else
+            {
+                txtInventory.BackColor = Color.White;
+            }
             txtRate.Text = product.Rate.ToString();
         }
 

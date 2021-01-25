@@ -1,4 +1,5 @@
-﻿using Shop_Store_System.Design_Interfaces;
+﻿using Shop_Store_System.DataAccess;
+using Shop_Store_System.Design_Interfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,8 +17,9 @@ namespace Shop_Store_System
         public formUserDashboard()
         {
             InitializeComponent();
+            ShowLowQuantity();
         }
-
+        ProductData productData = new ProductData();
         public static string transactionType;
 
         private void formUserDashboard_FormClosed(object sender, FormClosedEventArgs e)
@@ -70,6 +72,12 @@ namespace Shop_Store_System
             formLogin login = new formLogin();
             login.Show();
             this.Hide();
+        }
+
+        public void ShowLowQuantity()
+        {
+            DataTable dt = productData.DisplayProductsByLowQuantity();
+            lowQuantityProducts.DataSource = dt;
         }
     }
 }
