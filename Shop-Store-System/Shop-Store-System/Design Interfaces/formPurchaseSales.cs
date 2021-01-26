@@ -110,6 +110,8 @@ namespace Shop_Store_System.Design_Interfaces
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            decimal total=0;
+            decimal subTotal=0;
             string productName = txtProductName.Text;
             decimal price = decimal.Parse(txtRate.Text);
             decimal qty;
@@ -124,11 +126,19 @@ namespace Shop_Store_System.Design_Interfaces
                 return;
             }
 
-            decimal total = price * qty;
-
-            decimal subTotal = decimal.Parse(txtSubTotal.Text);
-            subTotal = subTotal + total;
-
+            if (qty < decimal.Parse(txtInventory.Text))
+            {
+                total = price * qty;
+                subTotal = decimal.Parse(txtSubTotal.Text);
+                subTotal = subTotal + total;
+            }
+            else
+            {
+                MessageBox.Show("Invalid quantity!");
+                txtQty.Text = string.Empty;
+                return;
+            }
+            
             //Проверка дали има избран продукт 
             if (productName == "")
             {

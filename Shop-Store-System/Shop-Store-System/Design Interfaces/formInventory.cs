@@ -64,11 +64,9 @@ namespace Shop_Store_System.Design_Interfaces
         private void dgvProducts_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             if (e.ColumnIndex == 6 && e.Value != null)
-            {
-                //Fetch the value of the second Column.
+            {             
                 int quantity = Convert.ToInt32(e.Value);
 
-                //Apply Background color based on value.
                 if (quantity < 5)
                 {
                     dgvProducts.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Red;
