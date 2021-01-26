@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.dgvOrders = new System.Windows.Forms.DataGridView();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
@@ -206,6 +206,7 @@
             this.cmbTransactionType.Margin = new System.Windows.Forms.Padding(2);
             this.cmbTransactionType.Name = "cmbTransactionType";
             this.cmbTransactionType.Size = new System.Drawing.Size(148, 27);
+            this.cmbTransactionType.Sorted = true;
             this.cmbTransactionType.TabIndex = 12;
             this.cmbTransactionType.SelectionChangeCommitted += new System.EventHandler(this.FilterData);
             // 
@@ -232,6 +233,7 @@
             this.comboBoxAddedBy.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxAddedBy.Name = "comboBoxAddedBy";
             this.comboBoxAddedBy.Size = new System.Drawing.Size(148, 27);
+            this.comboBoxAddedBy.Sorted = true;
             this.comboBoxAddedBy.TabIndex = 14;
             this.comboBoxAddedBy.SelectionChangeCommitted += new System.EventHandler(this.FilterData);
             // 
@@ -258,6 +260,7 @@
             this.comboBoxDealCust.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxDealCust.Name = "comboBoxDealCust";
             this.comboBoxDealCust.Size = new System.Drawing.Size(148, 27);
+            this.comboBoxDealCust.Sorted = true;
             this.comboBoxDealCust.TabIndex = 16;
             this.comboBoxDealCust.SelectionChangeCommitted += new System.EventHandler(this.FilterData);
             // 
@@ -345,21 +348,21 @@
             // 
             this.chartTypes.BackColor = System.Drawing.SystemColors.Control;
             this.chartTypes.BorderlineColor = System.Drawing.SystemColors.Control;
-            chartArea3.BackColor = System.Drawing.SystemColors.Control;
-            chartArea3.Name = "ChartArea1";
-            this.chartTypes.ChartAreas.Add(chartArea3);
+            chartArea1.BackColor = System.Drawing.SystemColors.Control;
+            chartArea1.Name = "ChartArea1";
+            this.chartTypes.ChartAreas.Add(chartArea1);
             this.chartTypes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chartTypes.Location = new System.Drawing.Point(3, 3);
             this.chartTypes.Name = "chartTypes";
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series3.CustomProperties = "PieDrawingStyle=SoftEdge, PieLabelStyle=Outside";
-            series3.EmptyPointStyle.IsValueShownAsLabel = true;
-            series3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            series3.IsValueShownAsLabel = true;
-            series3.Name = "Type";
-            series3.YValuesPerPoint = 2;
-            this.chartTypes.Series.Add(series3);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.CustomProperties = "PieDrawingStyle=SoftEdge, PieLabelStyle=Outside";
+            series1.EmptyPointStyle.IsValueShownAsLabel = true;
+            series1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            series1.IsValueShownAsLabel = true;
+            series1.Name = "Type";
+            series1.YValuesPerPoint = 2;
+            this.chartTypes.Series.Add(series1);
             this.chartTypes.Size = new System.Drawing.Size(622, 420);
             this.chartTypes.TabIndex = 28;
             this.chartTypes.Text = "Type";
@@ -368,16 +371,16 @@
             // 
             this.chartPrice.BackColor = System.Drawing.SystemColors.Control;
             this.chartPrice.BorderlineColor = System.Drawing.SystemColors.Control;
-            chartArea4.BackColor = System.Drawing.SystemColors.Control;
-            chartArea4.Name = "ChartArea1";
-            this.chartPrice.ChartAreas.Add(chartArea4);
+            chartArea2.BackColor = System.Drawing.SystemColors.Control;
+            chartArea2.Name = "ChartArea1";
+            this.chartPrice.ChartAreas.Add(chartArea2);
             this.chartPrice.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chartPrice.Location = new System.Drawing.Point(631, 3);
             this.chartPrice.Name = "chartPrice";
-            series4.ChartArea = "ChartArea1";
-            series4.Name = "Series1";
-            series4.YValuesPerPoint = 6;
-            this.chartPrice.Series.Add(series4);
+            series2.ChartArea = "ChartArea1";
+            series2.Name = "Series1";
+            series2.YValuesPerPoint = 6;
+            this.chartPrice.Series.Add(series2);
             this.chartPrice.Size = new System.Drawing.Size(623, 420);
             this.chartPrice.TabIndex = 29;
             this.chartPrice.Text = "chart1";

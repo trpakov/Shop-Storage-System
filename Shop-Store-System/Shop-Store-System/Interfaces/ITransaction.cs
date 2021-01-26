@@ -11,7 +11,7 @@ namespace Shop_Store_System.Interfaces
     interface ITransaction
     {
         DataTable DisplayAllTransactions();
-        DataTable GeTransactionsInRange(string date1, string date2);
+        DataTable GeTransactionsInRange(DateTime date1, DateTime date2);
 
         bool InsertTransaction(Transaction insertedTransaction, out int transactionID);
 
