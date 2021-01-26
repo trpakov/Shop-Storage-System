@@ -97,7 +97,7 @@ namespace Shop_Store_System.Design_Interfaces
             //Визуализация на намерените данни в текстовите кутии
             txtProductName.Text = product.Name;
             txtInventory.Text = product.Quantity.ToString();
-            if (product.Quantity < 5)
+            if (product.Quantity < 5 && txtProductName.Text!=string.Empty)
             {
                 txtInventory.BackColor = Color.Red;
             }
@@ -125,18 +125,18 @@ namespace Shop_Store_System.Design_Interfaces
                 MessageBox.Show("Select quantity!");
                 return;
             }
-
-            if (qty < decimal.Parse(txtInventory.Text))
+            string transactionType = labelTop.Text;
+            if (qty > decimal.Parse(txtInventory.Text) && transactionType== "Sales")
+            {
+                MessageBox.Show("Invalid quantity!");
+                txtQty.Text = string.Empty;
+                return;              
+            }
+            else
             {
                 total = price * qty;
                 subTotal = decimal.Parse(txtSubTotal.Text);
                 subTotal = subTotal + total;
-            }
-            else
-            {
-                MessageBox.Show("Invalid quantity!");
-                txtQty.Text = string.Empty;
-                return;
             }
             
             //Проверка дали има избран продукт 
