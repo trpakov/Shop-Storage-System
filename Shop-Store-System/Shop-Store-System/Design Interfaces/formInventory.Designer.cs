@@ -37,12 +37,15 @@
             // 
             // dgvProducts
             // 
+            this.dgvProducts.AllowUserToAddRows = false;
             this.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProducts.Location = new System.Drawing.Point(12, 70);
             this.dgvProducts.Name = "dgvProducts";
+            this.dgvProducts.ReadOnly = true;
+            this.dgvProducts.RowHeadersVisible = false;
             this.dgvProducts.RowHeadersWidth = 51;
             this.dgvProducts.RowTemplate.Height = 24;
-            this.dgvProducts.Size = new System.Drawing.Size(1165, 453);
+            this.dgvProducts.Size = new System.Drawing.Size(1039, 433);
             this.dgvProducts.TabIndex = 0;
             this.dgvProducts.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvProducts_CellFormatting);
             // 
@@ -84,7 +87,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1189, 535);
+            this.ClientSize = new System.Drawing.Size(1096, 539);
             this.Controls.Add(this.btnAll);
             this.Controls.Add(this.cmbCategories);
             this.Controls.Add(this.labelCategory);

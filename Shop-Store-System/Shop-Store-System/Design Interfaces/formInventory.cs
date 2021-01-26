@@ -33,7 +33,7 @@ namespace Shop_Store_System.Design_Interfaces
             //Визуализация на всички продукти
             DataTable productDataTable = productData.Select();
             dgvProducts.DataSource = productDataTable;
-            dgvProducts.Columns[0].HeaderText = "Product ID";
+            dgvProducts.Columns[0].Visible = false;
             dgvProducts.Columns[1].HeaderText = "Product Name";
             dgvProducts.Columns[2].HeaderText = "Category";
             dgvProducts.Columns[3].HeaderText = "Special Product Number";
@@ -41,7 +41,7 @@ namespace Shop_Store_System.Design_Interfaces
             dgvProducts.Columns[5].HeaderText = "Price";
             dgvProducts.Columns[6].HeaderText = "Quantity";
             dgvProducts.Columns[7].HeaderText = "Added Date";
-            dgvProducts.Columns[8].HeaderText = "Added By ID";
+            dgvProducts.Columns[8].Visible = false;
             dgvProducts.Columns[9].HeaderText = "Added By Name";
 
         }
