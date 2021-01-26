@@ -66,10 +66,10 @@ namespace Shop_Store_System.Design_Interfaces
         {
             if (!radioButtonAll.Checked)
             {
-                var date1 = dateTimePicker1.Value.Year + "/" + dateTimePicker1.Value.Month + "/" + dateTimePicker1.Value.Day;
-                var date2 = dateTimePicker2.Value.Year + "/" + dateTimePicker2.Value.Month + "/" + dateTimePicker2.Value.AddDays(1).Day;
+                //var date1 = dateTimePicker1.Value.Year + "/" + dateTimePicker1.Value.Month + "/" + dateTimePicker1.Value.Day;
+                //var date2 = dateTimePicker2.Value.Year + "/" + dateTimePicker2.Value.Month + "/" + dateTimePicker2.Value.AddDays(1).Day;
 
-                mainDT = transactionData.GeTransactionsInRange(date1, date2);
+                mainDT = transactionData.GeTransactionsInRange(dateTimePicker1.Value, dateTimePicker2.Value);
             }
             else
             {
@@ -89,8 +89,9 @@ namespace Shop_Store_System.Design_Interfaces
                     comboBoxAddedBy.Items.Add(row["added_by_name"]);
 
                 var dealCust = dcd.GetDeaCustNameFromID(int.Parse(row["dea_cust_id"].ToString()));
-                if (!comboBoxDealCust.Items.Contains(dealCust.Name))
-                    comboBoxDealCust.Items.Add(dealCust.Name);
+                var dealCustName = dealCust.Name ?? "Not Specified";
+                if (!comboBoxDealCust.Items.Contains(dealCustName))
+                    comboBoxDealCust.Items.Add(dealCustName);
             }
 
             cmbTransactionType.SelectedIndex = comboBoxAddedBy.SelectedIndex = comboBoxDealCust.SelectedIndex = 0;

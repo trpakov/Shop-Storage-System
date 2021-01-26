@@ -169,8 +169,11 @@ namespace Shop_Store_System.DataAccess
             return dt;
         }
 
-        public DataTable GeTransactionsInRange(string date1, string date2)
+        public DataTable GeTransactionsInRange(DateTime d1, DateTime d2)
         {
+            var date1 = d1.Year + "/" + d1.Month + "/" + d1.Day;
+            var date2 = d2.Year + "/" + d2.Month + "/" + d2.AddDays(1).Day;
+
             SqlConnection conn = new SqlConnection(myconnstrng);
 
             DataTable dt = new DataTable();
