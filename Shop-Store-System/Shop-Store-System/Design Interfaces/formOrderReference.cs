@@ -45,7 +45,7 @@ namespace Shop_Store_System.Design_Interfaces
             cmbTransactionType.Items.Add("All");
             comboBoxAddedBy.Items.Add("All");
             comboBoxDealCust.Items.Add("All");
-            cmbTransactionType.SelectedIndex = comboBoxAddedBy.SelectedIndex = comboBoxDealCust.SelectedIndex = 0;
+            cmbTransactionType.SelectedItem = comboBoxAddedBy.SelectedItem = comboBoxDealCust.SelectedItem = "All";
         }
 
         private void radioButtonAll_CheckedChanged(object sender, EventArgs e)
@@ -94,7 +94,7 @@ namespace Shop_Store_System.Design_Interfaces
                     comboBoxDealCust.Items.Add(dealCustName);
             }
 
-            cmbTransactionType.SelectedIndex = comboBoxAddedBy.SelectedIndex = comboBoxDealCust.SelectedIndex = 0;
+            cmbTransactionType.SelectedItem = comboBoxAddedBy.SelectedItem = comboBoxDealCust.SelectedItem = "All";
 
             dv = new DataView(mainDT);
             dgvOrders.DataSource = dv;
