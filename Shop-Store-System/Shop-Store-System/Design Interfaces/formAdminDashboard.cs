@@ -17,6 +17,7 @@ namespace Shop_Store_System
         public formAdminDashboard()
         {
             InitializeComponent();
+            dataGridViewLowQuantity.Hide();
             ShowLowQuantity();
         }
         ProductData productData = new ProductData();
@@ -98,6 +99,21 @@ namespace Shop_Store_System
         {
             DataTable dt = productData.DisplayProductsByLowQuantity();
             dataGridViewLowQuantity.DataSource = dt;
+            if (dataGridViewLowQuantity.Rows.Count != 0)
+            {
+                tableLabel.Text = "Products in low quantity:";
+                dataGridViewLowQuantity.Show();
+                dataGridViewLowQuantity.Columns[0].Visible = false;
+                dataGridViewLowQuantity.Columns[1].HeaderText = "Product Name";
+                dataGridViewLowQuantity.Columns[2].HeaderText = "Category";
+                dataGridViewLowQuantity.Columns[3].HeaderText = "Special Product Number";
+                dataGridViewLowQuantity.Columns[4].HeaderText = "Description";
+                dataGridViewLowQuantity.Columns[5].HeaderText = "Price";
+                dataGridViewLowQuantity.Columns[6].HeaderText = "Quantity";
+                dataGridViewLowQuantity.Columns[7].HeaderText = "Added Date";
+                dataGridViewLowQuantity.Columns[8].Visible = false;
+                dataGridViewLowQuantity.Columns[9].HeaderText = "Added By Name";
+            }
         }
     }
 }

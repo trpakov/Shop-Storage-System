@@ -43,6 +43,7 @@ namespace Shop_Store_System.Design_Interfaces
             dgvProducts.Columns[7].HeaderText = "Added Date";
             dgvProducts.Columns[8].HeaderText = "Added By ID";
             dgvProducts.Columns[9].HeaderText = "Added By Name";
+
         }
 
         private void cmbCategories_SelectedIndexChanged(object sender, EventArgs e)
@@ -51,6 +52,7 @@ namespace Shop_Store_System.Design_Interfaces
 
             DataTable dt = productData.DisplayProductsByCategory(category);
             dgvProducts.DataSource = dt;
+           
         }
 
         private void btnAll_Click(object sender, EventArgs e)
@@ -58,5 +60,25 @@ namespace Shop_Store_System.Design_Interfaces
             DataTable dt = productData.Select();
             dgvProducts.DataSource = dt;
         }
+
+        private void dgvProducts_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == 6 && e.Value != null)
+            {
+                //Fetch the value of the second Column.
+                int quantity = Convert.ToInt32(e.Value);
+
+                //Apply Background color based on value.
+                if (quantity < 5)
+                {
+                    dgvProducts.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Red;
+                }
+                if (quantity > 4)
+                {
+                    dgvProducts.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.White;
+                }
+            }
+        }
     }
 }
+

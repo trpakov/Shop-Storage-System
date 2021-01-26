@@ -17,6 +17,7 @@ namespace Shop_Store_System
         public formUserDashboard()
         {
             InitializeComponent();
+            lowQuantityProducts.Hide();
             ShowLowQuantity();
         }
         ProductData productData = new ProductData();
@@ -32,7 +33,7 @@ namespace Shop_Store_System
 
         private void formUserDashboard_Load(object sender, EventArgs e)
         {
-            labelLoggedUser.Text = formLogin.loggedIn;
+            labelLoggedUser.Text = formLogin.loggedIn;         
         }
 
         private void dealerAndCustomerToolStripMenuItem_Click(object sender, EventArgs e)
@@ -78,6 +79,22 @@ namespace Shop_Store_System
         {
             DataTable dt = productData.DisplayProductsByLowQuantity();
             lowQuantityProducts.DataSource = dt;
+            if (lowQuantityProducts.Rows.Count != 0)
+            {
+                tableLabel.Text = "Products in low quantity:";       
+                lowQuantityProducts.Show();
+                lowQuantityProducts.Columns[0].Visible = false;
+                lowQuantityProducts.Columns[1].HeaderText = "Product Name";
+                lowQuantityProducts.Columns[2].HeaderText = "Category";
+                lowQuantityProducts.Columns[3].HeaderText = "Special Product Number";
+                lowQuantityProducts.Columns[4].HeaderText = "Description";
+                lowQuantityProducts.Columns[5].HeaderText = "Price";
+                lowQuantityProducts.Columns[6].HeaderText = "Quantity";
+                lowQuantityProducts.Columns[7].HeaderText = "Added Date";
+                lowQuantityProducts.Columns[8].Visible = false;
+                lowQuantityProducts.Columns[9].HeaderText = "Added By Name";
+            }
+            
         }
     }
 }

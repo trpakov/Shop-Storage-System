@@ -43,6 +43,7 @@
             this.panelFooter = new System.Windows.Forms.Panel();
             this.labelFooter = new System.Windows.Forms.Label();
             this.lowQuantityProducts = new System.Windows.Forms.DataGridView();
+            this.tableLabel = new System.Windows.Forms.Label();
             this.menuStripTop.SuspendLayout();
             this.panelFooter.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lowQuantityProducts)).BeginInit();
@@ -180,19 +181,31 @@
             // 
             // lowQuantityProducts
             // 
+            this.lowQuantityProducts.AllowUserToAddRows = false;
             this.lowQuantityProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.lowQuantityProducts.Location = new System.Drawing.Point(12, 332);
+            this.lowQuantityProducts.Location = new System.Drawing.Point(12, 89);
             this.lowQuantityProducts.Name = "lowQuantityProducts";
+            this.lowQuantityProducts.ReadOnly = true;
             this.lowQuantityProducts.RowHeadersWidth = 51;
             this.lowQuantityProducts.RowTemplate.Height = 24;
-            this.lowQuantityProducts.Size = new System.Drawing.Size(394, 174);
+            this.lowQuantityProducts.Size = new System.Drawing.Size(525, 162);
             this.lowQuantityProducts.TabIndex = 13;
+            // 
+            // tableLabel
+            // 
+            this.tableLabel.AutoSize = true;
+            this.tableLabel.Location = new System.Drawing.Point(15, 69);
+            this.tableLabel.Name = "tableLabel";
+            this.tableLabel.Size = new System.Drawing.Size(181, 17);
+            this.tableLabel.TabIndex = 14;
+            this.tableLabel.Text = "No products in low quantity!";
             // 
             // formUserDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1390, 616);
+            this.Controls.Add(this.tableLabel);
             this.Controls.Add(this.lowQuantityProducts);
             this.Controls.Add(this.panelFooter);
             this.Controls.Add(this.labelDescription);
@@ -234,6 +247,7 @@
         private System.Windows.Forms.ToolStripMenuItem dealerAndCustomerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logisticToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
-        private System.Windows.Forms.DataGridView lowQuantityProducts;
+        private System.Windows.Forms.Label tableLabel;
+        public System.Windows.Forms.DataGridView lowQuantityProducts;
     }
 }

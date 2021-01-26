@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.pnlDeaCust = new System.Windows.Forms.Panel();
+            this.txtType = new System.Windows.Forms.TextBox();
+            this.labelType = new System.Windows.Forms.Label();
             this.dtpBillDate = new System.Windows.Forms.DateTimePicker();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.txtContact = new System.Windows.Forms.TextBox();
@@ -74,8 +76,6 @@
             this.labelDiscount = new System.Windows.Forms.Label();
             this.labelSubTotal = new System.Windows.Forms.Label();
             this.labelCalculationTitle = new System.Windows.Forms.Label();
-            this.txtType = new System.Windows.Forms.TextBox();
-            this.labelType = new System.Windows.Forms.Label();
             this.pnlDeaCust.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelDataGridView.SuspendLayout();
@@ -104,6 +104,24 @@
             this.pnlDeaCust.Name = "pnlDeaCust";
             this.pnlDeaCust.Size = new System.Drawing.Size(1421, 209);
             this.pnlDeaCust.TabIndex = 0;
+            // 
+            // txtType
+            // 
+            this.txtType.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtType.Location = new System.Drawing.Point(983, 158);
+            this.txtType.Name = "txtType";
+            this.txtType.Size = new System.Drawing.Size(284, 30);
+            this.txtType.TabIndex = 14;
+            // 
+            // labelType
+            // 
+            this.labelType.AutoSize = true;
+            this.labelType.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelType.Location = new System.Drawing.Point(906, 161);
+            this.labelType.Name = "labelType";
+            this.labelType.Size = new System.Drawing.Size(50, 23);
+            this.labelType.TabIndex = 13;
+            this.labelType.Text = "Type:";
             // 
             // dtpBillDate
             // 
@@ -558,24 +576,6 @@
             this.labelCalculationTitle.TabIndex = 0;
             this.labelCalculationTitle.Text = "Calculation Details";
             // 
-            // txtType
-            // 
-            this.txtType.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtType.Location = new System.Drawing.Point(983, 158);
-            this.txtType.Name = "txtType";
-            this.txtType.Size = new System.Drawing.Size(284, 30);
-            this.txtType.TabIndex = 14;
-            // 
-            // labelType
-            // 
-            this.labelType.AutoSize = true;
-            this.labelType.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelType.Location = new System.Drawing.Point(906, 161);
-            this.labelType.Name = "labelType";
-            this.labelType.Size = new System.Drawing.Size(50, 23);
-            this.labelType.TabIndex = 13;
-            this.labelType.Text = "Type:";
-            // 
             // formPurchaseSales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -588,6 +588,7 @@
             this.Name = "formPurchaseSales";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Purchase and Sales";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formPurchaseSales_FormClosing);
             this.Load += new System.EventHandler(this.formPurchaseSales_Load);
             this.pnlDeaCust.ResumeLayout(false);
             this.pnlDeaCust.PerformLayout();

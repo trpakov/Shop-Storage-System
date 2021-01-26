@@ -20,13 +20,18 @@ namespace Shop_Store_System.Design_Interfaces
         public formPurchaseSales()
         {
             InitializeComponent();
+           
         }
-
+   
         DealerCustomerData dealerCustomerData = new DealerCustomerData();
         ProductData productData = new ProductData();
         UserData userData = new UserData();
         TransactionData transactionData = new TransactionData();
         TransactionDetailsData transactionDetailData = new TransactionDetailsData();
+        formUserDashboard userDashboard = new formUserDashboard();
+
+
+
 
         DataTable transactionTable = new DataTable();
 
@@ -372,6 +377,12 @@ namespace Shop_Store_System.Design_Interfaces
             txtGrandTotal.Text = "0";
             txtPaidAmount.Text = "0";
             txtReturnAmount.Text = "0";
+        }
+
+        private void formPurchaseSales_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            userDashboard.Invalidate();
+            userDashboard.Update();
         }
     }
 }

@@ -44,6 +44,7 @@
             this.dgvProducts.RowTemplate.Height = 24;
             this.dgvProducts.Size = new System.Drawing.Size(1165, 453);
             this.dgvProducts.TabIndex = 0;
+            this.dgvProducts.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvProducts_CellFormatting);
             // 
             // labelCategory
             // 
@@ -99,10 +100,9 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgvProducts;
         private System.Windows.Forms.Label labelCategory;
         private System.Windows.Forms.ComboBox cmbCategories;
         private System.Windows.Forms.Button btnAll;
+        public System.Windows.Forms.DataGridView dgvProducts;
     }
 }
