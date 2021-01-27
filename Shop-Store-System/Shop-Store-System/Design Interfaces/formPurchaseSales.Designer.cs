@@ -588,7 +588,6 @@
             this.Name = "formPurchaseSales";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Purchase and Sales";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formPurchaseSales_FormClosing);
             this.Load += new System.EventHandler(this.formPurchaseSales_Load);
             this.pnlDeaCust.ResumeLayout(false);
             this.pnlDeaCust.PerformLayout();

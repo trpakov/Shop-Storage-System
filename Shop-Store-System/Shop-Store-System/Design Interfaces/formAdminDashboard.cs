@@ -17,8 +17,10 @@ namespace Shop_Store_System
         public formAdminDashboard()
         {
             InitializeComponent();
+            //A
             dataGridViewLowQuantity.Hide();
             ShowLowQuantity();
+            //
         }
         ProductData productData = new ProductData();
         private void usersToolStripMenuItem_Click(object sender, EventArgs e)
@@ -94,7 +96,7 @@ namespace Shop_Store_System
             formOrderReference refForm = new formOrderReference();
             refForm.Show();
         }
-
+        //A
         public void ShowLowQuantity()
         {
             DataTable dt = productData.DisplayProductsByLowQuantity();

@@ -17,8 +17,10 @@ namespace Shop_Store_System
         public formUserDashboard()
         {
             InitializeComponent();
+            //A
             lowQuantityProducts.Hide();
             ShowLowQuantity();
+            //
         }
         ProductData productData = new ProductData();
         public static string transactionType;
@@ -46,26 +48,32 @@ namespace Shop_Store_System
         {
             transactionType = "Purchase";
             formPurchaseSales purchase = new formPurchaseSales();
+            //A
             purchase.FormClosed += Purchase_FormClosed;
+            //
             purchase.Show();
         }
+        //A
         private void Purchase_FormClosed(object sender, FormClosedEventArgs e)
         {
             ShowLowQuantity();           
         }
-
+        //
         private void salesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             transactionType = "Sales";
             formPurchaseSales sales = new formPurchaseSales();
+            //A
             sales.FormClosed += Sales_FormClosed;
+            //
             sales.Show();
         }
+        //A
         private void Sales_FormClosed(object sender, FormClosedEventArgs e)
         {
             ShowLowQuantity();
         }
-
+        //
         private void inventoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
             formInventory inventory = new formInventory();
@@ -84,6 +92,7 @@ namespace Shop_Store_System
             login.Show();
         }
 
+        //A
         public void ShowLowQuantity()
         {
             DataTable dt = productData.DisplayProductsByLowQuantity();

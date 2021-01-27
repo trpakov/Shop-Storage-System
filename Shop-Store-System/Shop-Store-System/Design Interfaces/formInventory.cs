@@ -61,17 +61,18 @@ namespace Shop_Store_System.Design_Interfaces
             dgvProducts.DataSource = dt;
         }
 
+        //A
         private void dgvProducts_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             if (e.ColumnIndex == 6 && e.Value != null)
             {             
                 int quantity = Convert.ToInt32(e.Value);
 
-                if (quantity < 5)
+                if (quantity < 20)
                 {
                     dgvProducts.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Red;
                 }
-                if (quantity > 4)
+                if (quantity > 19)
                 {
                     dgvProducts.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.White;
                 }

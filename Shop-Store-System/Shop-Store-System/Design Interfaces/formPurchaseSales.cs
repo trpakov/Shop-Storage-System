@@ -28,11 +28,7 @@ namespace Shop_Store_System.Design_Interfaces
         UserData userData = new UserData();
         TransactionData transactionData = new TransactionData();
         TransactionDetailsData transactionDetailData = new TransactionDetailsData();
-        formUserDashboard userDashboard = new formUserDashboard();
-
-
-
-
+        
         DataTable transactionTable = new DataTable();
 
         string description = null;
@@ -97,7 +93,8 @@ namespace Shop_Store_System.Design_Interfaces
             //Визуализация на намерените данни в текстовите кутии
             txtProductName.Text = product.Name;
             txtInventory.Text = product.Quantity.ToString();
-            if (product.Quantity < 5 && txtProductName.Text!=string.Empty)
+            //A
+            if (product.Quantity < 20 && txtProductName.Text!=string.Empty)
             {
                 txtInventory.BackColor = Color.Red;
             }
@@ -110,6 +107,7 @@ namespace Shop_Store_System.Design_Interfaces
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            
             txtInventory.BackColor = Color.White;
             decimal total;
             decimal subTotal;
@@ -139,7 +137,7 @@ namespace Shop_Store_System.Design_Interfaces
                 subTotal = decimal.Parse(txtSubTotal.Text);
                 subTotal = subTotal + total;
             }
-            
+            //
             //Проверка дали има избран продукт 
             if (productName == "")
             {
@@ -390,9 +388,6 @@ namespace Shop_Store_System.Design_Interfaces
             txtReturnAmount.Text = "0";
         }
 
-        private void formPurchaseSales_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            
-        }
+
     }
 }

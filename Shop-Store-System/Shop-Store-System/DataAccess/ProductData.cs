@@ -458,6 +458,7 @@ namespace Shop_Store_System.DataAccess
 
             return dt;
         }
+        //A
         public DataTable DisplayProductsByLowQuantity()
         {
             SqlConnection conn = new SqlConnection(myconnstrng);
@@ -466,7 +467,7 @@ namespace Shop_Store_System.DataAccess
 
             try
             {
-                string sql = "SELECT * FROM table_products WHERE qty<5";
+                string sql = "SELECT * FROM table_products WHERE qty<20";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
