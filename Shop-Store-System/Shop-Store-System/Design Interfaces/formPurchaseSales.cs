@@ -110,8 +110,9 @@ namespace Shop_Store_System.Design_Interfaces
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            decimal total=0;
-            decimal subTotal=0;
+            txtInventory.BackColor = Color.White;
+            decimal total;
+            decimal subTotal;
             string productName = txtProductName.Text;
             decimal price = decimal.Parse(txtRate.Text);
             decimal qty;
@@ -391,8 +392,7 @@ namespace Shop_Store_System.Design_Interfaces
 
         private void formPurchaseSales_FormClosing(object sender, FormClosingEventArgs e)
         {
-            userDashboard.Invalidate();
-            userDashboard.Update();
+            
         }
     }
 }

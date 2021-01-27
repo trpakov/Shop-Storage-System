@@ -46,14 +46,24 @@ namespace Shop_Store_System
         {
             transactionType = "Purchase";
             formPurchaseSales purchase = new formPurchaseSales();
+            purchase.FormClosed += Purchase_FormClosed;
             purchase.Show();
+        }
+        private void Purchase_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ShowLowQuantity();           
         }
 
         private void salesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             transactionType = "Sales";
             formPurchaseSales sales = new formPurchaseSales();
+            sales.FormClosed += Sales_FormClosed;
             sales.Show();
+        }
+        private void Sales_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ShowLowQuantity();
         }
 
         private void inventoryToolStripMenuItem_Click(object sender, EventArgs e)
@@ -72,7 +82,6 @@ namespace Shop_Store_System
         {
             formLogin login = new formLogin();
             login.Show();
-            this.Hide();
         }
 
         public void ShowLowQuantity()
@@ -93,6 +102,11 @@ namespace Shop_Store_System
                 lowQuantityProducts.Columns[7].HeaderText = "Added Date";
                 lowQuantityProducts.Columns[8].Visible = false;
                 lowQuantityProducts.Columns[9].HeaderText = "Added By Name";
+            }
+            else
+            {
+                lowQuantityProducts.Hide();
+                tableLabel.Text = " No products in low quantity!";
             }
             
         }
