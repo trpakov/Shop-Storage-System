@@ -90,6 +90,7 @@ namespace Shop_Store_System
         {
             formLogin login = new formLogin();
             login.Show();
+            this.Hide();
         }
 
         //A

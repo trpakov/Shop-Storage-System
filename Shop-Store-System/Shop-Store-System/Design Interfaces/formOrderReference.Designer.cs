@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.dgvOrders = new System.Windows.Forms.DataGridView();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
@@ -78,8 +78,8 @@
             // 
             // dgvOrders
             // 
+            this.dgvOrders.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOrders.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvOrders.Location = new System.Drawing.Point(2, 2);
             this.dgvOrders.Margin = new System.Windows.Forms.Padding(2);
             this.dgvOrders.Name = "dgvOrders";
@@ -348,21 +348,21 @@
             // 
             this.chartTypes.BackColor = System.Drawing.SystemColors.Control;
             this.chartTypes.BorderlineColor = System.Drawing.SystemColors.Control;
-            chartArea1.BackColor = System.Drawing.SystemColors.Control;
-            chartArea1.Name = "ChartArea1";
-            this.chartTypes.ChartAreas.Add(chartArea1);
+            chartArea7.BackColor = System.Drawing.SystemColors.Control;
+            chartArea7.Name = "ChartArea1";
+            this.chartTypes.ChartAreas.Add(chartArea7);
             this.chartTypes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chartTypes.Location = new System.Drawing.Point(3, 3);
             this.chartTypes.Name = "chartTypes";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series1.CustomProperties = "PieDrawingStyle=SoftEdge, PieLabelStyle=Outside";
-            series1.EmptyPointStyle.IsValueShownAsLabel = true;
-            series1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            series1.IsValueShownAsLabel = true;
-            series1.Name = "Type";
-            series1.YValuesPerPoint = 2;
-            this.chartTypes.Series.Add(series1);
+            series7.ChartArea = "ChartArea1";
+            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series7.CustomProperties = "PieDrawingStyle=SoftEdge, PieLabelStyle=Outside";
+            series7.EmptyPointStyle.IsValueShownAsLabel = true;
+            series7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            series7.IsValueShownAsLabel = true;
+            series7.Name = "Type";
+            series7.YValuesPerPoint = 2;
+            this.chartTypes.Series.Add(series7);
             this.chartTypes.Size = new System.Drawing.Size(622, 420);
             this.chartTypes.TabIndex = 28;
             this.chartTypes.Text = "Type";
@@ -371,16 +371,16 @@
             // 
             this.chartPrice.BackColor = System.Drawing.SystemColors.Control;
             this.chartPrice.BorderlineColor = System.Drawing.SystemColors.Control;
-            chartArea2.BackColor = System.Drawing.SystemColors.Control;
-            chartArea2.Name = "ChartArea1";
-            this.chartPrice.ChartAreas.Add(chartArea2);
+            chartArea8.BackColor = System.Drawing.SystemColors.Control;
+            chartArea8.Name = "ChartArea1";
+            this.chartPrice.ChartAreas.Add(chartArea8);
             this.chartPrice.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chartPrice.Location = new System.Drawing.Point(631, 3);
             this.chartPrice.Name = "chartPrice";
-            series2.ChartArea = "ChartArea1";
-            series2.Name = "Series1";
-            series2.YValuesPerPoint = 6;
-            this.chartPrice.Series.Add(series2);
+            series8.ChartArea = "ChartArea1";
+            series8.Name = "Series1";
+            series8.YValuesPerPoint = 6;
+            this.chartPrice.Series.Add(series8);
             this.chartPrice.Size = new System.Drawing.Size(623, 420);
             this.chartPrice.TabIndex = 29;
             this.chartPrice.Text = "chart1";

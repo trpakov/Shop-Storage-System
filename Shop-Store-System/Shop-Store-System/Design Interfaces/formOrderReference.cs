@@ -38,6 +38,9 @@ namespace Shop_Store_System.Design_Interfaces
 
         private void formOrderReference_Load(object sender, EventArgs e)
         {
+            TopMost = true;
+            WindowState = FormWindowState.Maximized;
+
             radioButtonAll.Checked = true;
             dateTimePicker1.MaxDate = DateTime.Now;
             dateTimePicker2.MaxDate = DateTime.Now;
